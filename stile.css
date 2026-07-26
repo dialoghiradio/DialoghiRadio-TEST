@@ -1,0 +1,375 @@
+/* ============================================
+   STILE GENERALE DELLA PAGINA
+   ============================================ */
+
+body {
+    /* Carattere principale */
+    font-family: Arial, sans-serif;
+
+    /* Tutto il contenuto centrato */
+    text-align: center;
+
+    /* Eliminazione margini e spazi predefiniti */
+    margin: 0;
+    padding: 20px;
+
+    /* Sfondo generale dell'app */
+    background: #eef6fa; /* azzurro tenue   */
+	/*          #f5f5f5;    grigio  chiaro  */
+	/*          #f1f7f1;    verde   tenue   */
+	/*          #f7f1e8;    crema  delicato */ 
+
+}
+
+
+
+/* ============================================
+   TESTATA DELL'APP
+   Contiene logo, titolo e descrizione
+   ============================================ */
+
+.testata {
+
+    /* Sfondo bianco della scheda */
+    background: white;
+
+    padding: 25px;
+
+    /* Angoli arrotondati */
+    border-radius: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+/* Logo Dialoghi Radio */
+
+.logo {
+    width: 150px;
+    border-radius: 50%;
+}
+
+
+
+/* Titolo principale */
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+
+
+h2 {
+
+    /* Colore titoli secondari */
+    color: #555;
+
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+
+
+.testata p {
+
+    /* Dimensione descrizione nella testata */
+    font-size: 18px;
+
+}
+
+
+
+/* ============================================
+   BLOCCO ULTIMA PUNTATA
+   ============================================ */
+
+.ultima {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    /* Ombra della scheda */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* ============================================
+   ELENCO EPISODI CARICATI AUTOMATICAMENTE
+   ============================================ */
+
+#episodi div {
+
+    /* Ogni puntata viene visualizzata
+       come una scheda */
+
+    background: white;
+
+    padding: 15px;
+
+    margin: 20px 0;
+
+    border-radius: 20px;
+
+}
+
+
+
+/* ============================================
+   LINK GENERICI
+   ============================================ */
+
+a {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 15px 25px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+}
+
+
+
+/* ============================================
+   PULSANTI PRINCIPALI DELL'APP
+   ============================================ */
+
+.bottone {
+
+    display: inline-block;
+
+    width: 220px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    padding: 14px 20px;
+
+    background: #007bff;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin: 10px;
+
+}
+
+
+
+/* Effetto quando il mouse passa sopra */
+
+.bottone:hover {
+
+    background: #0056b3;
+
+}
+
+
+
+/* Il pulsante Info è un button,
+   ma deve avere lo stesso stile */
+
+button.bottone {
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+/* ============================================
+   ADATTAMENTO SMARTPHONE
+   ============================================ */
+
+@media (max-width: 600px) {
+
+
+    /* Logo più piccolo su telefono */
+
+    .logo {
+
+        width: 70px;
+
+        display: block;
+
+        margin: 0 auto;
+
+    }
+
+
+    /* Pulsanti a tutta larghezza */
+
+    .bottone {
+
+        display: block;
+
+        width: 80%;
+
+        margin: 15px auto;
+
+    }
+
+}
+
+
+
+/* ============================================
+   CONTENUTO PRINCIPALE
+   ============================================ */
+
+main {
+
+    padding: 10px;
+
+}
+
+
+
+/* ============================================
+   SPAZIATURA ELEMENTI DINAMICI
+   ============================================ */
+
+#ultima-puntata {
+
+    margin-top: 25px;
+
+}
+
+
+
+#episodi div {
+
+    margin-bottom: 25px;
+
+}
+
+
+
+/* ============================================
+   INDICAZIONE VERSIONE APP
+   ============================================ */
+
+.versione {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    color: #777;
+
+}
+
+/* ============================================
+   PIEDE PAGINA
+   ============================================ */
+
+footer {
+
+    margin-top: 30px;
+
+    color: #777;
+
+}
+/* Pensiero del giorno */
+
+#contenutoGiornaliero p {
+    font-size: 18px;
+}
+
+#contenutoGiornaliero strong {
+    font-size: 20px;
+}
+/* ============================================
+   📻 Modalità Radio
+   ============================================ */
+
+.radio-attiva {
+    animation: lampeggioRadio 1.5s infinite;
+}
+
+
+@keyframes lampeggioRadio {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+/* ============================================
+   📻 Controlli radio
+   ============================================ */
+
+#statoRadio {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+
+#controlliRadio {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+
+#controlliRadio button {
+    padding: 10px 18px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#playRadio {
+    background-color: #5a8f6a;
+}
+
+#stopRadio {
+    background-color: #a65a5a;
+}
+
+iframe {
+    position: relative;
+    z-index: 10;
+}

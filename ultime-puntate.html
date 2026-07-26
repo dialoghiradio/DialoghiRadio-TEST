@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Dichiarazione HTML5 -->
+
+<html lang="it">
+<!-- Lingua della pagina: italiano -->
+
+<head>
+
+<meta charset="UTF-8">
+<!-- Supporto caratteri (accenti, emoji, ecc.) -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Adattamento per smartphone -->
+
+<title>Ascolta Dialoghi Radio</title>
+<!-- Titolo della pagina -->
+
+<link rel="stylesheet" href="stile.css">
+<!-- Collegamento al file CSS -->
+
+</head>
+
+<body>
+
+<header class="testata">
+<!-- Intestazione della pagina -->
+
+<img src="icona.png" class="logo" alt="Dialoghi Radio">
+<!-- Logo dell'app -->
+
+<h1>🎧 Ascolta Dialoghi Radio</h1>
+<!-- Titolo principale -->
+
+<p>Archivio completo e ultimi episodi</p>
+<!-- Sottotitolo -->
+
+<a href="index.html" class="bottone">
+⬅ Torna alla Home
+</a>
+<!-- Pulsante per tornare alla Home -->
+
+</header>
+
+<main>
+
+<p>
+Scegli se ascoltare l'archivio completo
+oppure gli ultimi episodi disponibili di Dialoghi Radio.
+</p>
+
+<div id="contatore-ascolti" class="box-giorno">
+</div>
+
+<a href="https://castbox.fm/channel/id6422987" class="bottone" target="_blank" id="tutte-puntate">
+📚 Archivio completo
+</a>
+
+<p style="font-size: 0.9em; color: gray;">
+Archivio completo disponibile su Castbox.
+</p>
+
+
+<hr>
+
+<h2>🎧 Ultimi episodi</h2>
+
+<p>
+Ascolta gli ultimi 10 episodi di Dialoghi Radio.
+La raccolta si aggiorna automaticamente.
+</p>
+
+<div id="episodi">
+    Caricamento episodi...
+</div>
+
+</main>
+
+<footer>
+<!-- Piè di pagina -->
+
+<p>
+❤️ Dialoghi Radio
+</p>
+
+</footer>
+
+<script src="ultime-puntate.js"></script>
+<!-- Collegamento al JavaScript che carica le puntate -->
+
+</body>
+
+</html>
