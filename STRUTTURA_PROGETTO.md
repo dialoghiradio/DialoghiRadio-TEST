@@ -1,5 +1,15 @@
-# Struttura progetto - Dialoghi Radio
+# Struttura progetto - Dialoghi Radio - Ambiente DR-TEST
 
+⚠️ Questo ambiente è dedicato alle prove.
+
+Repository:
+DialoghiRadio-TEST
+
+Scopo:
+- test nuove funzioni;
+- verifiche smartphone;
+- prove audio;
+- controllo prima del passaggio in produzione.
 Descrizione:
 Mappa dei file e delle funzionalità dell'app Dialoghi Radio Beta 1.0.2.
 Serve per orientarsi rapidamente nel progetto e capire dove intervenire.

@@ -1,6 +1,17 @@
 # NOTE_PROGETTO.md
 
-# Progetto: Dialoghi Radio
+# Progetto: Dialoghi Radio - Ambiente DR-TEST
+
+⚠️ Questo ambiente è dedicato alle prove.
+
+Repository:
+DialoghiRadio-TEST
+
+Scopo:
+- test nuove funzioni;
+- verifiche smartphone;
+- prove audio;
+- controllo prima del passaggio in produzione.
 
 ## 24/07/2026
 
