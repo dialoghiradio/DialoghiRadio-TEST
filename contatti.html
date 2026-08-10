@@ -1,127 +1,73 @@
 <!DOCTYPE html>
-<!-- Documento HTML5 -->
-
 <html lang="it">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Dialoghi Radio</title>
 
-<meta charset="UTF-8">
-<!-- Supporto caratteri speciali e lettere accentate -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Adattamento della pagina agli smartphone -->
-
-<title>Contatti - Dialoghi Radio</title>
-<!-- Titolo della pagina -->
-
-<link rel="stylesheet" href="stile.css">
-<!-- Collegamento al foglio di stile grafico -->
-
+    <!-- Stile e risorse -->
+    <link rel="stylesheet" href="stile.css">
 </head>
-
 
 <body>
 
+    <!-- Testata -->
+    <header class="testata">
+        <img src="icona.png" class="logo" alt="Dialoghi Radio Logo">
+        <h1>💬 Contatti e suggerimenti</h1>
+        <p>Il tuo contributo è prezioso</p>
 
-<!-- Intestazione della pagina -->
-<header class="testata">
+        <a href="index.html" class="bottone">⬅ Torna alla Home</a>
+    </header>
 
-<img src="icona.png" class="logo" alt="Dialoghi Radio">
-<!-- Logo dell'app -->
+    <!-- Contenuto Principale -->
+    <main>
+        <p>Hai trovato un problema o vuoi suggerire un miglioramento?</p>
+        <p>Scegli il tipo di messaggio che desideri inviare:</p>
 
-<h1>💬 Contatti e suggerimenti</h1>
-<!-- Titolo sezione -->
+        <!-- Indicazioni per classificare le richieste -->
+        <ul style="list-style: none; padding: 0; margin: 15px 0;">
+            <li>⚠️ <strong>Problema</strong> → Segnala un errore</li>
+            <li>💡 <strong>Suggerimento</strong> → Proponi un'idea</li>
+            <li>⭐ <strong>Recensione</strong> → Lascia un parere</li>
+        </ul>
 
-<p>Il tuo contributo è prezioso</p>
+        <!-- Invio email con oggetto preimpostato -->
+        <p>
+            <a id="problema" href="#" class="bottone">⚠️ Segnala un problema</a>
+        </p>
+        <p>
+            <a id="suggerimento" href="#" class="bottone">💡 Invia un suggerimento</a>
+        </p>
+        <p>
+            <a id="recensione" href="#" class="bottone">⭐ Scrivi una recensione</a>
+        </p>
 
-<br>
+        <p>Ogni messaggio è un aiuto per crescere insieme.</p>
+        <p>
+            🙏 Grazie per il tempo che ci dedichi. Ogni suggerimento sarà valutato con attenzione e ci aiuterà a migliorare Dialoghi Radio.
+        </p>
 
-<a href="index.html" class="bottone">
-⬅ Torna alla Home
-</a>
-<!-- Pulsante ritorno alla pagina principale -->
+        <p class="descrizione-pulsante">
+            L'indirizzo email sarà utilizzato esclusivamente per rispondere alla tua richiesta.
+        </p>
+    </main>
 
+    <!-- Piè di pagina -->
+    <footer>
+        <p>❤️ Grazie di seguire Dialoghi Radio ❤️</p>
+    </footer>
 
-</header>
+    <!-- Script Config & Logic -->
+    <script src="config.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const email = CONFIG.contatti.email;
 
-
-
-<!-- Contenuto principale -->
-<main>
-
-
-<p>
-Hai trovato un problema o vuoi suggerire un miglioramento?
-</p>
-
-<p>
-Scegli il tipo di messaggio:
-</p>
-
-
-<!-- Indicazioni per classificare le richieste -->
-<p>
-
-<p>⚠️ Problema → segnala un errore</p>
-
-<p>💡 Suggerimento → proponi un'idea</p>
-
-<p>⭐ Recensione → lascia un parere</p>
-</p>
-
-<!-- Invio email con oggetto preimpostato -->
-
-<p>
-<a href="mailto:teisasa@outlook.it?subject=[PROBLEMA]%20Dialoghi%20Radio" class="bottone">
-⚠️ Segnala un problema
-</a>
-</p>
-
-
-<p>
-<a href="mailto:teisasa@outlook.it?subject=[SUGGERIMENTO]%20Dialoghi%20Radio" class="bottone">
-💡 Invia un suggerimento
-</a>
-</p>
-
-
-<p>
-<a href="mailto:teisasa@outlook.it?subject=[RECENSIONE]%20Dialoghi%20Radio" class="bottone">
-⭐ Scrivi una recensione
-</a>
-</p>
-
-
-
-<p>
-Ogni messaggio è un aiuto per crescere insieme.
-</p>
-
-
-<p>
-🙏 Grazie per il tempo che ci dedichi.  
-Ogni suggerimento sarà valutato con attenzione
-e ci aiuterà a migliorare Dialoghi Radio.
-</p>
-
-
-<!-- Informativa sul trattamento dell'indirizzo email -->
-<p>
-L'indirizzo email sarà utilizzato solo per rispondere alla richiesta.
-</p>
-
-</main>
-
-
-
-<!-- Piè di pagina -->
-<footer>
-
-<p>❤️ Grazie di seguire Dialoghi Radio ❤️</p>
-
-</footer>
-
-
+            document.getElementById("problema").href = `mailto:${email}?subject=[PROBLEMA]%20Dialoghi%20Radio`;
+            document.getElementById("suggerimento").href = `mailto:${email}?subject=[SUGGERIMENTO]%20Dialoghi%20Radio`;
+            document.getElementById("recensione").href = `mailto:${email}?subject=[RECENSIONE]%20Dialoghi%20Radio`;
+        });
+    </script>
 </body>
-
 </html>

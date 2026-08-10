@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorie - Dialoghi Radio</title>
+
+    <!-- Stile e risorse -->
+    <link rel="stylesheet" href="stile.css">
+</head>
+
+<body>
+
+    <!-- Testata -->
+    <header class="testata">
+        <img src="icona.png" class="logo" alt="Dialoghi Radio Logo">
+        <h1>📚 Archivio per Categorie</h1>
+        <p class="sottotitolo">Scegli cosa ascoltare in base al tuo momento</p>
+
+        <div style="margin-top: 15px;">
+            <a href="index.html" class="bottone">🏠 Torna alla Home</a>
+			<button onclick="condividiCategorie()" class="bottone bottone-invito">
+			👥 Invita un amico
+			</button>
+        </div>
+    </header>
+
+    <!-- Contenuto Principale -->
+    <main>
+        <!-- Sezione Sorprendimi / Casuale -->
+        <section class="sezione-casuale" style="margin-bottom: 30px;">
+            <h2>🎲 Ascolto Casuale</h2>
+            <div id="rapporto-casuale"></div>
+
+            <button id="sorprendimi" class="bottone">🎲 Sorprendimi</button>
+
+            <div style="margin-top: 15px;">
+                <label for="categoria-casuale">Scegli categoria per la sorpresa:</label>
+                <select id="categoria-casuale">
+                    <option value="tutte">Tutte</option>
+                    <option value="Domande di vita vera">Domande di vita vera</option>
+                    <option value="Buongiorno">Buongiorno</option>
+                    <option value="Pillola di Luce">Pillola di Luce</option>
+                    <option value="Accanto a Te">Accanto a Te</option>
+                    <option value="Percorso Biblico">Percorso Biblico</option>
+                    <option value="Sorriso quotidiano">Sorriso quotidiano</option>
+                    <option value="Archivio Preghiere">Archivio Preghiere</option>
+                    <option value="Alla scuola dell’Amore">Alla scuola dell’Amore</option>
+                    <option value="Scenette">Scenette</option>
+                    <option value="Riflessioni di Fede">Riflessioni di Fede</option>
+                </select>
+            </div>
+
+            <div id="contatore-casuale"></div>
+            <h3 id="casuale-titolo"></h3>
+            <div id="casuale-player"></div>
+        </section>
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+
+        <!-- Sezione Filtra Archivio -->
+        <section class="sezione-filtro">
+            <h2>📋 Filtra Archivio per Categoria</h2>
+
+            <label for="selettore">Filtra per:</label>
+            <select id="selettore">
+                <option value="tutte">Tutte</option>
+                <option value="Domande di vita vera">Domande di vita vera</option>
+                <option value="Buongiorno">Buongiorno</option>
+                <option value="Pillola di Luce">Pillola di Luce</option>
+                <option value="Accanto a Te">Accanto a Te</option>
+                <option value="Percorso Biblico">Percorso Biblico</option>
+                <option value="Sorriso quotidiano">Sorriso quotidiano</option>
+                <option value="Archivio Preghiere">Archivio Preghiere</option>
+                <option value="Alla scuola dell’Amore">Alla scuola dell’Amore</option>
+                <option value="Scenette">Scenette</option>
+                <option value="Riflessioni di Fede">Riflessioni di Fede</option>
+            </select>
+
+            <h3 id="titolo-risultato" style="margin-top: 20px;">Risultati</h3>
+
+            <div id="risultato">
+                Caricamento in corso...
+            </div>
+        </section>
+    </main>
+
+    <!-- Piè di pagina -->
+    <footer>
+        <p>❤️ Grazie di seguire Dialoghi Radio ❤️</p>
+    </footer>
+
+    <!-- Script e Logica -->
+	<script src="config.js"></script>
+	<script src="app.js"></script>
+	<script src="categorie.js"></script>
+
+</body>
+</html>

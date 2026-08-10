@@ -1,51 +1,328 @@
 # NOTE_PROGETTO.md
 
-# Progetto: Dialoghi Radio - Ambiente DR-TEST
+# Progetto: Dialoghi Radio — Ambiente DR-TEST
 
-⚠️ Questo ambiente è dedicato alle prove.
+⚠️ **Questo ambiente è dedicato alle prove.**
 
-Repository:
-DialoghiRadio-TEST
+**Repository:** `DialoghiRadio-TEST`
 
-Scopo:
-- test nuove funzioni;
-- verifiche smartphone;
-- prove audio;
-- controllo prima del passaggio in produzione.
+## Scopo
 
-## 24/07/2026
+L'ambiente DR-TEST viene utilizzato per:
 
-- Versione Beta 1.0.2 in fase di verifica.
-- Guida utente aggiornata.
-- Correzione testi "Ultimi episodi".
-- Backup eseguito (PC + USB).
-- Verifica finale delle modifiche in ambiente DR-TEST.
+* testare nuove funzioni;
+* verificare le modifiche grafiche;
+* effettuare prove su smartphone;
+* verificare le funzioni audio;
+* verificare i collegamenti WhatsApp e telefonici;
+* raccogliere feedback dai tester;
+* controllare la versione prima del passaggio in produzione.
 
-## Stato attuale
+Le modifiche vengono sviluppate e verificate prima in DR-TEST.
 
-Progetto web per una piccola app di contenuti audio e pensieri del giorno.
+Solo dopo la verifica finale vengono trasferite nella versione di produzione.
 
-Ambiente di sviluppo:
+---
 
-* Visual Studio Code
-* Live Server
-* Git/GitHub per DR-PRODUZIONE
+# Stato attuale
 
-Ambiente di test:
+**Versione:** Beta 1.0.3
 
-* DR-TEST locale senza collegamento Git
+**Ambiente:** DR-TEST
 
-## Repository GitHub
+**Stato:** 🟡 Sviluppo / verifica finale
 
-Repository collegato:
+La Beta 1.0.3 comprende l'evoluzione delle funzioni già presenti nella Beta 1.0.2, con particolare attenzione a:
 
+* guida utente;
+* condivisione dei contenuti;
+* sezione Comunità;
+* collegamenti WhatsApp;
+* accesso alla conferenza telefonica;
+* categorie;
+* contatti;
+* configurazione centralizzata tramite `config.js`;
+* organizzazione della documentazione;
+* preparazione del nuovo ciclo di test.
+
+---
+
+# Metodo di lavoro
+
+La cartella di prova è:
+
+```text
+DR-TEST
+```
+
+Il flusso di lavoro è:
+
+```text
+Modifica file
+      ↓
+Prova in DR-TEST
+      ↓
+Live Server
+      ↓
+Verifica PC
+      ↓
+Verifica smartphone
+      ↓
+Controllo funzioni
+      ↓
+Eventuali correzioni
+      ↓
+Test finale
+      ↓
+Versione stabile
+      ↓
+Trasferimento in DR-PRODUZIONE
+      ↓
+Git / GitHub
+```
+
+**Regola principale:**
+
+> Nessuna modifica viene considerata pronta per la produzione finché non è stata verificata in DR-TEST.
+
+---
+
+# Configurazione globale
+
+È stato introdotto il file:
+
+```text
+config.js
+```
+
+Il file centralizza le configurazioni che possono cambiare tra ambiente di test e produzione.
+
+Attualmente contiene:
+
+* collegamento WhatsApp per richieste di preghiera;
+* gruppo WhatsApp per preparazione conferenza;
+* numero e codice per la conferenza telefonica;
+* email dei contatti;
+* percorsi disponibili;
+* versione dell'app;
+* data aggiornamento;
+* nome dell'ambiente;
+* URL dell'ambiente;
+* feed audio;
+* collegamento Castbox.
+
+Questo sistema permette di evitare di modificare manualmente più pagine quando cambia un collegamento o un parametro.
+
+---
+
+# Sezione Comunità
+
+La sezione Comunità è stata sviluppata in DR-TEST.
+
+Funzioni attualmente previste:
+
+### 🙏 Richiesta di preghiera
+
+Apre WhatsApp per permettere all'utente di inviare una richiesta personale.
+
+### 👥 Preparazione conferenza
+
+Apre il gruppo WhatsApp dedicato alla preparazione dell'incontro.
+
+### 📞 Entra nella conferenza
+
+Avvia il collegamento telefonico alla conferenza.
+
+### 📤 Invita nella Comunità
+
+Permette di condividere l'invito alla Comunità.
+
+---
+
+# Colori delle funzioni Comunità
+
+La distinzione grafica attuale è intenzionale:
+
+* 🟢 funzioni WhatsApp;
+* 🟠 funzione telefonica della conferenza;
+* 🔵 ritorno alla Home.
+
+In questo modo l'utente può riconoscere immediatamente il tipo di azione che sta per eseguire.
+
+---
+
+# Gestione della conferenza
+
+La funzione di conferenza è attualmente disponibile tramite chiamata telefonica.
+
+È stata considerata la possibilità di evitare chiamate o messaggi fuori dagli orari previsti.
+
+Possibili soluzioni future:
+
+1. disabilitare temporaneamente i pulsanti della conferenza;
+2. disabilitare l'intera sezione Comunità;
+3. collegare la disponibilità della funzione a giorni e orari;
+4. mantenere gli orari in un file di configurazione separato.
+
+La decisione definitiva verrà presa dopo la verifica dell'utilizzo reale della funzione.
+
+---
+
+# Condivisione
+
+Sono state sviluppate diverse funzioni di condivisione.
+
+Tra quelle già previste:
+
+* condivisione dell'app;
+* condivisione della guida;
+* condivisione di un episodio;
+* condivisione delle categorie;
+* condivisione del Percorso Biblico;
+* condivisione del Pensiero del giorno;
+* condivisione della funzione "Sorprendimi";
+* condivisione della Comunità.
+
+I testi possono essere centralizzati nel file:
+
+```text
+contenuti/messaggi-condivisione.json
+```
+
+Questo permette di modificare i messaggi senza dover intervenire direttamente nella logica delle pagine.
+
+---
+
+# Contatti
+
+La pagina Contatti è attiva.
+
+Sono disponibili:
+
+* ⚠️ Problema;
+* 💡 Suggerimento;
+* ⭐ Recensione.
+
+I messaggi vengono gestiti tramite email.
+
+La funzione è stata verificata e considerata funzionante.
+
+---
+
+# Guida utente
+
+La guida utente è stata aggiornata.
+
+Il testo introduttivo attuale è:
+
+> Scopri le diverse sezioni e come utilizzare l'app Dialoghi Radio.
+
+La guida contiene le indicazioni necessarie per orientarsi nelle principali funzioni dell'app.
+
+È presente anche la funzione di condivisione della guida.
+
+---
+
+# Categorie
+
+La sezione Categorie è attiva.
+
+Sono presenti:
+
+```text
+categorie.html
+categorie.js
+```
+
+La funzione permette di organizzare e presentare i contenuti per tema.
+
+La struttura delle categorie viene documentata anche nel file:
+
+```text
+documentazione/CATEGORIE_CONTENUTI.md
+```
+
+---
+
+# Audio
+
+Gli audio locali di prova si trovano nella cartella:
+
+```text
+audio/notizie/
+```
+
+Esempio:
+
+```text
+audio/
+└── notizie/
+    └── news001.mp3
+```
+
+Gli episodi principali vengono recuperati tramite il feed audio configurato in `config.js`.
+
+L'archivio completo è disponibile tramite Castbox.
+
+---
+
+# Pensiero del giorno
+
+Il Pensiero del giorno viene caricato automaticamente dal file:
+
+```text
+contenuti/pensieri.json
+```
+
+La gestione è separata dal codice JavaScript.
+
+Questo permette di modificare i contenuti senza modificare la logica dell'app.
+
+---
+
+# PWA
+
+Dialoghi Radio è una Web App installabile.
+
+La configurazione della PWA utilizza:
+
+```text
+manifest.json
+```
+
+L'app può essere installata sui dispositivi compatibili.
+
+Le istruzioni di installazione sono documentate nella guida dedicata.
+
+---
+
+# Backup
+
+Il progetto viene protetto attraverso:
+
+* copia locale sul PC;
+* repository Git/GitHub per la versione di produzione;
+* copia di sicurezza su supporto USB.
+
+Prima del passaggio a una nuova versione stabile deve essere eseguito un backup.
+
+---
+
+# Git e produzione
+
+La versione di produzione è separata dall'ambiente DR-TEST.
+
+Repository ufficiale:
+
+```text
 https://github.com/dialoghiradio/DR
+```
 
-Cartella locale collegata:
+Cartella locale di produzione:
 
+```text
 DR-PRODUZIONE
-
-Il repository locale è collegato correttamente a GitHub.
+```
 
 Comandi principali:
 
@@ -56,371 +333,167 @@ git commit -m "descrizione modifica"
 git push
 ```
 
-## Metodo di lavoro
+Il repository GitHub viene utilizzato per:
 
-La cartella DR è la versione produzione.
-
-Flusso:
-
-PC (Visual Studio Code)
-↓
-Modifica file
-↓
-Prova con Live Server
-↓
-Git status
-↓
-Git add
-↓
-Git commit
-↓
-Git push
-↓
-GitHub aggiornato
-↓
-App aggiornata
-
-Nota:
-
-Le nuove modifiche vengono prima provate nella cartella DR-TEST.
-Solo dopo la verifica vengono trasferite nella versione DR-PRODUZIONE
-e pubblicate tramite GitHub.
-
-## Ambiente di prova
-
-Cartella:
-
-DR-TEST
-
-Utilizzo:
-
-* esperimenti;
-* nuove funzioni;
-* prove grafiche;
-* prove audio.
-
-Le modifiche vengono prima testate con Live Server.
-
-Solo dopo vengono portate nella versione DR.
-
-## Struttura progetto
-
-File principali:
-
-* index.html
-* app.js
-* pensieri.json
-
-Cartella audio:
-
-```
-audio/
-└── notizie/
-    └── news001.mp3
-```
-
-## Pensiero del giorno
-
-Il file pensieri.json contiene i testi.
-
-Esempio:
-
-```json
-[
-  {
-    "id": 1,
-    "testo": "La fede cresce quando viene condivisa."
-  }
-]
-```
-
-Il pensiero viene scelto in base al giorno.
-
-aggiunto saluto dinamico in base all'orario;
-aggiunta dissolvenza del Pensiero del giorno all'apertura della Home.
-
-## Esperimenti DR-TEST - luglio 2026
-## Esperimenti DR-TEST - luglio 2026
-
-Durante la fase di prova sono state sperimentate alcune migliorie
-dell'esperienza utente dell'app.
-
-### ✅ Esperimento 1 — Saluto dinamico
-
-Aggiunto un saluto automatico sotto la data della Home
-in base all'orario del dispositivo:
-
-- 🌅 Buongiorno
-- ☀️ Buon pomeriggio
-- 🌙 Buonasera
-
-La funzione è stata testata modificando temporaneamente
-l'orario del dispositivo.
+* pubblicazione;
+* controllo delle versioni;
+* storico dei commit;
+* backup della versione funzionante.
 
 ---
 
-### ✅ Esperimento 2 — Messaggio variabile di benvenuto
+# Regola per il passaggio in produzione
 
-La descrizione iniziale della Home è stata resa dinamica
-in base al momento della giornata.
+Prima di trasferire una versione da DR-TEST a produzione devono essere verificati:
 
-Messaggi utilizzati:
+* tutte le pagine principali;
+* navigazione;
+* audio;
+* collegamenti esterni;
+* WhatsApp;
+* conferenza telefonica;
+* contatti;
+* condivisione;
+* categorie;
+* guida;
+* PWA;
+* visualizzazione su smartphone;
+* eventuali errori JavaScript;
+* versione e data;
+* configurazione `config.js`.
 
-- 🌅 Mattina:
-  "Inizia la giornata con un momento di ascolto e riflessione."
-
-- ☀️ Pomeriggio:
-  "Un momento di pausa con parole e musica."
-
-- 🌙 Sera:
-  "Concludi la giornata con un tempo di ascolto e serenità."
-
-La funzione è stata testata verificando il cambio automatico
-del messaggio.
-
----
-
-### ✅ Esperimento 3 — Contatore episodi ascoltati
-
-Aggiunto nella pagina "Ascolta Dialoghi Radio"
-un contatore degli episodi segnati come ascoltati.
-
-La funzione utilizza il sistema già presente
-basato su memoria locale del dispositivo:
-
-`localStorage`
-
-Il conteggio visualizza:
-
-🎧 Episodi già ascoltati: numero
-
-Verifica effettuata:
-
-- segnando un episodio come ascoltato il numero aumenta;
-- togliendo la spunta "Già ascoltata" il numero diminuisce;
-- il conteggio rimane sincronizzato con la lista degli episodi selezionati.
-
-Nessun dato viene raccolto esternamente.
+Solo dopo la verifica completa la versione può essere considerata pronta per DR-PRODUZIONE.
 
 ---
 
-### ✅ Esperimento 4 — Dissolvenza Pensiero del giorno
+# Documentazione
 
-Aggiunto un effetto di comparsa graduale del box:
+La documentazione è organizzata nella cartella:
 
-✨ Pensiero del giorno
-
-all'apertura della Home.
-
-L'effetto è stato mantenuto leggero per non rallentare
-il caricamento della pagina.
-
----
-
-### ✅ Esperimento 5 — Ultimo aggiornamento più dinamico
-
-Modificata la visualizzazione dell'aggiornamento app.
-
-Prima:
-
-Aggiornamento app:
-24/07/2026
-
-Dopo:
-
-📻 App aggiornata il 24/07/2026
-
-La modifica rende l'informazione più naturale
-e coerente con il tema Dialoghi Radio.
-
----
-
-## Esperimento 6 — Modalità Radio
-
-Aggiunta una modalità radio nella Home per migliorare
-l'esperienza di ascolto dell'audio News Dialoghi Radio.
-
-Modifiche effettuate:
-
-- aggiunto stato dinamico di ascolto;
-- aggiunti comandi personalizzati Play/Pausa e Stop;
-- migliorata la distinzione grafica dei controlli audio.
-
-Comportamento:
-
-▶️ Audio avviato:
-🔴 In onda... 📡
-
-L'indicatore presenta una leggera animazione
-di lampeggio per simulare una trasmissione radio.
-
-⏸️ Audio in pausa:
-⏸️ In pausa
-
-⏹️ Stop:
-l'audio viene fermato e riportato all'inizio.
-
-⏹️ Fine audio:
-l'indicatore viene rimosso automaticamente.
-
-La gestione utilizza gli eventi audio HTML:
-- play;
-- pause;
-- ended;
-- timeupdate.
-
-Testato:
-- PC;
-- smartphone;
-- DR-TEST.
-
-Verificato:
-- riproduzione audio da cellulare;
-- visualizzazione corretta dello stato radio;
-- funzionamento Play/Pausa;
-- funzionamento Stop;
-- ritorno alla posizione iniziale dopo Stop.
-
-Stato:
-- funzionante;
-- da valutare eventuale passaggio in produzione.
-## Audio
-
-Gli audio vengono inseriti nella cartella:
-
-```
-audio/notizie/
+```text
+documentazione/
 ```
 
-Per aggiornare un audio:
+Sono presenti, tra gli altri:
 
-1. sostituire il file sul PC;
-2. provare con Live Server;
-3. fare commit e push.
+* `NOTE_INTERNE.md`;
+* `guida_installazione.md`;
+* `guida_utente.md`;
+* `SUGGERIMENTI_FUTURI.md`;
+* `CATEGORIE_CONTENUTI.md`;
+* cartella `tester/`;
+* cartella `immagini_guida/`;
+* cartella `QR_CODE/`.
 
-## Backup
+Nella root rimangono invece i documenti generali di progetto:
 
-Attualmente il progetto è protetto da:
+* `NOTE_PROGETTO.md`;
+* `STRUTTURA_PROGETTO.md`;
+* `CHANGELOG.md`;
+* `COPYRIGHT`;
+* `PRIVACY`;
+* `TERMINI_UTILIZZO`.
 
-* copia locale sul PC;
-* repository GitHub;
-* backup su USB.
+---
 
-## Idee future
+# Tester Beta
 
-Possibili sviluppi:
+La documentazione dei tester si trova in:
 
-* archivio audio giornalieri;
-* news audio;
-* repertorio del coro con:
-  * testi dei canti;
-  * registrazioni audio;
-  * materiale del gruppo.
-* Esplora contenuti con categorie tematiche;
+```text
+documentazione/tester/
+```
 
-## Note di sviluppo
+Contiene:
 
-Le modifiche importanti devono essere sempre testate prima in locale.
+* `messaggio_tester_beta.md`;
+* `registro_tester_beta.md`;
+* `risposte_email.txt`.
 
-GitHub viene usato come pubblicazione e archivio della versione funzionante.
+Il registro viene utilizzato per raccogliere:
 
-## Documentazione collegata
+* dispositivi utilizzati;
+* installazioni;
+* feedback;
+* problemi;
+* suggerimenti;
+* verifiche effettuate.
 
-Il progetto contiene anche:
+---
 
-- `documentazione/SUGGERIMENTI_FUTURI.md`
-  - idee e possibili sviluppi futuri dell'app
+# File di prova
 
-- `documentazione/CATEGORIE_CONTENUTI.md`
-  - struttura delle categorie previste per la futura funzione "Esplora contenuti"
- 
-## Aggiornamenti DR-TEST - Luglio 2026
+Nella root sono presenti alcuni file utilizzati per verifiche tecniche:
 
-In ambiente DR-TEST sono state effettuate alcune modifiche grafiche e di navigazione prima del passaggio in produzione.
+```text
+test-conferenza.html
+prova-speaker.html
+provaa-audio.html
+```
 
-### Home page (index.html)
+Questi file sono strumenti di test e non costituiscono pagine principali dell'app.
 
-Modificata la parte iniziale della pagina:
+---
 
-* mantenuta la versione Beta 1.0.2;
-* inserita la voce "Aggiornamento app" con data;
-* migliorata la leggibilità della testata.
+# Ambiente DR-TEST
 
-Modificato il pulsante di accesso all'ascolto:
+Il QR Code presente in:
 
-Prima: 🎙️ Ascolta Dialoghi Radio
-Dopo: ▶️ Vai all’ascolto
+```text
+documentazione/QR_CODE/
+```
 
-La pagina di destinazione è rimasta la sezione
-"Ascolta Dialoghi Radio".
+è destinato all'accesso all'ambiente di prova.
 
-Motivo della modifica:
+Il QR Code della versione ufficiale sarà separato e utilizzato esclusivamente per la produzione.
 
-Il pulsante non apre direttamente tutte le puntate, ma porta alla pagina dove l'utente può scegliere tra:
+---
 
-* ultime puntate disponibili;
-* archivio completo su Castbox.
+# Sviluppi futuri
 
-La nuova dicitura evita ambiguità.
+Tra le funzioni ancora da valutare:
 
+* gestione degli orari della Comunità;
+* gestione degli orari della conferenza;
+* eventuale attivazione/disattivazione delle funzioni Comunità;
+* notifiche;
+* statistiche anonime;
+* dirette Live;
+* ulteriori categorie;
+* funzioni di accompagnamento personale;
+* evoluzione del progetto "Accanto a Te".
 
-### Pagina ascolto (ultime-puntate.html)
+Le idee vengono raccolte nel documento:
 
-Migliorata la chiarezza della pagina audio.
+```text
+documentazione/SUGGERIMENTI_FUTURI.md
+```
 
-La pagina ora distingue:
+---
 
-* 📚 Tutte le puntate
-  - collegamento all'archivio completo su Castbox;
+# Stato finale della Beta 1.0.3
 
-* 🎧 Ultime puntate
-  - visualizzazione automatica delle ultime 10 puntate.
+La Beta 1.0.3 viene considerata in fase di:
 
+🟡 **verifica finale**
 
-### Pagina contatti (contatti.html)
+Prima del passaggio in produzione devono essere completati:
 
-Ridotto il testo introduttivo per rendere la pagina più leggibile su smartphone.
+* verifica generale delle funzioni;
+* verifica smartphone;
+* verifica dei collegamenti;
+* controllo della documentazione;
+* aggiornamento del registro tester;
+* aggiornamento del `CHANGELOG.md`;
+* backup;
+* controllo finale della versione.
 
-Modificata la classificazione dei messaggi:
+Dopo queste verifiche sarà possibile preparare il passaggio a:
 
-* ⚠️ Problema → segnala un errore
-* 💡 Suggerimento → proponi un'idea
-* ⭐ Recensione → lascia un parere
+```text
+DR-PRODUZIONE
+```
 
-Semplificato anche il messaggio finale:
-❤️ Grazie di seguire Dialoghi Radio ❤️
+---
 
-
-### Grafica (stile.css)
-
-Modificato lo sfondo generale dell'app:
-#eef6fa
-
-Scelta di un azzurro tenue per armonizzarsi con i pulsanti blu.
-
-La modifica è stata verificata su smartphone tramite Live Server.
-
-
-### File modificati in DR-TEST
-
-Modifiche verificate:
-
-* index.html
-* ultime-puntate.html
-* STRUTTURA_PROGETTO.md
-* NOTE_PROGETTO.md
-
-Altri file già aggiornati nella fase precedente:
-
-* contatti.html
-* stile.css
-
-
-### Stato aggiornamento
-
-Le modifiche sono attualmente presenti in DR-TEST.
-
-Il passaggio a DR-PRODUZIONE verrà effettuato dopo la verifica finale.
-
-Commit previsto al termine della verifica finale:
-"Migliorata navigazione audio e grafica app"
+❤️ **Dialoghi Radio**

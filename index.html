@@ -1,209 +1,194 @@
 <!DOCTYPE html>
-<!-- HTML5 -->
-
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <!-- Supporto caratteri -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Responsive per smartphone -->
-
     <title>Dialoghi Radio</title>
-    <!-- Titolo pagina -->
 
+    <!-- Risorse e PWA -->
     <link rel="stylesheet" href="stile.css">
-    <!-- Stile grafico -->
-
     <link rel="manifest" href="manifest.json">
-    <!-- PWA: permette installazione come app -->
-
     <link rel="icon" type="image/png" href="icona.png">
-    <!-- Icona browser/app -->
 </head>
 
 <body>
 
-<header class="testata">
-    <!-- Intestazione -->
+    <!-- Testata -->
+    <header class="testata">
+        <img src="icona.png" class="logo" alt="Dialoghi Radio Logo">
+        <h1>Dialoghi Radio</h1>
 
-    <img src="icona.png" class="logo" alt="Dialoghi Radio">
-    <!-- Logo -->
+        <div class="versione" id="versione-app"></div>
+        <div id="avviso-versione"></div>
+        <div id="data-oggi"></div>
+        <div id="saluto"></div>
 
-    <h1>Dialoghi Radio</h1>
-    <div class="versione">Beta 1.0.2</div>
+        <p class="sottotitolo">La Siesta del Pane Quotidiano</p>
+        <p id="descrizione-dinamica" class="descrizione">
+            Parole, musica e riflessioni per accompagnare la tua giornata
+        </p>
+        <div class="ultimo-aggiornamento" id="data-aggiornamento"></div>
+    </header>
 
-   <div id="data-oggi"></div>
-   <div id="saluto"></div>
-<p class="sottotitolo">La Siesta del Pane Quotidiano</p>
-<p id="descrizione-dinamica" class="descrizione">
-Parole, musica e riflessioni per accompagnare la tua giornata
-</p>
-    <div class="ultimo-aggiornamento">
-    📻 App aggiornata il 26/07/2026
+    <!-- Contenuto Principale -->
+    <main>
+        <!-- Pensiero del giorno -->
+        <div id="contenutoGiornaliero" class="box-giorno">
+            <p>Caricamento...</p>
+        </div>
+
+        <!-- Sezione Player Radio & News -->
+        <div id="radioBox">
+            <h3>📰 News Dialoghi Radio</h3>
+            <div id="statoRadio"></div>
+
+            <audio id="audioRadio">
+                <source src="audio/notizie/news001.mp3" type="audio/mpeg">
+                Il tuo browser non supporta l'audio.
+            </audio>
+
+            <div id="controlliRadio">
+                <button id="playRadio">▶️ Play</button>
+                <button id="stopRadio">⏹️ Stop</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Sezione 1: Ascolta -->
+        <h2>🎧 Ascolta</h2>
+
+        <a href="categorie.html" class="bottone">📚 Esplora per categorie</a>
+        <p class="descrizione-pulsante">
+            Trova episodi e percorsi organizzati per tema e scegli cosa ascoltare.
+        </p>
+
+        <a href="percorso-biblico.html" class="bottone">📖 Percorso Biblico</a>
+        <p class="descrizione-pulsante">
+            Un cammino organizzato in più giornate per accompagnare l’ascolto e la riflessione.
+        </p>
+
+        <a href="ultime-puntate.html" class="bottone">🎧 Ascolta Dialoghi Radio</a>
+        <p class="descrizione-pulsante">
+            Ascolta gli ultimi episodi e accedi all’archivio completo di Dialoghi Radio.
+        </p>
+
+        <hr>
+
+        <!-- Sezione 2: Comunità -->
+        <h2>🙏 Comunità</h2>
+
+        <a href="contatti.html" class="bottone">💬 Contatti e suggerimenti</a>
+        <p class="descrizione-pulsante">
+            Segnala un problema, proponi un’idea o condividi la tua opinione.
+        </p>
+
+        <a href="comunita.html" class="bottone">🙏 Entra nella Comunità</a>
+        <p class="descrizione-pulsante">
+            Condividi intenzioni, partecipa e cammina insieme agli altri.
+        </p>
+
+        <hr>
+
+        <!-- Sezione 3: Informazioni e utility -->
+        <h2>ℹ️ Informazioni</h2>
+
+        <button onclick="mostraInfo()" class="bottone">ℹ️ Info</button>
+        <p class="descrizione-pulsante">
+            Scopri le informazioni e il significato del progetto Dialoghi Radio.
+        </p>
+
+        <a href="guida.html" class="bottone">🧭 Guida (come usare l’app)</a>
+        <p class="descrizione-pulsante">
+            Scopri le diverse sezioni e come utilizzare l’app.
+        </p>
+
+        <hr>
+
+	<button onclick="condividiCategorie()" class="bottone bottone-invito">
+	👥 Invita un amico
+	</button>
+        <p class="descrizione-pulsante">
+            Invita un amico a scoprire e ascoltare Dialoghi Radio.
+        </p>
+    </main>
+
+    <!-- Modal Info Nascosto -->
+    <div id="infoBox" style="display:none; padding:20px;">
+        <h2>Dialoghi Radio</h2>
+        <p>Versione <span id="versione-info"></span></p>
+        <p>© 2026 Salvatore Esposito</p>
+        <p>Un progetto di ascolto e accompagnamento.</p>
+
+        <h3>🎧 Ascolto in background</h3>
+        <p class="sottotitolo">
+            Dopo aver avviato un contenuto audio puoi ridurre a icona Dialoghi Radio o spegnere lo schermo:
+            l'ascolto può continuare mentre utilizzi altre applicazioni.
+        </p>
+        <button onclick="chiudiInfo()">Chiudi</button>
     </div>
-   </header>
 
-<main>
-    <!-- Pensiero del giorno -->
-	
-    <div id="contenutoGiornaliero" class="box-giorno">
-        <p>Caricamento...</p>
-    </div>
-
-<div id="radioBox">
-
-<h3>📰 News Dialoghi Radio</h3>
-
-<div id="statoRadio"></div>
-
-<audio id="audioRadio">
-    <source src="audio/notizie/news001.mp3" type="audio/mpeg">
-    Il tuo browser non supporta l'audio.
-</audio>
-<div id="controlliRadio">
-
-<button id="playRadio">
-▶️ Play
-</button>
-
-<button id="stopRadio">
-⏹️ Stop
-</button>
-
-</div>
-
-    <hr>
-
-    <!-- 📚 PERCORSI -->
-	
-    <h2>📚 Percorsi</h2>
-
-    <a href="percorso-biblico.html" class="bottone">
-        📖 Apri Percorso Biblico
-    </a>
-
-    <!-- 🎧 ULTIME PUNTATE -->
-	
-   <a href="ultime-puntate.html" class="bottone">
-   ▶️   Vai all’ascolto
-   </a>
-	
-    <hr>
-
-    <!-- 💬 CONTATTI -->
-   
-    <a href="contatti.html" class="bottone">
-        💬 Contatti e suggerimenti
-    </a>
-
-    <hr>
-    
-    <!-- ℹ️ INFO -->
- 
-    <button onclick="mostraInfo()" class="bottone">
-        ℹ️ Info
-    </button>
-
-    <!-- 📘 GUIDA -->
-
-	<a href="guida.html" class="bottone">
-    🧭 Guida (come usare l’app)
-    </a>
-
-
-</main>
+    <!-- Piè di pagina -->
 
 <footer>
-<p>❤️ Dialoghi Radio</p>
+    <p class="link-documenti">
+        <a href="privacy.html">Privacy</a>
+        <a href="termini.html">Termini</a>
+        <a href="copyright.html">Copyright</a>
+    </p>
 
+    <p>❤️ Dialoghi Radio</p>
 </footer>
-
-<!-- Script Spreaker -->
-<script async src="https://widget.spreaker.com/widgets.js"></script>
-
-<!-- Script principale -->
-<script src="app.js"></script>
-
-  <!-- BOX INFO NASCOSTO -->
-<div id="infoBox" style="display:none; padding:20px;">
-  <h2>Dialoghi Radio</h2>
-  <p>Versione Beta 1.0.2</p>
-  <p>© 2026 Salvatore Esposito</p>
-  <p>
-    Un progetto di ascolto e accompagnamento.
-  </p>
-  <h3>🎧 Ascolto in background</h3>
-  <p class="sottotitolo">
-    Dopo aver avviato un contenuto audio puoi ridurre
-    a icona Dialoghi Radio o spegnere lo schermo:
-    l'ascolto può continuare mentre utilizzi altre
-    applicazioni.
-  </p>
-  <button onclick="chiudiInfo()">Chiudi</button>
-</div>
+```
 
 
-<!-- SCRIPT INFO -->
-<script>
 
-function mostraInfo() {
-  const info = document.getElementById("infoBox");
-  info.style.display = "block";
 
-  info.scrollIntoView({
-    behavior: "smooth"
-  });
-}
+    <!-- Script Esterni -->
+    <script async src="https://widget.spreaker.com/widgets.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
 
-function chiudiInfo() {
-  document.getElementById("infoBox").style.display = "none";
-}
+    <!-- Script Inline Logic -->
+    <script>
+        function mostraInfo() {
+            const info = document.getElementById("infoBox");
+            info.style.display = "block";
+            info.scrollIntoView({ behavior: "smooth" });
+        }
 
-</script>
-<script>
-const oggi = new Date();
+        function chiudiInfo() {
+            document.getElementById("infoBox").style.display = "none";
+        }
 
-const opzioni = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-};
+        // Gestione data e saluti dinamici
+        const oggi = new Date();
+        const opzioni = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
 
-document.getElementById("data-oggi").innerHTML =
-    oggi.toLocaleDateString('it-IT', opzioni);
+        document.getElementById("data-oggi").innerHTML = oggi.toLocaleDateString('it-IT', opzioni);
 
-const ora = new Date().getHours();
+        const ora = oggi.getHours();
+        let messaggio = "";
+        let descrizione = "";
 
-let messaggio = "";
+        if (ora < 12) {
+            messaggio = "🌅 Buongiorno";
+            descrizione = "Inizia la giornata con un momento di ascolto e riflessione.";
+        } else if (ora < 18) {
+            messaggio = "☀️ Buon pomeriggio";
+            descrizione = "Un momento di pausa con parole e musica.";
+        } else {
+            messaggio = "🌙 Buonasera";
+            descrizione = "Concludi la giornata con un tempo di ascolto e serenità.";
+        }
 
-if (ora < 12) {
-    messaggio = "🌅 Buongiorno";
-} 
-else if (ora < 18) {
-    messaggio = "☀️ Buon pomeriggio";
-} 
-else {
-    messaggio = "🌙 Buonasera";
-}
-
-document.getElementById("saluto").innerHTML = messaggio;
-
-let descrizione = "";
-
-if (ora < 12) {
-    descrizione = "Inizia la giornata con un momento di ascolto e riflessione.";
-}
-else if (ora < 18) {
-    descrizione = "Un momento di pausa con parole e musica.";
-}
-else {
-    descrizione = "Concludi la giornata con un tempo di ascolto e serenità.";
-}
-
-document.getElementById("descrizione-dinamica").innerHTML = descrizione;
-
-</script>
+        document.getElementById("saluto").innerHTML = messaggio;
+        document.getElementById("descrizione-dinamica").innerHTML = descrizione;
+    </script>
 </body>
 </html>

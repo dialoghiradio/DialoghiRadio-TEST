@@ -92,3 +92,47 @@ per eventuali sviluppi futuri.
 ---
 
 ❤️ Dialoghi Radio
+---
+
+# Registro Tester Beta 1.0.3
+
+## Nuova fase di verifica
+
+**Data:** 10 agosto 2026
+
+**Obiettivo:**
+
+Verificare la stabilità della versione Beta 1.0.3 dopo le modifiche alle funzioni di condivisione, alla sezione Comunità e alle altre funzionalità dell'app.
+
+### Funzioni principali da verificare
+
+1. Condivisione dell'app dalla Home.
+2. Condivisione della Guida.
+3. Condivisione dei singoli episodi.
+4. Condivisione delle categorie.
+5. Condivisione del Percorso Biblico.
+6. Condivisione del Pensiero del giorno.
+7. Funzione Sorprendimi.
+8. Funzioni della Comunità:
+
+   * richiesta di preghiera;
+   * preparazione conferenza;
+   * ingresso nella conferenza;
+   * invito nella Comunità.
+9. Contatti:
+
+   * segnalazione problema;
+   * suggerimento;
+   * recensione.
+10. Apertura dell'Archivio completo tramite Castbox.
+11. Verifica della visualizzazione della versione Beta 1.0.3.
+
+### Stato
+
+La versione Beta 1.0.3 viene considerata una versione di test di riferimento per le prossime verifiche.
+
+Le segnalazioni ricevute dai tester verranno registrate di seguito, mantenendo separate le diverse versioni dell'app.
+
+---
+
+❤️ Dialoghi Radio

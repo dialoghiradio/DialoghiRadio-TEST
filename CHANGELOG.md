@@ -1,217 +1,122 @@
-# Cronologia aggiornamenti - Dialoghi Radio
+# 📜 Cronologia Aggiornamenti — Dialoghi Radio
 
-## Beta 1.0.2 - Luglio 2026
+Tutte le modifiche rilevanti, i miglioramenti e le nuove funzionalità introdotte nell'applicazione **Dialoghi Radio**.
 
-Aggiunta sezione:
+---
 
-🌅 Oggi su Dialoghi Radio
+🚀 Beta 1.0.3 — Agosto 2026
+📄 Documentazione & Organizzazione
+Struttura progetto aggiornata
+Revisione completa del file struttura_progetto.md
+Migliorata la leggibilità e organizzazione delle sezioni
+Note progetto
+Creato il file note_progetto.md
+Definizione chiara di:
+obiettivi
+architettura
+logiche principali
+ambiente di test
+Documentazione tester
+Inserito e strutturato il file messaggio_tester_beta.md
+Definito messaggio standard per raccolta feedback
+Aggiunta sezione domande guida per i tester
+🧪 Miglioramenti fase Beta
+Migliorata la gestione della fase di test:
+separazione tra documentazione tecnica e comunicazione tester
+maggiore chiarezza nelle istruzioni di installazione
+organizzazione dei file nella cartella tester/
+🔧 Manutenzione e Coerenza
+Allineamento tra:
+CHANGELOG.md
+struttura progetto
+documentazione interna
+Migliorata la coerenza generale del progetto in vista della produzione
 
-Introduzione del Pensiero del giorno:
-caricamento automatico da file JSON (contenuti/pensieri.json);
-visualizzazione dinamica nella Home;
-aggiornamento automatico giornaliero.
+💡 Nota:
+Questa versione non introduce nuove funzionalità per l’utente finale, ma consolida la struttura del progetto e la gestione della fase Beta.
 
-### Miglioramenti tecnici 
-Corretto l'indice di selezione del Pensiero del giorno per allineare la prima frase al primo giorno del ciclo.
-Migliorata gestione degli errori JavaScript:
-controlli sui contenitori HTML (if(elemento)).
-Reso più robusto il recupero ID episodi Spreaker.
-Separazione più chiara tra:
-app.js (Home)
-ultime-puntate.js (pagina ascolto)
+---
 
-### Struttura contenuti
-Introduzione file:
+🚀 Beta 1.0.2 — Luglio 2026
+🌅 Nuove Funzionalità
+Pensiero del Giorno
+Introduzione della sezione dinamica 🌅 Oggi su Dialoghi Radio nella Home.
+Caricamento automatico dal file contenuti/pensieri.json.
+Selezione automatica del contenuto in base alla data (aggiornamento giornaliero).
+🛠️ Miglioramenti Tecnici & Refactoring
+Correzione indice Pensiero
+Allineato l’indice per far coincidere il primo elemento del JSON con il primo giorno del ciclo.
+Gestione errori JavaScript (difensiva)
+Inseriti controlli sugli elementi DOM (if (elemento)) per evitare errori nelle pagine secondarie.
+Ottimizzazione estrazione ID Spreaker
+Migliorata la regex per il recupero degli ID dagli URL degli episodi.
+Separazione delle responsabilità
+app.js → gestione Home, Pensiero del giorno e logiche principali.
+ultime-puntate.js → gestione archivio e riproduzione episodi.
+📁 Struttura Contenuti
+Introdotto il file:
 contenuti/pensieri.json
-
-per gestione contenuti dinamici.
-
-## Beta 1.0.1 - Luglio 2026
-
-### Miglioramenti
-
-- Rimossa la scritta "Caricamento ultima puntata" dalla Home.
-- Aggiornata la versione visualizzata nell'app.
-- Riordinato il menu Home mettendo "Contatti e suggerimenti" prima di "Info".
-- Migliorata la descrizione della sezione Guida.
-- Aggiornate le indicazioni della guida utente per installazione Android e iPhone/iPad.
-- Aggiunte le possibili voci di installazione Android:
-  - Installa
-  - Crea scorciatoia
-  - Aggiungi alla schermata Home.
-
-### Feedback tester applicati
-
-- Migliorata la visibilità delle sezioni principali.
-- Reso più chiaro il percorso per contattare Dialoghi Radio.
-- Raccolti e integrati suggerimenti ricevuti durante il ciclo di test Beta.
-
-## Beta 1.0.0 - Luglio 2026
-
-Prima versione Beta dell'app Dialoghi Radio.
-
----
-
-## Funzioni introdotte
-
-- Collegamento al feed Spreaker.
-- Visualizzazione automatica delle puntate.
-- Sezione 📖 Percorso Biblico.
-- Sezione 🎧 Ultime Puntate.
-- Navigazione tra Home e sezioni interne.
-- Installazione come Web App sul dispositivo.
-- Gestione versione Beta.
-
-
----
-
-## Organizzazione contenuti
-
-- Creata sezione dedicata al Percorso Biblico.
-- Creata sezione dedicata all'ascolto delle puntate.
-- Inseriti pulsanti di accesso dalla Home.
-- Aggiunto pulsante "Torna alla Home" nelle sezioni interne.
-
-
----
-
-## Grafica e usabilità
-
-- Inserita icona ufficiale Dialoghi Radio.
-- Adattato il logo per dispositivi mobili.
-- Inserita indicazione versione Beta 1.0.0.
-- Migliorati pulsanti, spaziature e leggibilità.
-- Struttura ottimizzata per PC e smartphone.
-
-
----
-
-## Funzioni aggiunte durante la fase Beta
-
-- Aggiunta descrizione della sezione Ultime Puntate.
-- Inserito caricamento automatico degli ultimi 10 episodi.
-- Aggiunta funzione:
-
-  ✅ Già ascoltata
-
-- Possibilità di aggiungere o rimuovere la spunta delle puntate ascoltate.
-- Memorizzazione dello stato sul dispositivo tramite memoria locale.
-- Nessuna raccolta di dati personali.
-
-
----
-
-## Comunicazione con gli ascoltatori
-
-- Creata sezione 💬 Contatti e suggerimenti.
-- Inseriti collegamenti email diretti.
-- Aggiunto messaggio di ringraziamento agli ascoltatori.
-
-
----
-
-# Sviluppi e aggiornamenti successivi alla Beta 1.0.0
-
-## Documentazione
-
-- Creata guida utente interna.
-- Collegato il documento:
-
-`documentazione/guida_utente.md`
-
-- Inserite istruzioni per Android e iPhone.
-- Preparata documentazione per futuri utenti.
-- Migliorata la lettura della guida su PC e smartphone.
-
-
----
-
-## Gestione progetto
-
-- Creato sistema ordinato di documentazione.
-- Salvato backup del progetto su PC e supporto USB.
-- Organizzata gestione versioni tramite GitHub.
-- Utilizzati commit per tracciare le modifiche.
-
-
----
-
-## Miglioramento sezione ascolto
-
-- Aggiunto collegamento all'archivio completo tramite Castbox.
-- Riorganizzata la pagina:
-
-🎧 Ascolta Dialoghi Radio
-
-con:
-
-- 📚 Tutte le puntate
-- 🎧 Ultime puntate automatiche
-
-
-- Aggiornato il pulsante Home:
-da "Apri ultime puntate"
-
-a:
-
-🎧 Ascolta Dialoghi Radio
-
-
----
-
-## Organizzazione codice JavaScript
-
-Separazione dei compiti tra file:
-
-### app.js
-
-Gestione Home:
-
-- caricamento Percorso Biblico;
-- caricamento ultime puntate nella Home;
-- gestione dei contenuti principali.
-- (aggiunto in 1.0.2: pensiero del giorno)
-
-### ultime-puntate.js
-
-Gestione pagina ascolto:
-
-- caricamento episodi;
-- player Spreaker;
-- gestione puntate ascoltate.
-
-
-Aggiunti commenti esplicativi al codice.
-
-
----
-
-## Feedback Beta
-
-- Creato documento:
-
-`documentazione/SUGGERIMENTI_FUTURI.md`
-
-
-- Raccolti suggerimenti dei tester.
-- Inserita segnalazione relativa all'ascolto audio in background come possibile sviluppo futuro.
-
----
-
-# Sviluppi futuri
-
-- Sviluppo del progetto "Accanto a Te".
-- Spazio ascoltatori.
-- Nuovi percorsi tematici.
-- Miglioramenti grafici.
-- Nuove categorie di contenuti.
-- Sistema notifiche aggiornamenti.
-- Menu laterale di navigazione.
-- Ascolto Live H24.
-- Palinsesto programmato.
-- Funzione condivisione applicazione.
-
-
----
+Obiettivo:
+separare i dati dinamici dal codice JavaScript.
+
+⚙️ Beta 1.0.1 — Luglio 2026
+🎨 Interfaccia e Usabilità (UI/UX)
+Rimossa la dicitura “Caricamento ultima puntata” dalla Home.
+Riordinato il menu principale:
+Contatti e suggerimenti spostato prima di Info.
+Migliorata la chiarezza della sezione Guida Utente.
+
+Aggiornate le istruzioni di installazione PWA:
+
+Android (Chrome):
+
+Installa
+Crea scorciatoia
+Aggiungi alla schermata Home
+
+iOS (Safari):
+
+Aggiungi alla schermata Home
+💬 Feedback Tester Integrati
+Migliorata la visibilità delle sezioni di ascolto.
+Semplificata la procedura di invio feedback.
+
+🎉 Beta 1.0.0 — Luglio 2026
+
+Prima release Beta pubblica della PWA Dialoghi Radio.
+
+🎙️ Funzionalità Principali
+Integrazione Spreaker
+Connessione al feed RSS per aggiornamento automatico delle puntate.
+Ultime puntate
+Caricamento dinamico delle ultime 10 puntate.
+Tracciamento ascolti
+Funzione ✅ Già ascoltata
+Salvataggio tramite localStorage
+Nessun dato personale raccolto
+Sezioni tematiche
+📖 Percorso Biblico
+🎧 Ultime Puntate
+PWA
+Installabile su smartphone e desktop.
+🎨 Grafica & Layout
+Inserita icona ufficiale.
+Layout ottimizzato per mobile.
+Indicatori versione Beta visibili.
+📞 Comunicazione
+Creata la pagina:
+💬 Contatti e suggerimenti
+Link email con parametri precompilati.
+📚 Documentazione e Gestione
+Creata la guida utente (guida_utente.md)
+Creato file idee future (SUGGERIMENTI_FUTURI.md)
+Strutturato repository GitHub con versionamento e backup
+🔮 Sviluppi Futuri (Roadmap)
+ Progetto Accanto a Te
+ Spazio interattivo per gli ascoltatori
+ Notifiche push
+ Menu laterale (Drawer)
+ Streaming live H24
+ Riproduzione audio in background
 
 ❤️ Dialoghi Radio

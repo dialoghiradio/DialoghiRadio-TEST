@@ -1,59 +1,49 @@
 <!DOCTYPE html>
-<!-- HTML5 -->
-
 <html lang="it">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percorso Biblico - Dialoghi Radio</title>
 
-<meta charset="UTF-8">
-<!-- Supporto caratteri -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Responsive -->
-
-<title>Percorso Biblico - Dialoghi Radio</title>
-<!-- Titolo pagina -->
-
-<link rel="stylesheet" href="stile.css">
-<!-- Stile grafico -->
-
+    <!-- Stile e risorse -->
+    <link rel="stylesheet" href="stile.css">
 </head>
 
 <body>
 
-<!-- Intestazione della pagina -->
-<header class="testata">
+    <!-- Testata -->
+    <header class="testata">
+        <img src="icona.png" class="logo" alt="Dialoghi Radio Logo">
+        <h1>📖 Percorso Biblico</h1>
+    </header>
 
-  <img src="icona.png" class="logo" alt="Dialoghi Radio">
-  <h1>📖 Percorso Biblico</h1>
-  
-</header>
+    <!-- Contenuto Principale -->
+    <main>
+        <p>Un cammino nella Parola di Dio attraverso la Bibbia.</p>
 
-<main>
+	<button class="bottone bottone-condividi" onclick="condividiPercorso()">
+		📤 Condividi Percorso
+	</button>
 
-  <p>
-  Un cammino nella Parola di Dio attraverso la Bibbia.
-  </p>
-  
-  <br>
+        <a href="index.html" class="bottone">
+            ⬅ Torna alla Home
+        </a>
 
-  <a href="index.html" class="bottone">
-  ⬅ Torna alla Home
-  </a>
+        <!-- Contenitore riempito dinamicamente da percorso-biblico.js -->
+        <div id="percorso-biblico">
+            🔄 Caricamento percorso biblico...
+        </div>
+    </main>
 
-  <!-- Contenitore riempito dinamicamente da percorso-biblico.js -->
-  <div id="percorso-biblico">
-  🔄 Caricamento percorso biblico...
-  </div>
+    <!-- Piè di pagina -->
+    <footer>
+        <p>❤️ Dialoghi Radio</p>
+    </footer>
 
-</main>
-
-<footer>
-  ❤️ Dialoghi Radio
-</footer>
-
-<script src="percorso-biblico.js"></script>
+    <!-- Script JS -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="percorso-biblico.js"></script>
 
 </body>
-
 </html>

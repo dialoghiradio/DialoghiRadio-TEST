@@ -92,3 +92,75 @@ Obiettivo:
 
 Verificare semplicità di utilizzo,
 installazione e ascolto dei contenuti.
+
+---
+
+# Messaggio tester Beta 1.0.3 - Dialoghi Radio
+
+## Obiettivo
+
+Questo messaggio viene utilizzato per invitare amici e collaboratori a provare la versione Beta 1.0.3 di Dialoghi Radio e raccogliere eventuali suggerimenti, segnalazioni e impressioni sull'utilizzo dell'app.
+
+## Messaggio da inviare
+
+📻 **Ciao! Ti invito a provare Dialoghi Radio — Beta 1.0.3.**
+
+Dialoghi Radio è una Web App dedicata all'ascolto di:
+
+🎙 episodi audio
+📖 Percorsi Biblici
+🙏 riflessioni e momenti di condivisione
+
+La nuova versione contiene diverse funzioni aggiornate e vorrei farla provare ad alcune persone per verificarne il funzionamento e raccogliere eventuali suggerimenti.
+
+📱 **Per provarla:**
+
+Apri questo collegamento dal cellulare:
+
+https://dialoghiradio.github.io/DialoghiRadio-TEST/
+
+Se vuoi, puoi anche installarla come Web App sulla schermata Home.
+
+Dopo averla provata, mi farebbe piacere ricevere un tuo parere:
+
+✅ cosa ti piace
+✅ cosa miglioreresti
+✅ eventuali difficoltà incontrate
+✅ eventuali funzioni che non funzionano correttamente
+
+Grazie per il tuo aiuto ❤️
+
+**Dialoghi Radio**
+
+*"Parole, musica e riflessioni per accompagnare la tua giornata."*
+
+---
+
+## Domande per i tester
+
+1. Hai trovato facilmente le diverse sezioni dell'app?
+2. L'ascolto degli episodi funziona correttamente?
+3. La funzione **Già ascoltata** funziona correttamente?
+4. Hai provato **Sorprendimi**? Ti propone episodi che non avevi ancora ascoltato?
+5. Le funzioni di condivisione funzionano correttamente?
+6. Le funzioni della Comunità funzionano correttamente?
+7. Hai riscontrato problemi?
+8. C'è qualcosa che miglioreresti o aggiungeresti?
+
+---
+
+## Note interne
+
+I suggerimenti e le segnalazioni dei tester saranno utilizzati per verificare la stabilità della Beta 1.0.3 e programmare le future versioni dell'app.
+
+## Stato test
+
+**Versione testata:** Beta 1.0.3
+
+**Data:** 10 agosto 2026
+
+**Obiettivo:** verificare stabilità, navigazione, ascolto, condivisione e principali funzioni della Comunità.
+
+---
+
+❤️ Dialoghi Radio

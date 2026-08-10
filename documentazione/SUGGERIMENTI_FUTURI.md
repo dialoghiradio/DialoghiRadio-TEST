@@ -1,210 +1,480 @@
-# Suggerimenti futuri - Dialoghi Radio
+# SUGGERIMENTI_FUTURI.md
 
-Raccolta delle idee e dei miglioramenti emersi durante la fase Beta.
+# Suggerimenti futuri — Dialoghi Radio
 
-## Esperienza ascolto
+Raccolta delle idee, dei suggerimenti dei tester e dei possibili miglioramenti emersi durante lo sviluppo di Dialoghi Radio.
 
-### Riproduzione in background
-
-Feedback iniziale tester:
-
-> L'app si sente benissimo, unica pecca che se esci dall'app non continua a sentire a differenza di Spreaker.
-
-Verifica effettuata:
-
-La riproduzione in background è risultata funzionante
-su dispositivo mobile.
-
-È possibile:
-- ridurre a icona Dialoghi Radio;
-- spegnere lo schermo;
-- utilizzare altre applicazioni durante l'ascolto.
-
-Possibili sviluppi futuri:
-- continuare a monitorare la compatibilità
-  con diversi dispositivi;
-- migliorare ulteriormente l'esperienza audio.
+Le funzioni già realizzate vengono mantenute come riferimento storico e non vengono più considerate sviluppi futuri.
 
 ---
 
-## Accoglienza e atmosfera
+# Esperienza di ascolto
 
-### Musica apertura
+## Riproduzione in background
 
-> Proposta: all'apertura dell'app riprodurre un canto (es. Ave Maria) come momento di accoglienza.
+Feedback iniziale dei tester:
 
-Valutazione:
+> L'app si sente benissimo, unica pecca che se esci dall'app non continua a sentire a differenza di Spreaker.
+
+### Verifica effettuata
+
+La riproduzione in background è risultata funzionante su dispositivo mobile.
+
+È possibile:
+
+* ridurre a icona Dialoghi Radio;
+* spegnere lo schermo;
+* utilizzare altre applicazioni durante l'ascolto.
+
+### Stato
+
+🟢 **Funzione verificata**
+
+Possibili attività future:
+
+* continuare a monitorare la compatibilità con diversi dispositivi;
+* migliorare ulteriormente l'esperienza audio.
+
+---
+
+# Accoglienza e atmosfera
+
+## Musica di apertura
+
+Proposta:
+
+> All'apertura dell'app riprodurre un canto, ad esempio Ave Maria, come momento di accoglienza.
+
+### Valutazione
 
 Il suggerimento nasce dal desiderio di creare un'esperienza più spirituale e coinvolgente.
 
-Possibile sviluppo futuro:
-- valutare una sezione dedicata a preghiere, canti o momenti spirituali;
-- evitare la riproduzione automatica obbligatoria all'apertura;
-- considerare una scelta volontaria dell'utente.
+### Possibile sviluppo
 
-Nota:
-Una musica automatica all'avvio potrebbe risultare poco adatta in alcuni contesti (luoghi pubblici, telefono silenzioso, preferenze personali). Eventuali funzioni audio di accoglienza dovranno essere valutate mantenendo semplicità e libertà di scelta.
+* valutare una sezione dedicata a preghiere, canti o momenti spirituali;
+* evitare la riproduzione automatica obbligatoria all'apertura;
+* considerare una scelta volontaria dell'utente.
 
-### Immagini e atmosfera
+### Nota
 
-Possibile introduzione di:
-- immagini variabili nella Home;
-- eventuali musiche di accompagnamento;
-- ambientazione più accogliente all'apertura.
+Una musica automatica all'avvio potrebbe risultare poco adatta in alcuni contesti:
 
-Da valutare:
-- evitare riproduzioni automatiche invasive;
-- mantenere l'icona dell'app stabile;
-- preferire scelta dell'utente o attivazione volontaria.
+* luoghi pubblici;
+* telefono silenzioso;
+* preferenze personali dell'utente.
 
-## Home e comunicazioni
+Eventuali funzioni audio di accoglienza dovranno quindi mantenere semplicità e libertà di scelta.
 
-### Stato attuale
+---
 
-Inserito il sistema del pensiero del giorno tramite file:
-
-- pensieri.json
-- selezione automatica della frase
-
-La Home contiene già:
-
-- data del giorno visualizzata all'apertura;
-- indicazione dell'ultimo aggiornamento dell'app;
-- versione Beta dell'app;
-- pensiero del giorno;
-- sezione news audio.
-
-### Bacheca avvisi / nuove pubblicazioni
-Possibile sviluppo futuro:
-
-- evidenziare automaticamente le nuove pubblicazioni;
-- comunicazioni o aggiornamenti importanti;
-- migliorare la presentazione dei contenuti nella Home;
-- eventuale bacheca avvisi Dialoghi Radio;
-- centralizzazione informazioni app tramite file configurazione.
-
-## Organizzazione contenuti
-
-### Esplora contenuti
-
-#### Obiettivo
-
-Creare una sezione che permetta all'utente di trovare facilmente i contenuti di Dialoghi Radio.
-
-La funzione prevede una suddivisione dei contenuti per categorie.
-
-La struttura delle categorie è descritta nel documento:
-
-- `documentazione/CATEGORIE_CONTENUTI.md`
+## Immagini e atmosfera
 
 Possibili sviluppi:
 
-- nuovo pulsante "Esplora contenuti";
-- pagina con elenco categorie;
-- ricerca per argomento;
-- collegamento diretto alle puntate;
-- filtro dei contenuti per categoria.
+* immagini variabili nella Home;
+* eventuali musiche di accompagnamento;
+* ambientazione più accogliente all'apertura.
 
-Nota:
+Da mantenere come principio:
 
-La funzione sarà valutata dopo il completamento della fase Beta.
+* evitare riproduzioni automatiche invasive;
+* mantenere stabile l'icona dell'app;
+* preferire la scelta dell'utente.
 
-## Comunità e partecipazione
+---
 
-### Incontro telefonico
+# Home e comunicazioni
 
-Possibile sviluppo futuro:
+## Stato attuale
 
-Inserire nell'app un accesso diretto agli incontri telefonici di gruppo tramite conferenza.
+La Home dispone già di:
+
+* data del giorno;
+* saluto dinamico;
+* messaggio di accoglienza;
+* versione dell'app;
+* data dell'ultimo aggiornamento;
+* Pensiero del giorno;
+* News audio.
+
+Il Pensiero del giorno viene caricato tramite:
+
+```text id="k4n7a3"
+contenuti/pensieri.json
+```
+
+---
+
+## Bacheca avvisi / nuove pubblicazioni
+
+### Possibile sviluppo futuro
+
+Valutare una sezione dedicata agli avvisi di Dialoghi Radio.
+
+Possibili utilizzi:
+
+* evidenziare nuove pubblicazioni;
+* comunicare aggiornamenti importanti;
+* segnalare eventi;
+* informare gli ascoltatori su nuove funzioni;
+* centralizzare le comunicazioni dell'app.
+
+### Possibile gestione
+
+La funzione potrebbe utilizzare un file di configurazione o contenuti separati dal codice.
+
+**Stato:** 🟡 Da valutare
+
+---
+
+# Organizzazione dei contenuti
+
+## Categorie
+
+La funzione Categorie è stata realizzata.
+
+Sono presenti:
+
+```text id="2q3o8p"
+categorie.html
+categorie.js
+```
+
+La struttura delle categorie è documentata in:
+
+```text id="7r1c2m"
+documentazione/CATEGORIE_CONTENUTI.md
+```
+
+### Stato
+
+🟢 **Funzione attiva**
+
+---
+
+## Esplora contenuti
+
+La sezione Categorie costituisce la base per una futura funzione più completa di esplorazione dei contenuti.
+
+### Possibili sviluppi
+
+* ricerca per argomento;
+* filtro dei contenuti;
+* collegamento diretto alle puntate;
+* ricerca per tema;
+* visualizzazione dei percorsi correlati.
+
+### Stato
+
+🟡 **Possibile evoluzione**
+
+---
+
+# Comunità e partecipazione
+
+## Sezione Comunità
+
+La sezione Comunità è stata realizzata nell'ambiente DR-TEST.
+
+Funzioni disponibili:
+
+* 🙏 Richiesta di preghiera;
+* 👥 Preparazione conferenza;
+* 📞 Entra nella conferenza;
+* 📤 Invita nella Comunità.
+
+### Collegamenti
+
+Le funzioni vengono gestite tramite `config.js`.
+
+### Stato
+
+🟢 **Funzione attiva in DR-TEST**
+
+---
+
+## Incontro telefonico
+
+La funzione di accesso alla conferenza telefonica è stata realizzata.
 
 Funzionamento:
 
-- l'utente seleziona il pulsante dall'app;
-- viene avviata la chiamata al numero della conferenza;
-- dopo la risposta inserisce il codice di accesso.
+* l'utente seleziona il pulsante;
+* viene avviata la chiamata;
+* il sistema utilizza il numero e il codice configurati.
 
-Valutazione:
+### Stato
 
-La funzione permetterebbe di trasformare l'ascolto individuale in un momento di partecipazione e condivisione.
+🟢 **Funzione attiva in DR-TEST**
 
-Da valutare:
-- posizione del pulsante nell'app;
-- eventuali giorni e orari degli incontri;
-- spiegazione semplice per i nuovi utenti.
+### Possibile evoluzione
 
-### Dirette Live
+Per evitare chiamate o messaggi fuori dagli orari previsti, valutare:
+
+* disabilitazione temporanea del pulsante;
+* disabilitazione dell'intera sezione Comunità;
+* gestione automatica dei giorni e degli orari;
+* file separato per la programmazione degli incontri.
+
+🟡 **Da definire**
+
+---
+
+## Preparazione conferenza
+
+La preparazione dell'incontro viene gestita tramite gruppo WhatsApp.
+
+### Stato
+
+🟢 **Funzione attiva in DR-TEST**
+
+---
+
+## Richieste di preghiera
+
+La richiesta di preghiera viene gestita tramite WhatsApp.
+
+### Stato
+
+🟢 **Funzione attiva in DR-TEST**
+
+---
+
+## Invito alla Comunità
+
+È disponibile la funzione di condivisione della Comunità.
+
+### Stato
+
+🟢 **Funzione attiva in DR-TEST**
+
+---
+
+# Dirette Live
 
 Possibile sviluppo futuro:
 
 Inserire nell'app un accesso diretto alle dirette di Dialoghi Radio.
 
 Possibili utilizzi:
-- momenti di riflessione;
-- incontri con gli ascoltatori;
-- approfondimenti;
-- eventi speciali.
 
-Valutazione:
+* momenti di riflessione;
+* incontri con gli ascoltatori;
+* approfondimenti;
+* eventi speciali.
 
-La funzione potrebbe trasformare l'app da semplice archivio audio a spazio di partecipazione.
+### Da valutare
 
-Da valutare:
-- piattaforma da utilizzare;
-- modalità di partecipazione;
-- eventuale integrazione con la Home.
+* piattaforma da utilizzare;
+* modalità di partecipazione;
+* eventuale integrazione con la Home;
+* eventuale palinsesto.
 
-### Accompagnamento personale
+**Stato:** 🟡 Da valutare
 
-#### Obiettivo
+---
+
+# Accompagnamento personale
+
+## Obiettivo
 
 Offrire agli ascoltatori un modo semplice per condividere:
-- dubbi sui contenuti;
-- pensieri personali;
-- richieste di preghiera;
-- intenzioni per persone care.
 
-Possibili modalità:
+* dubbi sui contenuti;
+* pensieri personali;
+* richieste di preghiera;
+* intenzioni per persone care.
 
-- collegamento diretto a WhatsApp per inviare un vocale;
-- modulo contatti;
-- raccolta tramite email;
-- eventuale sistema interno futuro di messaggi vocali.
+## Modalità possibili
 
-Valutazione:
+* collegamento diretto a WhatsApp;
+* invio di un vocale;
+* modulo contatti;
+* raccolta tramite email;
+* eventuale sistema interno futuro di messaggi vocali.
 
-La funzione deve mantenere un rapporto personale e umano, evitando di trasformare Dialoghi Radio in una semplice piattaforma automatica.
-L'obiettivo non è creare una semplice chat, ma favorire un rapporto di ascolto, vicinanza e accompagnamento.
+### Valutazione
 
-Collegamento con le categorie:
+La funzione deve mantenere un rapporto personale e umano.
 
-- Accanto a Te
-- Domande di vita vera
-- Archivio Preghiere
+L'obiettivo non è creare una semplice chat, ma favorire:
 
----
+* ascolto;
+* vicinanza;
+* accompagnamento;
+* condivisione.
 
-## Statistiche utilizzo app
+### Possibili collegamenti futuri
 
-valutare un sistema anonimo per conoscere il numero di utenti attivi;
-capire quali sezioni vengono maggiormente utilizzate;
-migliorare l'esperienza degli ascoltatori.
+* Accanto a Te;
+* Domande di vita vera;
+* Archivio Preghiere.
 
-## Condivisione dell'app
-
-Possibile sviluppo:
-
-aggiungere un pulsante per condividere Dialoghi Radio;
-facilitare il passaparola tra gli ascoltatori;
-permettere di inviare un contenuto o il collegamento dell'app.
+**Stato:** 🟡 Da sviluppare
 
 ---
 
-## Principio generale
+# Statistiche utilizzo app
+
+Possibile sviluppo futuro:
+
+valutare un sistema anonimo per conoscere:
+
+* numero indicativo di utenti attivi;
+* sezioni maggiormente utilizzate;
+* contenuti più ascoltati;
+* andamento generale dell'utilizzo.
+
+### Attenzione
+
+Qualsiasi sistema di statistiche dovrà essere valutato nel rispetto della privacy e senza raccogliere dati personali non necessari.
+
+**Stato:** 🟡 Da valutare
+
+---
+
+# Condivisione
+
+La funzione di condivisione è stata sviluppata.
+
+Sono disponibili funzioni per condividere, dove previsto:
+
+* app;
+* episodi;
+* categorie;
+* Percorso Biblico;
+* guida;
+* Pensiero del giorno;
+* Comunità;
+* funzione "Sorprendimi".
+
+I testi sono centralizzati in:
+
+```text id="x1a2qk"
+contenuti/messaggi-condivisione.json
+```
+
+### Stato
+
+🟢 **Funzione attiva in DR-TEST**
+
+### Possibili sviluppi
+
+* migliorare ulteriormente i testi;
+* aggiungere nuove modalità di condivisione;
+* rendere i messaggi personalizzabili in base al contenuto.
+
+---
+
+# Gestione degli orari della Comunità
+
+Questa è una delle principali evoluzioni da definire.
+
+## Obiettivo
+
+Evitare che le funzioni di Comunità e conferenza generino chiamate o messaggi in orari non opportuni.
+
+## Possibili soluzioni
+
+### Soluzione A — Disabilitazione manuale
+
+Disabilitare i pulsanti quando la Comunità non è disponibile.
+
+### Soluzione B — Disabilitazione automatica
+
+Utilizzare giorni e orari predefiniti.
+
+### Soluzione C — Configurazione separata
+
+Creare un file dedicato agli orari, ad esempio:
+
+```text id="v1q8jk"
+orari-comunita.js
+```
+
+oppure un file dati:
+
+```text id="d3s7la"
+contenuti/orari-comunita.json
+```
+
+La soluzione definitiva verrà scelta dopo aver verificato l'utilizzo reale della Comunità.
+
+**Stato:** 🟡 Da definire
+
+---
+
+# Possibili sviluppi editoriali
+
+## Accanto a Te
+
+Progetto dedicato all'accompagnamento personale e spirituale.
+
+Possibili collegamenti:
+
+* richieste di preghiera;
+* testimonianze;
+* domande personali;
+* accompagnamento.
+
+**Stato:** 🟡 Progetto futuro
+
+---
+
+## Archivio Preghiere
+
+Possibile raccolta organizzata di preghiere e intenzioni.
+
+**Stato:** 🟡 Idea
+
+---
+
+## Domande di vita vera
+
+Possibile sezione dedicata alle domande degli ascoltatori e alle riflessioni.
+
+**Stato:** 🟡 Idea
+
+---
+
+# Principio generale del progetto
 
 Ogni nuova funzione deve rispettare lo stile di Dialoghi Radio:
 
-- semplicità;
-- facilità di utilizzo;
-- ascolto immediato;
-- attenzione all'esperienza dell'utente;
-- nessuna funzione invasiva.
+* semplicità;
+* facilità di utilizzo;
+* ascolto immediato;
+* attenzione all'esperienza dell'utente;
+* rispetto della privacy;
+* nessuna funzione invasiva;
+* libertà di scelta dell'utente.
+
+Una nuova funzione deve essere introdotta solo se porta un reale beneficio all'esperienza degli ascoltatori.
+
+---
+
+# Stato roadmap
+
+| Funzione                   | Stato                |
+| -------------------------- | -------------------- |
+| Riproduzione in background | 🟢 Verificata        |
+| Pensiero del giorno        | 🟢 Attiva            |
+| Categorie                  | 🟢 Attiva            |
+| Condivisione               | 🟢 Attiva            |
+| Comunità                   | 🟢 Attiva in DR-TEST |
+| Richiesta di preghiera     | 🟢 Attiva in DR-TEST |
+| Preparazione conferenza    | 🟢 Attiva in DR-TEST |
+| Conferenza telefonica      | 🟢 Attiva in DR-TEST |
+| Invito Comunità            | 🟢 Attiva in DR-TEST |
+| Orari Comunità             | 🟡 Da definire       |
+| Bacheca avvisi             | 🟡 Da valutare       |
+| Dirette Live               | 🟡 Da valutare       |
+| Statistiche anonime        | 🟡 Da valutare       |
+| Accompagnamento personale  | 🟡 Da sviluppare     |
+| Accanto a Te               | 🟡 Progetto futuro   |
+| Archivio Preghiere         | 🟡 Idea              |
+| Domande di vita vera       | 🟡 Idea              |
+
+---
+
+❤️ **Dialoghi Radio**

@@ -1,0 +1,26 @@
+{
+  "home": {
+    "titolo": "Dialoghi Radio",
+    "testo": "🙏 Ti invito a conoscere Dialoghi Radio.\n\nUn momento di ascolto, riflessione e condivisione."
+  },
+  "episodio": {
+    "titolo": "Dialoghi Radio",
+    "testo": "🎧 Ho ascoltato questo episodio di Dialoghi Radio e penso possa piacerti:\n\n{titolo}\n\nUn momento di ascolto su un tema specifico."
+  },
+  "pensiero": {
+    "titolo": "Dialoghi Radio",
+    "testo": "✨ Oggi evidenzio per te questo pensiero di Dialoghi Radio:\n\n\"{pensiero}\""
+  },
+  "percorso": {
+    "titolo": "Dialoghi Radio",
+    "testo": "📖 Dialoghi Radio\n\nTi invito a seguire il percorso a partire dal primo giorno.\n\nUn cammino di ascolto e riflessione."
+  }, 
+  "categorie": {
+    "titolo": "Dialoghi Radio",
+    "testo": "📚 Scopri i percorsi, i temi e l'archivio ordinato di Dialoghi Radio."
+  },
+  "sorprendimi": { 
+  "titolo": "Dialoghi Radio", 
+  "testo": "✨ Dialoghi Radio ha scelto per me un episodio che non avevo ancora ascoltato:\n\n{titolo}\n\nUn momento di ascolto su un tema specifico." 
+  }
+}

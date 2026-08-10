@@ -1,307 +1,80 @@
 /* ============================================
-   STILE GENERALE DELLA PAGINA
+   1. STILE GENERALE & LAYOUT
    ============================================ */
 
 body {
-    /* Carattere principale */
     font-family: Arial, sans-serif;
-
-    /* Tutto il contenuto centrato */
     text-align: center;
-
-    /* Eliminazione margini e spazi predefiniti */
     margin: 0;
     padding: 20px;
-
-    /* Sfondo generale dell'app */
-    background: #eef6fa; /* azzurro tenue   */
-	/*          #f5f5f5;    grigio  chiaro  */
-	/*          #f1f7f1;    verde   tenue   */
-	/*          #f7f1e8;    crema  delicato */ 
-
+    background: #eef6fa; /* Azzurro tenue */
+    /* Alternative sfondo:
+       #f5f5f5; Grigio chiaro
+       #f1f7f1; Verde tenue
+       #f7f1e8; Crema delicato
+    */
 }
 
+main {
+    padding: 10px;
+}
 
+footer {
+    margin-top: 30px;
+    color: #777;
+}
+
+iframe {
+    position: relative;
+    z-index: 10;
+}
 
 /* ============================================
-   TESTATA DELL'APP
-   Contiene logo, titolo e descrizione
+   2. TESTATA & TIPOGRAFIA
    ============================================ */
 
 .testata {
-
-    /* Sfondo bianco della scheda */
-    background: white;
-
+    background: #ffffff;
     padding: 25px;
-
-    /* Angoli arrotondati */
     border-radius: 25px;
-
     margin-bottom: 5px;
 }
-
-
-/* Logo Dialoghi Radio */
 
 .logo {
     width: 150px;
     border-radius: 50%;
 }
 
-
-
-/* Titolo principale */
-
 h1 {
     font-size: 36px;
     margin-bottom: 5px;
 }
 
-
-
 h2 {
-
-    /* Colore titoli secondari */
     color: #555;
-
     margin-top: 30px;
     margin-bottom: 15px;
 }
 
-
-
 .testata p {
-
-    /* Dimensione descrizione nella testata */
     font-size: 18px;
-
 }
-
-
-
-/* ============================================
-   BLOCCO ULTIMA PUNTATA
-   ============================================ */
-
-.ultima {
-
-    background: white;
-
-    padding: 20px;
-
-    border-radius: 15px;
-
-    /* Ombra della scheda */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-
-}
-
-
-
-/* ============================================
-   ELENCO EPISODI CARICATI AUTOMATICAMENTE
-   ============================================ */
-
-#episodi div {
-
-    /* Ogni puntata viene visualizzata
-       come una scheda */
-
-    background: white;
-
-    padding: 15px;
-
-    margin: 20px 0;
-
-    border-radius: 20px;
-
-}
-
-
-
-/* ============================================
-   LINK GENERICI
-   ============================================ */
-
-a {
-
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 15px 25px;
-
-    background: #222;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-
-    font-size: 18px;
-
-}
-
-
-
-/* ============================================
-   PULSANTI PRINCIPALI DELL'APP
-   ============================================ */
-
-.bottone {
-
-    display: inline-block;
-
-    width: 220px;
-
-    box-sizing: border-box;
-
-    text-align: center;
-
-    padding: 14px 20px;
-
-    background: #007bff;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    margin: 10px;
-
-}
-
-
-
-/* Effetto quando il mouse passa sopra */
-
-.bottone:hover {
-
-    background: #0056b3;
-
-}
-
-
-
-/* Il pulsante Info è un button,
-   ma deve avere lo stesso stile */
-
-button.bottone {
-
-    border: none;
-
-    cursor: pointer;
-
-    font-family: Arial, sans-serif;
-
-}
-
-
-
-/* ============================================
-   ADATTAMENTO SMARTPHONE
-   ============================================ */
-
-@media (max-width: 600px) {
-
-
-    /* Logo più piccolo su telefono */
-
-    .logo {
-
-        width: 70px;
-
-        display: block;
-
-        margin: 0 auto;
-
-    }
-
-
-    /* Pulsanti a tutta larghezza */
-
-    .bottone {
-
-        display: block;
-
-        width: 80%;
-
-        margin: 15px auto;
-
-    }
-
-}
-
-
-
-/* ============================================
-   CONTENUTO PRINCIPALE
-   ============================================ */
-
-main {
-
-    padding: 10px;
-
-}
-
-
-
-/* ============================================
-   SPAZIATURA ELEMENTI DINAMICI
-   ============================================ */
-
-#ultima-puntata {
-
-    margin-top: 25px;
-
-}
-
-
-
-#episodi div {
-
-    margin-bottom: 25px;
-
-}
-
-
-
-/* ============================================
-   INDICAZIONE VERSIONE APP
-   ============================================ */
 
 .versione {
-
     display: block;
-
     margin-top: 10px;
-
     font-size: 14px;
-
     color: #777;
-
 }
 
-/* ============================================
-   PIEDE PAGINA
-   ============================================ */
-
-footer {
-
-    margin-top: 30px;
-
-    color: #777;
-
+.descrizione-pulsante {
+    margin: 6px 10px 18px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
 }
-/* Pensiero del giorno */
 
+/* Nota / elementi dinamici */
 #contenutoGiornaliero p {
     font-size: 18px;
 }
@@ -309,32 +82,99 @@ footer {
 #contenutoGiornaliero strong {
     font-size: 20px;
 }
+
 /* ============================================
-   📻 Modalità Radio
+   3. PULSANTI E LINK
    ============================================ */
 
-.radio-attiva {
-    animation: lampeggioRadio 1.5s infinite;
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: #222;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
 }
 
-
-@keyframes lampeggioRadio {
-
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.4;
-    }
-
-    100% {
-        opacity: 1;
-    }
-
+.bottone {
+    display: inline-block;
+    width: 220px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 14px 20px;
+    background: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
 }
+
+.bottone:hover {
+    background: #0056b3;
+}
+
+button.bottone {
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.btn-share {
+  background-color: #25D366;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-share:active {
+  transform: scale(0.97);
+}
+
 /* ============================================
-   📻 Controlli radio
+   4. SCHEDE ED EPISODI
+   ============================================ */
+
+.ultima {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#ultima-puntata {
+    margin-top: 25px;
+}
+
+#episodi div {
+    background: #ffffff;
+    padding: 15px;
+    margin: 20px 0 25px 0;
+    border-radius: 20px;
+}
+
+.episodio-cliccabile {
+    margin: 12px 0;
+    padding: 14px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.episodio-cliccabile:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   5. CONTROLLI RADIO & MODALITÀ LIVE
    ============================================ */
 
 #statoRadio {
@@ -342,7 +182,6 @@ footer {
     margin-bottom: 20px;
     font-size: 1.1em;
 }
-
 
 #controlliRadio {
     margin-top: 10px;
@@ -352,11 +191,10 @@ footer {
     justify-content: center;
 }
 
-
 #controlliRadio button {
     padding: 10px 18px;
     border-radius: 10px;
-    color: white;
+    color: #ffffff;
     border: none;
     cursor: pointer;
 }
@@ -369,7 +207,162 @@ footer {
     background-color: #a65a5a;
 }
 
-iframe {
-    position: relative;
-    z-index: 10;
+.radio-attiva {
+    animation: lampeggioRadio 1.5s infinite;
+}
+
+@keyframes lampeggioRadio {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   6. RESPONSIVE (SMARTPHONE)
+   ============================================ */
+
+@media (max-width: 600px) {
+    .logo {
+        width: 70px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .bottone {
+        display: block;
+        width: 80%;
+        margin: 15px auto;
+    }
+}
+.bottone-invito {
+    background: #f4a261 !important;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.bottone-invito:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.bottone-invito:active {
+    transform: scale(0.97);
+}
+.bottone-condividi {
+	background: #25D366 !important;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.bottone-condividi:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.bottone-condividi:active {
+    transform: scale(0.97);
+}
+.btn-comunita {
+    background: #f4a261 !important;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-comunita:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-comunita:active {
+    transform: scale(0.97);
+}
+.btn-comunita.bottone-condividi {
+    background: #25D366 !important;
+    color: white;
+}
+/* Pagine documentazione */
+
+.pagina-documento {
+max-width: 800px;
+margin: 20px auto;
+padding: 24px;
+font-size: 17px;
+line-height: 1.65;
+text-align: left;
+}
+
+.pagina-documento h2 {
+margin-top: 30px;
+margin-bottom: 12px;
+}
+
+.pagina-documento p {
+margin-bottom: 16px;
+}
+
+.pagina-documento ul {
+padding-left: 24px;
+margin-bottom: 20px;
+}
+
+.pagina-documento li {
+margin-bottom: 8px;
+}
+
+.pagina-documento hr {
+margin: 30px 0;
+border: 0;
+border-top: 1px solid #ccc;
+}
+
+@media (max-width: 600px) {
+
+```
+.pagina-documento {
+    margin: 10px;
+    padding: 18px;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.pagina-documento h2 {
+    font-size: 21px;
+    margin-top: 26px;
+}
+
+.pagina-documento p {
+    margin-bottom: 15px;
+}
+}
+.link-documenti {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.link-documenti a {
+    display: inline;
 }
