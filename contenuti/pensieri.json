@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "testo": "La fede cresce quando viene condivisa."
+    "testo": "Un piccolo gesto può accendere una grande luce."
   },
   {
     "id": 2,
@@ -10,5 +10,25 @@
   {
     "id": 3,
     "testo": "La speranza nasce dalla fiducia."
+  }
+  {
+    "id": 4,
+    "testo": "La fede cresce quando viene condivisa."
+  },
+  {
+    "id": 5,
+    "testo": "Dove c’è amore, anche il cammino diventa più leggero."
+  },
+  {
+    "id": 6,
+    "testo": "La gentilezza lascia tracce che il tempo non cancella."
+  }
+  {
+    "id": 7,
+    "testo": "A volte basta una parola per restituire coraggio."
+  },
+  {
+    "id": 8,
+    "testo": "Chi dona speranza diventa luce nel cammino degli altri."
   }
 ]
