@@ -168,6 +168,11 @@ button.bottone {
     transition: transform 0.15s, box-shadow 0.15s;
 }
 
+.episodio-cliccabile.episodio-selezionato {
+    background-color: #e8f0fe;
+    border: 2px solid #4a90e2;
+    font-weight: bold;
+}
 .episodio-cliccabile:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);

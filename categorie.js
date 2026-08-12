@@ -116,23 +116,6 @@ function gestisciSorprendimi(items) {
 
    caricaPlayer(id, titolo, "casuale");
 
-const playerEl = document.getElementById("casuale-player");
-
-if (playerEl) {
-
-    const condividi = document.createElement("button");
-
-	condividi.className = "bottone bottone-condividi";
-    condividi.textContent = "📤 Condividi questo episodio";
-
-    condividi.style.marginTop = "10px";
-
-    condividi.addEventListener("click", function () {
-      condividiSorprendimi(titolo, id);
-    });
-
-    playerEl.appendChild(condividi);
-}
 }
 
 // ============================================
@@ -145,13 +128,17 @@ function caricaPlayer(id, titolo, origine = "") {
 
     if (!titoloEl || !playerEl) return;
 
-    const messaggio = origine === "casuale" 
-        ? "Questo episodio è stato scelto casualmente dal sistema." 
+    const messaggio = origine === "casuale"
+        ? "Questo episodio è stato scelto casualmente dal sistema."
         : "Stai ascoltando un episodio selezionato dall'archivio.";
 
-    const prefisso = origine === "casuale" ? "✨ <b>Scelta per te</b>" : "📚 <b>Dall'archivio</b>";
+    const prefisso = origine === "casuale"
+        ? "✨ <b>Scelta per te</b>"
+        : "📚 <b>Dall'archivio</b>";
 
-    titoloEl.innerHTML = `${prefisso}<br>🎙 ${titolo}`;
+	const titoloPulito = titolo.replace(/^🎙\s*🎙\s*/, "🎙 ");
+    titoloEl.innerHTML = `${prefisso}<br>${titoloPulito}`;
+
     playerEl.innerHTML = `
         <div>${messaggio}</div><br>
         <iframe
@@ -162,8 +149,30 @@ function caricaPlayer(id, titolo, origine = "") {
             allow="autoplay">
         </iframe>
     `;
-}
 
+    // Pulsante di condivisione
+    const condividi = document.createElement("button");
+
+    condividi.className = "bottone bottone-condividi";
+    condividi.textContent = "📤 Condividi questo episodio";
+    condividi.style.marginTop = "10px";
+
+    condividi.addEventListener("click", function () {
+        if (origine === "casuale") {
+            condividiSorprendimi(titolo, id);
+        } else if (typeof condividiEpisodio === "function") {
+            condividiEpisodio(titolo, id);
+        }
+    });
+
+    playerEl.appendChild(condividi);
+
+    // Porta automaticamente il player in vista
+    playerEl.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
 function mostraEpisodi(categoria) {
     const risultato = document.getElementById("risultato");
     const titoloRisultato = document.getElementById("titolo-risultato");
@@ -182,41 +191,93 @@ function mostraEpisodi(categoria) {
     }
 
     let html = "";
-    filtrati.forEach(ep => {
-        const titolo = ep.querySelector("title")?.textContent || "";
-        const link = ep.querySelector("link")?.textContent || "";
+ filtrati.forEach(ep => {
+    const titolo = ep.querySelector("title")?.textContent || "";
+    const link = ep.querySelector("link")?.textContent || "";
 
-        html += `
-            <div class="categoria episodio-cliccabile" data-id="${link}">
-                🎙 ${titolo}
-            </div>
-        `;
-    });
+    const match = link.match(/(\d+)$/);
+    if (!match) return;
+
+    const id = match[1];
+
+    const ascoltate =
+        JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+
+    const giaAscoltata = ascoltate.includes(id);
+
+    html += `
+        <div class="categoria episodio-cliccabile" data-id="${link}">
+            🎙 ${titolo}
+
+            <br>
+
+            <button
+                class="bottone ascoltato-categoria"
+                data-id="${id}">
+                ${giaAscoltata ? "✅ Già ascoltata" : "☐ Già ascoltata"}
+            </button>
+        </div>
+    `;
+});
 
     risultato.innerHTML = html;
+document.querySelectorAll(".ascoltato-categoria").forEach(pulsante => {
+    pulsante.addEventListener("click", function (event) {
+        event.stopPropagation();
 
-    // Aggiunta Event Listener ai singoli episodi della lista
-    document.querySelectorAll(".episodio-cliccabile").forEach(elemento => {
-        elemento.addEventListener("click", function () {
-            const link = this.dataset.id;
-            const match = link.match(/(\d+)$/);
+        const id = this.dataset.id;
 
-            if (!match) {
-                console.log("ID Spreaker non trovato");
-                return;
-            }
+        let ascoltate =
+            JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
 
-            const id = match[1];
-            let ascoltate = JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+        if (ascoltate.includes(id)) {
+            ascoltate = ascoltate.filter(epId => epId !== id);
+            this.textContent = "☐ Già ascoltata";
+        } else {
+            ascoltate.push(id);
+            this.textContent = "✅ Già ascoltata";
+        }
 
-            if (!ascoltate.includes(id)) {
-                ascoltate.push(id);
-                localStorage.setItem("puntateAscoltate", JSON.stringify(ascoltate));
-            }
-
-            caricaPlayer(id, this.textContent, "lista");
-        });
+        localStorage.setItem(
+            "puntateAscoltate",
+            JSON.stringify(ascoltate)
+        );
     });
+});
+    // Aggiunta Event Listener ai singoli episodi della lista
+ document.querySelectorAll(".episodio-cliccabile").forEach(elemento => {
+    elemento.addEventListener("click", function () {
+
+        // Evidenzia l'episodio selezionato
+        document.querySelectorAll(".episodio-cliccabile").forEach(el => {
+            el.classList.remove("episodio-selezionato");
+        });
+
+        this.classList.add("episodio-selezionato");
+
+        const link = this.dataset.id;
+        const match = link.match(/(\d+)$/);
+
+        if (!match) {
+            console.log("ID Spreaker non trovato");
+            return;
+        }
+
+        const id = match[1];
+        let ascoltate =
+            JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+
+        if (!ascoltate.includes(id)) {
+            ascoltate.push(id);
+            localStorage.setItem(
+                "puntateAscoltate",
+                JSON.stringify(ascoltate)
+            );
+        }
+
+        caricaPlayer(id, this.textContent, "lista");
+    });
+});
 }
 
 // ============================================

@@ -9,75 +9,122 @@ const feed = CONFIG.audio.feed;
 // ============================================
 
 fetch(feed)
-    .then(response => response.text())
-    .then(str => {
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(str, "text/xml");
-        const items = [...xml.querySelectorAll("item")];
+.then(response => response.text())
+.then(str => {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(str, "text/xml");
+    const items = [...xml.querySelectorAll("item")];
 
-        const bibbia = document.getElementById("percorso-biblico");
-        if (!bibbia) {
-            console.error("Contenitore 'percorso-biblico' non trovato");
+    const bibbia = document.getElementById("percorso-biblico");
+    if (!bibbia) {
+        console.error("Contenitore 'percorso-biblico' non trovato");
+        return;
+    }
+
+    // Pulisce il messaggio di caricamento iniziale
+    bibbia.innerHTML = "";
+
+    let episodiTrovati = 0;
+
+    items.forEach(ep => {
+        const titoloElemento = ep.querySelector("title");
+        const linkElemento = ep.querySelector("link");
+
+        if (!titoloElemento || !linkElemento) return;
+
+        const titolo = titoloElemento.textContent;
+        const link = linkElemento.textContent;
+
+        // Filtra solo gli episodi del Percorso Biblico
+        if (!titolo.includes("[Percorso Biblico]")) return;
+
+        // Recupera ID Spreaker dall'URL
+        const match = link.match(/(\d+)$/);
+        if (!match) {
+            console.warn("ID episodio non trovato per il link:", link);
             return;
         }
 
-        // Pulisce il messaggio di caricamento iniziale
-        bibbia.innerHTML = "";
+        const id = match[1];
+        const titoloPulito = titolo.replace("[Percorso Biblico]", "").trim();
 
-        let episodiTrovati = 0;
+        // Recupera gli episodi già ascoltati
+        const ascoltate =
+            JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
 
-        items.forEach(ep => {
-            const titoloElemento = ep.querySelector("title");
-            const linkElemento = ep.querySelector("link");
+        const giaAscoltata = ascoltate.includes(id);
 
-            if (!titoloElemento || !linkElemento) return;
+        // Crea il blocco HTML dell'episodio
+        const elemento = document.createElement("div");
 
-            const titolo = titoloElemento.textContent;
-            const link = linkElemento.textContent;
+        elemento.innerHTML = `
+            <h3>📖 ${titoloPulito}</h3>
 
-            // Filtra solo gli episodi del Percorso Biblico
-            if (!titolo.includes("[Percorso Biblico]")) return;
+            <iframe
+                src="https://widget.spreaker.com/player?episode_id=${id}&theme=light"
+                width="100%"
+                height="200"
+                frameborder="0"
+                allow="autoplay">
+            </iframe>
 
-            // Recupera ID Spreaker dall'URL
-            const match = link.match(/(\d+)$/);
-            if (!match) {
-                console.warn("ID episodio non trovato per il link:", link);
-                return;
+            <button class="bottone ascoltato" data-id="${id}">
+                ${giaAscoltata ? "✅ Già ascoltata" : "☐ Già ascoltata"}
+            </button>
+
+            <hr>
+        `;
+
+        bibbia.appendChild(elemento);
+        episodiTrovati++;
+
+        // Gestione del pulsante "Già ascoltata"
+        const pulsante = elemento.querySelector(".ascoltato");
+
+        pulsante.addEventListener("click", () => {
+
+            let ascoltateAttuali =
+                JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+
+            const indice = ascoltateAttuali.indexOf(id);
+
+            if (indice !== -1) {
+                // Rimuove l'episodio dagli ascoltati
+                ascoltateAttuali.splice(indice, 1);
+                pulsante.textContent = "☐ Già ascoltata";
+            } else {
+                // Aggiunge l'episodio agli ascoltati
+                ascoltateAttuali.push(id);
+                pulsante.textContent = "✅ Già ascoltata";
             }
 
-            const id = match[1];
-            const titoloPulito = titolo.replace("[Percorso Biblico]", "").trim();
-
-            // Crea il blocco HTML dell'episodio
-            const elemento = document.createElement("div");
-            elemento.innerHTML = `
-                <h3>📖 ${titoloPulito}</h3>
-                <iframe
-                    src="https://widget.spreaker.com/player?episode_id=${id}&theme=light"
-                    width="100%"
-                    height="200"
-                    frameborder="0"
-                    allow="autoplay">
-                </iframe>
-                <hr>
-            `;
-
-            bibbia.appendChild(elemento);
-            episodiTrovati++;
+            localStorage.setItem(
+                "puntateAscoltate",
+                JSON.stringify(ascoltateAttuali)
+            );
         });
-
-        // Se nessun episodio è stato trovato
-        if (episodiTrovati === 0) {
-            bibbia.innerHTML = "<p>Nessun episodio del Percorso Biblico trovato al momento.</p>";
-        }
-    })
-    .catch(error => {
-        console.error("Errore durante il caricamento del percorso biblico:", error);
-        const contenitore = document.getElementById("percorso-biblico");
-        if (contenitore) {
-            contenitore.innerHTML = "<p>Impossibile caricare il percorso biblico al momento.</p>";
-        }
     });
+
+    // Se nessun episodio è stato trovato
+    if (episodiTrovati === 0) {
+        bibbia.innerHTML =
+            "<p>Nessun episodio del Percorso Biblico trovato al momento.</p>";
+    }
+})
+.catch(error => {
+    console.error(
+        "Errore durante il caricamento del percorso biblico:",
+        error
+    );
+
+    const contenitore =
+        document.getElementById("percorso-biblico");
+
+    if (contenitore) {
+        contenitore.innerHTML =
+            "<p>Impossibile caricare il percorso biblico al momento.</p>";
+    }
+});
 
 // ============================================
 // 📤 CONDIVIDI PERCORSO BIBLICO
@@ -86,7 +133,9 @@ fetch(feed)
 function condividiPercorso() {
 
     if (!window.messaggi || !window.messaggi.percorso) {
-        console.error("Messaggi di condivisione del percorso non trovati");
+        console.error(
+            "Messaggi di condivisione del percorso non trovati"
+        );
         return;
     }
 
