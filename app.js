@@ -83,6 +83,12 @@ if (audioRadio && statoRadio && playRadio && stopRadio) {
         statoRadio.innerHTML = "";
         statoRadio.classList.remove("radio-attiva");
     });
+	 // Quando l'audio termina naturalmente
+    audioRadio.addEventListener("ended", function () {
+        playRadio.innerHTML = "▶️ Play";
+        statoRadio.innerHTML = "";
+        statoRadio.classList.remove("radio-attiva");
+    });
 }
 
 // ============================================
