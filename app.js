@@ -1,7 +1,55 @@
 // ============================================
 // DIALOGHI RADIO - Gestione Home (Beta 1.0.2)
 // ============================================
+// ============================================
+// 🚧 CONTROLLO MODALITÀ TEST
+// ============================================
 
+if (
+    typeof CONFIG !== "undefined" &&
+    CONFIG.ambiente &&
+    CONFIG.ambiente.nome === "test" &&
+    CONFIG.ambiente.testAttivo === false
+) {
+    document.body.innerHTML = `
+        <main style="
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 30px;
+            text-align: center;
+            font-family: sans-serif;
+        ">
+            <h1>📻 Dialoghi Radio</h1>
+
+            <h2>🚧 Versione di test non più disponibile</h2>
+
+            <p>
+                Questa versione di Dialoghi Radio è stata utilizzata
+                per la fase di test.
+            </p>
+
+            <p>
+                I test sono terminati.
+                Per continuare a utilizzare Dialoghi Radio,
+                spostati sulla versione ufficiale.
+            </p>
+
+            <a
+                href="${CONFIG.ambiente.produzioneUrl}"
+                class="bottone"
+                style="
+                    display: inline-block;
+                    margin-top: 20px;
+                    text-decoration: none;
+                "
+            >
+                📻 Vai a Dialoghi Radio
+            </a>
+        </main>
+    `;
+
+    throw new Error("DR-TEST disattivato: utilizzare la versione di produzione.");
+}
 // Caricamento messaggi di condivisione
 fetch("contenuti/messaggi-condivisione.json")
     .then(response => response.json())

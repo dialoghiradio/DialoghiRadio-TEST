@@ -31,9 +31,11 @@ const CONFIG = Object.freeze({
 	},
 
     ambiente: {
-        nome: "test",
-        url: "https://dialoghiradio.github.io/DialoghiRadio-TEST/"
-    },
+		nome: "test",
+		url: "https://dialoghiradio.github.io/DialoghiRadio-TEST/",
+	    testAttivo: true,
+		produzioneUrl: "https://dialoghiradio.github.io/DR/"
+	},
 
     audio: {
         feed: "https://billowing-silence-9fc4.teisasa3.workers.dev/",
