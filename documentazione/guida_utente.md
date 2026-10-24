@@ -1,7 +1,7 @@
 # 📻 Guida Utente — Dialoghi Radio
 
-**Versione:** Beta 1.0.3
-**Ultimo aggiornamento:** 10 agosto 2026
+**Versione:** Beta 1.0.4
+**Ultimo aggiornamento:** 18 ottobre 2026
 
 ---
 
@@ -67,32 +67,27 @@ L'icona dell'app verrà aggiunta alla schermata principale.
 
 ## 🎧 Ascolta Dialoghi Radio
 
-In questa sezione puoi ascoltare gli **ultimi episodi pubblicati** ed esplorare l'intero archivio audio.
+La sezione **Ascolta Dialoghi Radio** permette di accedere alla pagina dedicata agli ultimi episodi e ai contenuti audio disponibili.
 
-Gli episodi vengono aggiornati automaticamente dal feed radio.
+Nell'ambiente DR-TEST, la pagina `ultime-puntate.html` è presente e funzionante. Nella configurazione di test attuale, premendo ▶️ nel player viene riprodotto il file audio `news001.mp3`.
 
-Per ogni episodio puoi:
+Le modalità di ascolto e la disponibilità degli altri episodi dipendono dalla configurazione effettivamente pubblicata.
 
-1. selezionare l'episodio;
-2. premere ▶️ nel player integrato per avviare l'ascolto;
-3. segnare l'episodio come **Già ascoltata**;
-4. condividere l'episodio con chi desideri.
+### Funzione «Già ascoltata»
 
-### ✅ Funzione "Già ascoltata"
+Quando la funzione è disponibile per un episodio, puoi contrassegnarlo come già ascoltato.
 
-Quando completi l'ascolto di un episodio, puoi segnarlo come **già ascoltato**.
+La registrazione dello stato e il comportamento della funzione possono dipendere dalla versione dell'app e dalla configurazione attiva.
 
-* Lo stato viene salvato localmente sul tuo dispositivo.
-* Puoi modificare la selezione in qualsiasi momento.
-* La funzione permette a **Sorprendimi** di evitare gli episodi che hai già ascoltato.
+La funzione **Sorprendimi**, quando disponibile e correttamente configurata, può utilizzare queste informazioni per evitare di riproporti episodi già ascoltati.
 
 ---
 
 ## 📚 Esplora per Categorie
 
-Se desideri scegliere cosa ascoltare in base al tuo stato d'animo o a un argomento specifico, puoi consultare l'archivio diviso per categorie.
+La funzione **Categorie** permette di esplorare i contenuti di Dialoghi Radio organizzati per argomento.
 
-Tra le categorie disponibili trovi:
+Tra le categorie tematiche del progetto trovi:
 
 * *Domande di vita vera*
 * *Buongiorno*
@@ -105,7 +100,9 @@ Tra le categorie disponibili trovi:
 * *Scenette*
 * *Riflessioni di Fede*
 
-In questa pagina è disponibile anche lo strumento **🎲 Sorprendimi**.
+La disponibilità dei contenuti nelle singole categorie dipende dagli episodi effettivamente pubblicati e dalla configurazione attiva.
+
+La funzione **Esplora contenuti**, con strumenti di ricerca e filtri più articolati, rappresenta una possibile evoluzione futura e non va confusa con le funzionalità già disponibili.
 
 ---
 
@@ -120,6 +117,8 @@ Quando premi **Sorprendimi**, l'app sceglie un episodio disponibile e lo propone
 > **"Lasciati sorprendere da qualcosa che non hai ancora ascoltato."**
 
 Dopo aver ascoltato l'episodio proposto, puoi segnarlo come ascoltato e, se vuoi, condividerlo.
+
+**Stato della verifica:** la selezione casuale degli episodi e il rispetto dello stato «Già ascoltata» sono stati verificati in DR-TEST.
 
 ---
 
@@ -176,11 +175,18 @@ Ogni messaggio può aiutare a far crescere e migliorare Dialoghi Radio.
 
 ## 🙏 Comunità
 
-La sezione **Comunità** è pensata come uno spazio di incontro e cammino condiviso.
+La sezione **Comunità** è dedicata alla condivisione, alla preghiera e agli incontri con gli altri partecipanti.
 
-L'obiettivo è permettere di condividere intenzioni di preghiera, prepararsi insieme e partecipare alle iniziative di Dialoghi Radio.
+Nell'ambiente DR-TEST sono disponibili le seguenti funzioni:
 
-La sezione è in fase di progettazione e potrà evolvere nel tempo.
+* 🙏 **Richiesta di preghiera:** per condividere un'intenzione tramite WhatsApp.
+* 👥 **Preparazione conferenza:** per partecipare alla preparazione dell'incontro tramite il gruppo WhatsApp.
+* 📞 **Entra nella conferenza:** per avviare la chiamata utilizzando il numero e il codice configurati.
+* 📤 **Invita nella Comunità:** per condividere l'accesso alla Comunità con altre persone.
+
+La disponibilità e il funzionamento dei collegamenti dipendono dalla configurazione attiva.
+
+**Nota:** le funzioni sono presenti nell'ambiente di test. La loro disponibilità nella versione di produzione deve essere verificata separatamente.
 
 ---
 
@@ -244,7 +250,7 @@ Il messaggio serve a informare l'ascoltatore delle principali modifiche introdot
 
 Le informazioni mostrate nel messaggio possono cambiare a ogni nuova versione.
 
-> **Nota:** il messaggio di aggiornamento non richiede alcuna installazione manuale. Dialoghi Radio rimane una Web App e gli aggiornamenti vengono pubblicati automaticamente nella versione online.
+> **Nota:** Dialoghi Radio è una Web App e non richiede un'installazione manuale degli aggiornamenti tramite uno store. Dopo la pubblicazione di una nuova versione, la disponibilità delle modifiche sul dispositivo può dipendere anche dalla cache del browser; se necessario, segui le istruzioni per ricaricare l'app.
 
 ---
 

@@ -17,17 +17,21 @@ materiali editoriali
 
 distribuiti attraverso i canali ufficiali e l’applicazione web dedicata.
 
-🔒 Contenuti protetti
+## 🔒 Contenuti e materiali del progetto
 
-Sono protetti ai sensi della normativa sul diritto d’autore:
+I contenuti originali di Dialoghi Radio, nei limiti previsti dalla normativa applicabile, possono essere tutelati dalla disciplina sul diritto d'autore e dagli altri diritti applicabili.
 
-il nome Dialoghi Radio e il relativo format
-i testi originali e le riflessioni
-le introduzioni e gli adattamenti
-i contenuti audio originali
-la struttura editoriale
-il progetto "Accanto a Te"
-l’organizzazione dei contenuti e l’esperienza dell’applicazione
+Rientrano tra i materiali del progetto, secondo la titolarità e la tutela effettivamente applicabili:
+
+* i testi originali e le riflessioni;
+* le introduzioni e gli adattamenti originali;
+* i contenuti audio originali;
+* i materiali editoriali;
+* il progetto «Accanto a Te»;
+* gli elementi originali della struttura editoriale e dell'applicazione.
+
+Il nome «Dialoghi Radio», il format e gli altri elementi identificativi possono essere soggetti a forme di tutela differenti, in base alle circostanze e alla normativa applicabile.
+
 ✅ Utilizzo consentito
 
 È consentito:
@@ -49,6 +53,6 @@ Per utilizzi diversi da quelli consentiti è necessario richiedere autorizzazion
 
 ℹ️ Nota
 
-Eventuali contenuti provenienti da piattaforme esterne (es. servizi di distribuzione audio) restano soggetti alle rispettive condizioni d’uso.
+I contenuti provenienti da piattaforme esterne, compresi gli audio distribuiti tramite servizi di terze parti, restano soggetti ai rispettivi diritti, alle licenze e alle condizioni d'uso. Le indicazioni presenti in questo documento non sostituiscono né limitano i diritti dei rispettivi titolari.
 
 ❤️ Dialoghi Radio

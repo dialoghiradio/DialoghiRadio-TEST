@@ -3,12 +3,12 @@
    ============================================ */
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    background: #eef6fa; /* Azzurro tenue */
-    /* Alternative sfondo:
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background: #eef6fa; /* Azzurro tenue */
+  /* Alternative sfondo:
        #f5f5f5; Grigio chiaro
        #f1f7f1; Verde tenue
        #f7f1e8; Crema delicato
@@ -16,17 +16,17 @@ body {
 }
 
 main {
-    padding: 10px;
+  padding: 10px;
 }
 
 footer {
-    margin-top: 30px;
-    color: #777;
+  margin-top: 30px;
+  color: #777;
 }
 
 iframe {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 /* ============================================
@@ -34,53 +34,53 @@ iframe {
    ============================================ */
 
 .testata {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 25px;
-    margin-bottom: 5px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 25px;
+  margin-bottom: 5px;
 }
 
 .logo {
-    width: 150px;
-    border-radius: 50%;
+  width: 150px;
+  border-radius: 50%;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 5px;
+  font-size: 36px;
+  margin-bottom: 5px;
 }
 
 h2 {
-    color: #555;
-    margin-top: 30px;
-    margin-bottom: 15px;
+  color: #555;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .testata p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .versione {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #777;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #777;
 }
 
 .descrizione-pulsante {
-    margin: 6px 10px 18px;
-    font-size: 0.9em;
-    color: #666;
-    text-align: center;
+  margin: 6px 10px 18px;
+  font-size: 0.9em;
+  color: #666;
+  text-align: center;
 }
 
 /* Nota / elementi dinamici */
 #contenutoGiornaliero p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #contenutoGiornaliero strong {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 /* ============================================
@@ -88,39 +88,39 @@ h2 {
    ============================================ */
 
 a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    background: #222;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 18px;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: #222;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
 }
 
 .bottone {
-    display: inline-block;
-    width: 220px;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 14px 20px;
-    background: #007bff;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px;
+  display: inline-block;
+  width: 220px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 14px 20px;
+  background: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .bottone:hover {
-    background: #0056b3;
+  background: #0056b3;
 }
 
 button.bottone {
-    border: none;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
+  border: none;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
 }
 
 .btn-share {
@@ -141,41 +141,43 @@ button.bottone {
    ============================================ */
 
 .ultima {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 #ultima-puntata {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 #episodi div {
-    background: #ffffff;
-    padding: 15px;
-    margin: 20px 0 25px 0;
-    border-radius: 20px;
+  background: #ffffff;
+  padding: 15px;
+  margin: 20px 0 25px 0;
+  border-radius: 20px;
 }
 
 .episodio-cliccabile {
-    margin: 12px 0;
-    padding: 14px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s;
+  margin: 12px 0;
+  padding: 14px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .episodio-cliccabile.episodio-selezionato {
-    background-color: #e8f0fe;
-    border: 2px solid #4a90e2;
-    font-weight: bold;
+  background-color: #e8f0fe;
+  border: 2px solid #4a90e2;
+  font-weight: bold;
 }
 .episodio-cliccabile:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* ============================================
@@ -183,49 +185,49 @@ button.bottone {
    ============================================ */
 
 #statoRadio {
-    margin-top: 15px;
-    margin-bottom: 20px;
-    font-size: 1.1em;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 1.1em;
 }
 
 #controlliRadio {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
 }
 
 #controlliRadio button {
-    padding: 10px 18px;
-    border-radius: 10px;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
 }
 
 #playRadio {
-    background-color: #5a8f6a;
+  background-color: #5a8f6a;
 }
 
 #stopRadio {
-    background-color: #a65a5a;
+  background-color: #a65a5a;
 }
 
 .radio-attiva {
-    animation: lampeggioRadio 1.5s infinite;
+  animation: lampeggioRadio 1.5s infinite;
 }
 
 @keyframes lampeggioRadio {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.4;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ============================================
@@ -233,141 +235,154 @@ button.bottone {
    ============================================ */
 
 @media (max-width: 600px) {
-    .logo {
-        width: 70px;
-        display: block;
-        margin: 0 auto;
-    }
+  .logo {
+    width: 70px;
+    display: block;
+    margin: 0 auto;
+  }
 
-    .bottone {
-        display: block;
-        width: 80%;
-        margin: 15px auto;
-    }
+  .bottone {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+  }
 }
 .bottone-invito {
-    background: #f4a261 !important;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+  background: #f4a261 !important;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .bottone-invito:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .bottone-invito:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
 .bottone-condividi {
-	background: #25D366 !important;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+  background: #25d366 !important;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .bottone-condividi:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .bottone-condividi:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
 .btn-comunita {
-    background: #f4a261 !important;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+  background: #f4a261 !important;
+  color: white;
+  width: 300px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .btn-comunita:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .btn-comunita:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
 .btn-comunita.bottone-condividi {
-    background: #25D366 !important;
-    color: white;
+  background: #25d366 !important;
+  color: white;
 }
+/* Allineamento icone dei pulsanti */
+.btn-comunita .icona {
+  display: inline-block;
+  width: 28px;
+  text-align: center;
+}
+
 /* Pagine documentazione */
 
 .pagina-documento {
-max-width: 800px;
-margin: 20px auto;
-padding: 24px;
-font-size: 17px;
-line-height: 1.65;
-text-align: left;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 24px;
+  font-size: 17px;
+  line-height: 1.65;
+  text-align: left;
 }
 
 .pagina-documento h2 {
-margin-top: 30px;
-margin-bottom: 12px;
+  margin-top: 30px;
+  margin-bottom: 12px;
 }
 
 .pagina-documento p {
-margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .pagina-documento ul {
-padding-left: 24px;
-margin-bottom: 20px;
+  padding-left: 24px;
+  margin-bottom: 20px;
 }
 
 .pagina-documento li {
-margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .pagina-documento hr {
-margin: 30px 0;
-border: 0;
-border-top: 1px solid #ccc;
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 @media (max-width: 600px) {
-
-```
-.pagina-documento {
+  .pagina-documento {
     margin: 10px;
     padding: 18px;
     font-size: 17px;
     line-height: 1.65;
-}
+  }
 
-.pagina-documento h2 {
+  .pagina-documento h2 {
     font-size: 21px;
     margin-top: 26px;
-}
+  }
 
-.pagina-documento p {
+  .pagina-documento p {
     margin-bottom: 15px;
-}
+  }
 }
 .link-documenti {
-    display: flex;
-    justify-content: center;
-    gap: 3px;
-    font-size: 0.85rem;
-    white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .link-documenti a {
-    display: inline;
+  display: inline;
 }

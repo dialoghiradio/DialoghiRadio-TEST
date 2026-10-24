@@ -4,36 +4,56 @@ Tutte le modifiche rilevanti, i miglioramenti e le nuove funzionalità introdott
 
 ---
 
-🚀 Beta 1.0.3 — Agosto 2026
-📄 Documentazione & Organizzazione
-Struttura progetto aggiornata
-Revisione completa del file struttura_progetto.md
-Migliorata la leggibilità e organizzazione delle sezioni
-Note progetto
-Creato il file note_progetto.md
-Definizione chiara di:
-obiettivi
-architettura
-logiche principali
-ambiente di test
-Documentazione tester
-Inserito e strutturato il file messaggio_tester_beta.md
-Definito messaggio standard per raccolta feedback
-Aggiunta sezione domande guida per i tester
-🧪 Miglioramenti fase Beta
-Migliorata la gestione della fase di test:
-separazione tra documentazione tecnica e comunicazione tester
-maggiore chiarezza nelle istruzioni di installazione
-organizzazione dei file nella cartella tester/
-🔧 Manutenzione e Coerenza
-Allineamento tra:
-CHANGELOG.md
-struttura progetto
-documentazione interna
-Migliorata la coerenza generale del progetto in vista della produzione
+## 🚀 Beta 1.0.3 — Agosto 2026
 
-💡 Nota:
-Questa versione non introduce nuove funzionalità per l’utente finale, ma consolida la struttura del progetto e la gestione della fase Beta.
+### 📄 Documentazione e organizzazione
+
+* Aggiornamento della struttura del progetto e della documentazione.
+* Revisione delle note di progetto e delle informazioni sullo stato della Beta.
+* Miglioramento dell'organizzazione dei documenti dedicati ai tester.
+* Revisione delle istruzioni di installazione e della guida utente.
+* Allineamento della documentazione sul funzionamento previsto delle principali sezioni dell'app.
+
+### 🧪 Verifica della Beta
+
+* Maggiore chiarezza nella distinzione tra ambiente DR-TEST e produzione.
+* Revisione delle informazioni sulle funzioni disponibili e su quelle ancora da verificare.
+* Organizzazione delle informazioni utili per la raccolta dei feedback e per i controlli sui dispositivi.
+
+### 🔧 Manutenzione e coerenza
+
+* Revisione della documentazione relativa alla struttura del progetto.
+* Aggiornamento delle note interne e del registro delle modifiche.
+* Chiarimento dello stato delle funzioni in valutazione e degli sviluppi futuri.
+* Precisazione delle condizioni necessarie per l'eventuale passaggio in produzione.
+
+**Nota:** la Beta 1.0.3 rimane soggetta a verifiche funzionali e prove sui dispositivi. Le modifiche documentali non implicano che tutte le funzioni siano state testate o che la versione sia pronta per la pubblicazione in produzione.
+
+---
+
+## 🚀 Beta 1.0.4 — Ottobre 2026
+
+### 📻 Palinsesto H24 — Prima integrazione
+
+* Integrazione parziale del palinsesto H24 nella versione locale di DR-TEST.
+* Avvio di una fase di utilizzo continuativo per verificare il comportamento della riproduzione audio.
+* Oltre un mese di utilizzo della versione locale, con sessioni di riproduzione di circa quattro ore.
+* Prove effettuate sia su computer sia su dispositivi mobili, senza problemi riscontrati durante l'utilizzo descritto.
+
+### 🧪 Verifica e stabilità
+
+* Riscontro positivo sulla stabilità del palinsesto durante le sessioni di prova effettuate.
+* Prosecuzione delle verifiche sulle funzionalità già implementate.
+* Necessità di completare i controlli sulle parti del palinsesto non ancora verificate.
+
+### 📄 Documentazione e preparazione al repository di test
+
+* Aggiornamento delle note di progetto e della struttura per descrivere la Beta 1.0.4.
+* Distinzione tra le funzionalità già presenti, quelle parzialmente implementate e quelle ancora da completare.
+* Preparazione della documentazione per il trasferimento della versione locale nel repository `DialoghiRadio-TEST`.
+* Prevista una fase di controllo e formattazione del codice, senza modifiche intenzionali alla logica o al funzionamento dell'applicazione.
+
+**Nota:** la Beta 1.0.4 è in preparazione per il repository di test. I risultati descritti riguardano l'utilizzo locale effettuato e non costituiscono una certificazione completa del palinsesto H24. La pubblicazione nel repository di test e l'eventuale successivo passaggio in produzione richiedono verifiche specifiche e autorizzazione esplicita.
 
 ---
 
@@ -112,11 +132,13 @@ Creata la guida utente (guida_utente.md)
 Creato file idee future (SUGGERIMENTI_FUTURI.md)
 Strutturato repository GitHub con versionamento e backup
 🔮 Sviluppi Futuri (Roadmap)
- Progetto Accanto a Te
- Spazio interattivo per gli ascoltatori
- Notifiche push
- Menu laterale (Drawer)
- Streaming live H24
- Riproduzione audio in background
+
+* Progetto «Accanto a Te».
+* Spazio interattivo per gli ascoltatori.
+* Notifiche push.
+* Menu laterale (Drawer).
+* Riproduzione audio in background, da valutare.
+
+**Palinsesto H24 — Beta 1.0.4:** progetto separato, attualmente in fase di progettazione e sviluppo. Non è una funzionalità completata della Beta 1.0.3.
 
 ❤️ Dialoghi Radio

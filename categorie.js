@@ -114,7 +114,7 @@ function gestisciSorprendimi(items) {
         `;
     }
 
-   caricaPlayer(id, titolo, "casuale");
+    caricaPlayer(id, titolo, "casuale");
 
 }
 
@@ -136,7 +136,7 @@ function caricaPlayer(id, titolo, origine = "") {
         ? "✨ <b>Scelta per te</b>"
         : "📚 <b>Dall'archivio</b>";
 
-	const titoloPulito = titolo.replace(/^🎙\s*🎙\s*/, "🎙 ");
+    const titoloPulito = titolo.replace(/^🎙\s*🎙\s*/, "🎙 ");
     titoloEl.innerHTML = `${prefisso}<br>${titoloPulito}`;
 
     playerEl.innerHTML = `
@@ -179,8 +179,8 @@ function mostraEpisodi(categoria) {
 
     if (!risultato) return;
 
-    const filtrati = categoria === "tutte" 
-        ? episodiGlobali 
+    const filtrati = categoria === "tutte"
+        ? episodiGlobali
         : episodiGlobali.filter(ep => {
             const titolo = ep.querySelector("title")?.textContent || "";
             return titolo.includes(`[${categoria}]`);
@@ -191,21 +191,44 @@ function mostraEpisodi(categoria) {
     }
 
     let html = "";
- filtrati.forEach(ep => {
-    const titolo = ep.querySelector("title")?.textContent || "";
-    const link = ep.querySelector("link")?.textContent || "";
 
-    const match = link.match(/(\d+)$/);
-    if (!match) return;
+    if (categoria === "Percorso Biblico") {
+        html += `
+        <div style="margin-bottom: 20px;">
+            <a href="percorso-biblico.html"
+               style="
+                   display: inline-block;
+                   padding: 10px 18px;
+                   background: #4169e1;
+                   color: white;
+                   text-decoration: none;
+                   border-radius: 8px;
+                   font-family: system-ui, -apple-system, sans-serif;
+                   font-weight: bold;
+                   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+               ">
+                📖 Scopri il Percorso Biblico
+            </a>
+        </div>
+    `;
+    }
 
-    const id = match[1];
 
-    const ascoltate =
-        JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+    filtrati.forEach(ep => {
+        const titolo = ep.querySelector("title")?.textContent || "";
+        const link = ep.querySelector("link")?.textContent || "";
 
-    const giaAscoltata = ascoltate.includes(id);
+        const match = link.match(/(\d+)$/);
+        if (!match) return;
 
-    html += `
+        const id = match[1];
+
+        const ascoltate =
+            JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+
+        const giaAscoltata = ascoltate.includes(id);
+
+        html += `
         <div class="categoria episodio-cliccabile" data-id="${link}">
             🎙 ${titolo}
 
@@ -218,66 +241,66 @@ function mostraEpisodi(categoria) {
             </button>
         </div>
     `;
-});
+    });
 
     risultato.innerHTML = html;
-document.querySelectorAll(".ascoltato-categoria").forEach(pulsante => {
-    pulsante.addEventListener("click", function (event) {
-        event.stopPropagation();
+    document.querySelectorAll(".ascoltato-categoria").forEach(pulsante => {
+        pulsante.addEventListener("click", function (event) {
+            event.stopPropagation();
 
-        const id = this.dataset.id;
+            const id = this.dataset.id;
 
-        let ascoltate =
-            JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+            let ascoltate =
+                JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
 
-        if (ascoltate.includes(id)) {
-            ascoltate = ascoltate.filter(epId => epId !== id);
-            this.textContent = "☐ Già ascoltata";
-        } else {
-            ascoltate.push(id);
-            this.textContent = "✅ Già ascoltata";
-        }
+            if (ascoltate.includes(id)) {
+                ascoltate = ascoltate.filter(epId => epId !== id);
+                this.textContent = "☐ Già ascoltata";
+            } else {
+                ascoltate.push(id);
+                this.textContent = "✅ Già ascoltata";
+            }
 
-        localStorage.setItem(
-            "puntateAscoltate",
-            JSON.stringify(ascoltate)
-        );
-    });
-});
-    // Aggiunta Event Listener ai singoli episodi della lista
- document.querySelectorAll(".episodio-cliccabile").forEach(elemento => {
-    elemento.addEventListener("click", function () {
-
-        // Evidenzia l'episodio selezionato
-        document.querySelectorAll(".episodio-cliccabile").forEach(el => {
-            el.classList.remove("episodio-selezionato");
-        });
-
-        this.classList.add("episodio-selezionato");
-
-        const link = this.dataset.id;
-        const match = link.match(/(\d+)$/);
-
-        if (!match) {
-            console.log("ID Spreaker non trovato");
-            return;
-        }
-
-        const id = match[1];
-        let ascoltate =
-            JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
-
-        if (!ascoltate.includes(id)) {
-            ascoltate.push(id);
             localStorage.setItem(
                 "puntateAscoltate",
                 JSON.stringify(ascoltate)
             );
-        }
-
-        caricaPlayer(id, this.textContent, "lista");
+        });
     });
-});
+    // Aggiunta Event Listener ai singoli episodi della lista
+    document.querySelectorAll(".episodio-cliccabile").forEach(elemento => {
+        elemento.addEventListener("click", function () {
+
+            // Evidenzia l'episodio selezionato
+            document.querySelectorAll(".episodio-cliccabile").forEach(el => {
+                el.classList.remove("episodio-selezionato");
+            });
+
+            this.classList.add("episodio-selezionato");
+
+            const link = this.dataset.id;
+            const match = link.match(/(\d+)$/);
+
+            if (!match) {
+                console.log("ID Spreaker non trovato");
+                return;
+            }
+
+            const id = match[1];
+            let ascoltate =
+                JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+
+            if (!ascoltate.includes(id)) {
+                ascoltate.push(id);
+                localStorage.setItem(
+                    "puntateAscoltate",
+                    JSON.stringify(ascoltate)
+                );
+            }
+
+            caricaPlayer(id, this.textContent, "lista");
+        });
+    });
 }
 
 // ============================================

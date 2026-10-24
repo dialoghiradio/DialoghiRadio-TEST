@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,7 @@
             background-color: #f5f5f5;
             border: 2px solid #ddd;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             cursor: pointer;
             transition: transform 0.15s ease, background-color 0.15s ease;
             display: flex;
@@ -54,30 +55,40 @@
 
 <body>
 
-	<!-- Testata -->
-	<header class="testata">
-		<h1 class="titolo-comunita">🙏 COMUNITÀ</h1>
-		<p class="sottotitolo-comunita">
-        Chiedi una preghiera, prepara e vivi insieme gli incontri,
-        invita altre persone nella comunità.
-		</p>
-	</header>
+    <!-- Testata -->
+    <header class="testata">
+        <h1 class="titolo-comunita">🙏 COMUNITÀ</h1>
+        <p class="sottotitolo-comunita">
+            Chiedi una preghiera, prepara e vivi insieme gli incontri,
+            invita altre persone nella comunità.
+        </p>
+    </header>
 
     <!-- Contenuto Principale -->
     <main>
-		<button class="btn-comunita bottone-condividi" onclick="apriChat()">
-			<span class="icona">💬</span> Richiesta di preghiera
-		</button>
+        <button class="btn-comunita bottone-condividi" onclick="apriChat()">
+            <span class="icona">💬</span> Richiesta di preghiera
+        </button>
 
-		<button class="btn-comunita bottone-condividi" onclick="apriGruppo()">
-			<span class="icona">👥</span> Preparazione conferenza
-		</button>
+        <button class="btn-comunita bottone-condividi" onclick="apriGruppo()">
+            <span class="icona">👥</span> Preparazione conferenza
+        </button>
 
         <button class="btn-comunita" onclick="entraConferenza()">
             <span class="icona">📞</span> Entra nella conferenza
         </button>
 
-		<button class="btn-comunita bottone-condividi" onclick="condividi()">
+        <a
+            id="bottoneDiretta"
+            class="btn-comunita"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="icona">🎥</span> Diretta della Comunità
+        </a>
+
+        <button class="btn-comunita bottone-condividi" onclick="condividi()">
             <span class="icona">📤</span> Invita nella Comunità
         </button>
 
@@ -101,6 +112,8 @@
             window.location.href = CONFIG.comunita.conferenza;
         }
 
+        document.getElementById("bottoneDiretta").href = CONFIG.comunita.diretta;
+
         function condividi() {
             const url = window.location.href;
             const datiCondivisione = {
@@ -120,4 +133,5 @@
         }
     </script>
 </body>
+
 </html>

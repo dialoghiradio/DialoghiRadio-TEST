@@ -27,8 +27,6 @@ Aprire il sito ufficiale:
 
 https://dialoghiradio.github.io/DR/
 
-*(Il collegamento potrebbe cambiare in base alla versione pubblicata.)*
-
 <p align="center">
 <img src="immagini_guida/01_apertura_link.png" width="350">
 </p>
@@ -108,7 +106,8 @@ L'installazione avviene tramite Safari.
 ### Procedura
 
 1. Aprire Safari.
-2. Visitare il sito ufficiale di Dialoghi Radio.
+2. Visitare il sito ufficiale di Dialoghi Radio:
+   https://dialoghiradio.github.io/DR/
 3. Toccare il pulsante:
 
 **Condividi**  
@@ -166,8 +165,7 @@ come Web App.
 
 # 🔄 Aggiornamenti dell'app
 
-Dialoghi Radio viene aggiornata automaticamente
-quando vengono pubblicate nuove modifiche.
+Dialoghi Radio viene aggiornata online quando vengono pubblicate nuove modifiche. In alcuni casi, il browser potrebbe continuare a mostrare temporaneamente una versione precedente.
 
 Se non vengono visualizzati gli aggiornamenti:
 

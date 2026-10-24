@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Palinsesto del giorno</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        .contenitore {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .giorno {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .programma {
+            background: white;
+            padding: 14px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .ora {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .titolo {
+            font-size: 17px;
+            margin-top: 4px;
+        }
+
+        .durata {
+            font-size: 13px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        .rosario {
+            border-left: 5px solid #777;
+        }
+
+        .fine-ciclo {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenitore">
+
+        <h1>📻 Palinsesto del giorno</h1>
+        <a href="../index.html" style="
+       display: inline-block;
+       margin-bottom: 20px;
+       padding: 8px 16px;
+       background: #4169e1;
+       color: white;
+       text-decoration: none;
+       border-radius: 8px;
+       font-family: system-ui, -apple-system, sans-serif;
+       font-weight: bold;
+       font-size: 14px;
+       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+       transition: all 0.2s ease-in-out;
+   " onmouseover="this.style.background='#3152be'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+            onmouseout="this.style.background='#4169e1'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)';">
+            <strong>← Torna alla Home</strong>
+        </a>
+
+
+        <div id="giorno" class="giorno">
+            Caricamento...
+        </div>
+
+        <div id="palinsesto">
+            Caricamento palinsesto...
+        </div>
+
+    </div>
+
+    <script>
+
+        fetch("onair.json")
+
+            .then(response => response.json())
+
+            .then(dati => {
+
+                const giorni = [
+                    "domenica",
+                    "lunedi",
+                    "martedi",
+                    "mercoledi",
+                    "giovedi",
+                    "venerdi",
+                    "sabato"
+                ];
+
+                const nomiGiorni = [
+                    "Domenica",
+                    "Lunedì",
+                    "Martedì",
+                    "Mercoledì",
+                    "Giovedì",
+                    "Venerdì",
+                    "Sabato"
+                ];
+
+                const oggiNumero =
+                    new Date().getDay();
+
+                const oggi =
+                    giorni[oggiNumero];
+
+                const nomeGiorno =
+                    nomiGiorni[oggiNumero];
+
+                document.getElementById("giorno").textContent =
+                    nomeGiorno;
+
+                // ========================================
+                // COSTRUISCE LA PLAYLIST DEL GIORNO
+                // ========================================
+
+                const playlist = dati.playlist.filter(
+                    contenuto => {
+
+                        // Contenuto normale oppure
+                        // preghiera non legata al giorno
+                        if (contenuto.variabilePerGiorno !== true) {
+                            return contenuto.attivo === true;
+                        }
+
+                        // Contenuto variabile per giorno
+                        return (
+                            contenuto.attivo === true &&
+                            contenuto.giorno === oggi
+                        );
+                    }
+                );
+                // ========================================
+                // ORA DI INIZIO
+                // ========================================
+
+                const [ore, minuti] =
+                    dati.oraInizioCiclo
+                        .split(":")
+                        .map(Number);
+
+                let orario =
+                    new Date();
+
+                orario.setHours(
+                    ore,
+                    minuti,
+                    0,
+                    0
+                );
+
+                // ========================================
+                // GENERAZIONE PALINSESTO
+                // ========================================
+
+                let html = "";
+
+                playlist.forEach(contenuto => {
+
+                    const orePartenza =
+                        String(
+                            orario.getHours()
+                        ).padStart(2, "0");
+
+                    const minutiPartenza =
+                        String(
+                            orario.getMinutes()
+                        ).padStart(2, "0");
+
+                    const durataMinuti =
+                        Math.floor(
+                            contenuto.durataSecondi / 60
+                        );
+
+                    const durataSecondi =
+                        contenuto.durataSecondi % 60;
+
+                    const durataFormattata =
+                        `${durataMinuti}:${String(
+                            durataSecondi
+                        ).padStart(2, "0")}`;
+
+                    const classe =
+                        contenuto.tipo === "preghiere"
+                            ? "programma rosario"
+                            : "programma";
+
+                    html += `
+                <div class="${classe}">
+
+                    <div class="ora">
+                        ${orePartenza}:${minutiPartenza}
+                    </div>
+
+                    <div class="titolo">
+                        🎧 ${contenuto.titolo}
+                    </div>
+
+                    <div class="durata">
+                        Durata: ${durataFormattata}
+                    </div>
+
+                </div>
+            `;
+
+                    // Passa al programma successivo
+                    orario =
+                        new Date(
+                            orario.getTime() +
+                            contenuto.durataSecondi * 1000
+                        );
+
+                });
+
+                // ========================================
+                // FINE CICLO
+                // ========================================
+
+                const oreFine =
+                    String(
+                        orario.getHours()
+                    ).padStart(2, "0");
+
+                const minutiFine =
+                    String(
+                        orario.getMinutes()
+                    ).padStart(2, "0");
+
+                html += `
+            <div class="fine-ciclo">
+                🔄 Fine ciclo: ${oreFine}:${minutiFine}
+            </div>
+        `;
+
+                document.getElementById(
+                    "palinsesto"
+                ).innerHTML = html;
+
+            })
+
+            .catch(error => {
+
+                console.error(
+                    "Errore caricamento palinsesto:",
+                    error
+                );
+
+                document.getElementById(
+                    "palinsesto"
+                ).textContent =
+                    "Errore nel caricamento del palinsesto.";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

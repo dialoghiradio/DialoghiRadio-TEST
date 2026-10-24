@@ -1,0 +1,148 @@
+{
+  "oraInizioCiclo": "16:00",
+
+  "playlist": [
+    {
+      "id": "pillola-luce",
+      "titolo": "Pillola di luce",
+      "tipo": "pillola",
+      "spreakerEpisodeId": 70823344,
+      "durataSecondi": 847,
+      "attivo": true
+    },
+    {
+      "id": "riflessioni-fede",
+      "titolo": "Riflessioni di Fede",
+      "tipo": "riflessioni",
+      "spreakerEpisodeId": 59312781,
+      "durataSecondi": 996,
+      "attivo": true
+    },
+    {
+      "id": "accanto-a-te",
+      "titolo": "Accanto a Te",
+      "tipo": "accanto",
+      "spreakerEpisodeId": 73337076,
+      "durataSecondi": 1025,
+      "attivo": true
+    },
+    {
+      "id": "buongiorno",
+      "titolo": "Buongiorno",
+      "tipo": "buongiorno",
+      "spreakerEpisodeId": 73163624,
+      "durataSecondi": 212,
+      "attivo": true
+    },
+    {
+      "id": "sorriso-quotidiano",
+      "titolo": "Sorriso quotidiano",
+      "tipo": "sorriso",
+      "spreakerEpisodeId": 69368529,
+      "durataSecondi": 673,
+      "attivo": true
+    },
+    {
+      "id": "rosario-domenica",
+      "titolo": "Rosario meditato — Misteri Gloriosi",
+      "tipo": "preghiere",
+      "giorno": "domenica",
+	    "variabilePerGiorno": true,
+      "spreakerEpisodeId": 59915034,
+      "durataSecondi": 2173,
+      "attivo": true
+    },
+    {
+      "id": "rosario-lunedi",
+      "titolo": "Rosario meditato — Misteri Gaudiosi",
+      "tipo": "preghiere",
+      "giorno": "lunedi",
+	    "variabilePerGiorno": true,
+      "spreakerEpisodeId": 59867085,
+      "durataSecondi": 2670,
+      "attivo": true
+    },
+    {
+      "id": "rosario-martedi",
+      "titolo": "Rosario meditato — Misteri Dolorosi",
+      "tipo": "preghiere",
+      "giorno": "martedi",
+	    "variabilePerGiorno": true,
+      "spreakerEpisodeId": 59960573,
+      "durataSecondi": 2881,
+      "attivo": true
+    },
+    {
+      "id": "rosario-mercoledi",
+      "titolo": "Rosario meditato — Misteri Gloriosi",
+      "tipo": "preghiere",
+      "giorno": "mercoledi",
+	    "variabilePerGiorno": true,
+      "spreakerEpisodeId": 59915034,
+      "durataSecondi": 2173,
+      "attivo": true
+    },
+    {
+      "id": "rosario-giovedi",
+      "titolo": "Rosario meditato — Misteri Luminosi",
+      "tipo": "preghiere",
+      "giorno": "giovedi",
+	    "variabilePerGiorno": true,
+      "spreakerEpisodeId": 59927151,
+      "durataSecondi": 2186,
+      "attivo": true
+    },
+    {
+      "id": "rosario-venerdi",
+      "titolo": "Rosario meditato — Misteri Dolorosi",
+      "tipo": "preghiere",
+      "giorno": "venerdi",
+	    "variabilePerGiorno": true,
+      "spreakerEpisodeId": 59960573,
+      "durataSecondi": 2881,
+      "attivo": true
+    },
+    {
+      "id": "rosario-sabato",
+      "titolo": "Rosario meditato — Misteri Gaudiosi",
+      "tipo": "preghiere",
+      "giorno": "sabato",
+	    "variabilePerGiorno": true,
+      "spreakerEpisodeId": 59867085,
+      "durataSecondi": 2670,
+      "attivo": true
+    },
+    {
+      "id": "scenette",
+      "titolo": "Scenette",
+      "tipo": "scenette",
+      "spreakerEpisodeId": 73284891,
+      "durataSecondi": 668,
+      "attivo": true
+    },
+    {
+      "id": "domande-vita-vera",
+      "titolo": "Domande di vita vera",
+      "tipo": "vita-vera",
+      "spreakerEpisodeId": 72962385,
+      "durataSecondi": 438,
+      "attivo": true
+    },
+    {
+      "id": "percorso-biblico",
+      "titolo": "Percorso biblico",
+      "tipo": "biblico",
+      "spreakerEpisodeId": 69630524,
+      "durataSecondi": 5586,
+      "attivo": true
+    },
+    {
+      "id": "scuola-amore",
+      "titolo": "Alla scuola dell'Amore",
+      "tipo": "amore",
+      "spreakerEpisodeId": 67230216,
+      "durataSecondi": 1567,
+      "attivo": true
+    }
+  ]
+}

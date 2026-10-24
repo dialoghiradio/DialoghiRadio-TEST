@@ -54,7 +54,7 @@ Le nuove modifiche vengono prima verificate in questo ambiente e solo successiva
 
 | File            | Descrizione                                                                             |
 | --------------- | --------------------------------------------------------------------------------------- |
-| `config.js`     | Configurazione globale dell'app, contatti, Comunità, percorsi, ambiente e servizi audio |
+| `config.js`     | Configurazione globale dell'app e parametri previsti per ambiente, contatti, Comunità, percorsi e servizi audio, secondo le impostazioni effettivamente utilizzate |
 | `manifest.json` | Configurazione della Web App installabile (PWA)                                         |
 | `stile.css`     | Stili grafici e layout dell'app                                                         |
 | `icona.png`     | Icona principale di Dialoghi Radio                                                      |
@@ -89,7 +89,7 @@ audio/
     └── news001.mp3
 ```
 
-Gli episodi principali di Dialoghi Radio vengono invece recuperati automaticamente dal feed audio configurato nell'app.
+Gli episodi principali di Dialoghi Radio vengono recuperati dal feed audio configurato nell'app. Il comportamento effettivo dipende dalla configurazione e deve essere verificato nell'ambiente DR-TEST.
 
 ---
 
@@ -191,11 +191,11 @@ Il QR Code dell'ambiente di produzione sarà distinto e verrà utilizzato nella 
 
 Nella root del progetto sono presenti:
 
-| File               | Descrizione                                            |
-| ------------------ | ------------------------------------------------------ |
-| `COPYRIGHT`        | Informazioni relative al diritto d'autore del progetto |
-| `PRIVACY`          | Informativa relativa alla privacy                      |
-| `TERMINI_UTILIZZO` | Termini e condizioni di utilizzo                       |
+| File             | Descrizione                                      |
+| ---------------- | ------------------------------------------------ |
+| `copyright.html` | Pagina relativa al diritto d'autore del progetto |
+| `privacy.html`   | Informativa sulla privacy dell'app               |
+| `termini.html`   | Termini e condizioni di utilizzo dell'app        |
 
 ---
 
@@ -216,7 +216,7 @@ Nella root sono presenti alcuni file utilizzati per prove e sperimentazioni:
 | File                   | Utilizzo                                   | Stato   |
 | ---------------------- | ------------------------------------------ | ------- |
 | `test-conferenza.html` | Prova della funzione conferenza telefonica | 🧪 Test |
-| `prova-speaker.html`   | Prove relative a Spreaker                  | 🧪 Test |
+| `prova-spreaker.html`  | Prove relative a Spreaker                  | 🧪 Test |
 | `prova-audio.html`     | Prove di riproduzione audio                | 🧪 Test |
 
 Questi file non fanno parte delle funzioni principali dell'app e vengono mantenuti per eventuali verifiche tecniche.
@@ -232,7 +232,6 @@ Questi file non fanno parte delle funzioni principali dell'app e vengono mantenu
 | Gestione degli orari della conferenza tramite file separato      | 🟡 Da valutare |
 | Notifiche per nuovi episodi                                      | 🟡 Futuro      |
 | Statistiche anonime di utilizzo                                  | 🟡 Da valutare |
-| Ulteriori categorie di contenuti                                 | 🟡 In sviluppo |
 | Dirette Live                                                     | 🟡 Da valutare |
 | Funzioni di accompagnamento personale                            | 🟡 Futuro      |
 
@@ -248,6 +247,7 @@ Questi file non fanno parte delle funzioni principali dell'app e vengono mantenu
 * Non vengono raccolti dati personali attraverso il sistema di tracciamento degli ascolti.
 * `config.js` centralizza le configurazioni che possono cambiare tra ambiente di test e produzione.
 * Il QR Code presente in DR-TEST punta esclusivamente all'ambiente di prova.
+* Il palinsesto H24 è un progetto separato, previsto per la Beta 1.0.4, ancora in fase di progettazione e sviluppo. Non è una funzione completata della Beta 1.0.3.
 
 ---
 
@@ -272,14 +272,77 @@ Feedback
         ↓
 Correzioni
         ↓
-Versione stabile
+Verifica conclusiva
+        ↓
+Approvazione esplicita
+        ↓
+Eventuale pubblicazione
         ↓
 DR-PRODUZIONE
-        ↓
-GitHub / pubblicazione
 ```
 
 **Le modifiche non vengono trasferite in produzione finché la verifica in DR-TEST non è conclusa.**
+
+---
+
+# PARTE II — BETA 1.0.4 E PALINSESTO H24
+
+## Stato della versione
+
+**Versione:** Beta 1.0.4
+**Ambiente:** DR-TEST locale
+**Repository di destinazione:** `DialoghiRadio-TEST`
+**Stato:** 🟡 versione in preparazione per il repository di test.
+
+La Beta 1.0.4 comprende le modifiche apportate al progetto locale e una prima parte del palinsesto H24 già integrata nell'applicazione.
+
+La versione precedente, Beta 1.0.3, rimane distinta dalla nuova versione.
+
+## Palinsesto H24 parziale
+
+Il palinsesto H24 è stato integrato parzialmente nella versione locale ed è stato utilizzato per oltre un mese, sia su computer sia su dispositivi mobili.
+
+Durante questo periodo sono state effettuate sessioni di riproduzione continua di circa quattro ore, senza problemi riscontrati nell'esperienza d'uso descritta.
+
+Questi risultati costituiscono un riscontro positivo sulla stabilità della versione attualmente utilizzata. Non equivalgono, tuttavia, a una verifica completa di tutte le 24 ore di programmazione né di tutte le funzionalità previste.
+
+Il palinsesto deve pertanto essere descritto come **parzialmente implementato e sottoposto a test continuativi**, senza considerarlo già completato in ogni sua parte.
+
+## Preparazione della versione per Git di test
+
+La versione locale Beta 1.0.4 sarà preparata per il repository `DialoghiRadio-TEST`.
+
+Prima della pubblicazione occorrerà:
+
+* verificare i file effettivamente modificati;
+* controllare la coerenza dei riferimenti alla versione;
+* aggiornare la documentazione interessata;
+* verificare il funzionamento dell'applicazione;
+* effettuare eventuali interventi di sola formattazione del codice senza modificarne intenzionalmente la logica;
+* controllare che le operazioni Git riguardino esclusivamente il repository di test.
+
+La pubblicazione nel repository di test non comporta il passaggio automatico in produzione.
+
+## Formattazione e conservazione del codice
+
+Gli interventi di formattazione dovranno limitarsi al miglioramento della leggibilità del codice, senza modificare intenzionalmente le funzioni, la logica applicativa, i collegamenti, le configurazioni o il comportamento del palinsesto.
+
+Dopo gli eventuali interventi sarà necessario verificare che l'applicazione continui a comportarsi come prima.
+
+Qualsiasi correzione funzionale eventualmente necessaria dovrà essere valutata separatamente.
+
+## Verifiche prima della pubblicazione
+
+Prima di pubblicare la Beta 1.0.4 nel repository di test occorrerà controllare:
+
+* le funzioni principali dell'applicazione;
+* la riproduzione audio;
+* le parti del palinsesto già implementate;
+* il comportamento su computer e smartphone;
+* gli eventuali errori introdotti durante la formattazione;
+* la coerenza della documentazione.
+
+Il progetto di produzione rimane separato. Un eventuale passaggio in produzione richiederà verifiche adeguate e autorizzazione esplicita.
 
 ---
 

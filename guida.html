@@ -6,155 +6,153 @@
 
 <head>
 
-<meta charset="UTF-8">
-<!-- Supporto caratteri speciali e lettere accentate -->
+  <meta charset="UTF-8">
+  <!-- Supporto caratteri speciali e lettere accentate -->
 
 
-<!-- Fondamentale per smartphone -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="stile.css">
+  <!-- Fondamentale per smartphone -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stile.css">
 
-<!-- Adattamento della pagina ai dispositivi mobili -->
-
-
-<title>Guida utente - Dialoghi Radio</title>
-<!-- Titolo della pagina -->
+  <!-- Adattamento della pagina ai dispositivi mobili -->
 
 
-<style>
+  <title>Guida utente - Dialoghi Radio</title>
+  <!-- Titolo della pagina -->
 
-/* ============================================
+
+  <style>
+    /* ============================================
    STILE PAGINA GUIDA UTENTE
    ============================================ */
 
 
-body {
+    body {
 
-  /* Carattere principale */
-  font-family: Arial, sans-serif;
+      /* Carattere principale */
+      font-family: Arial, sans-serif;
 
-  margin: 0;
-  padding: 20px;
+      margin: 0;
+      padding: 20px;
 
-  background: #f5f5f5;
+      background: #f5f5f5;
 
-  color: #333;
+      color: #333;
 
-  /* Altezza delle righe per facilitare la lettura */
-  line-height: 1.6;
-}
-
-
-
-/* Contenitore centrale della guida */
-
-.contenitore {
-
-  max-width: 800px;
-
-  margin: auto;
-
-  background: white;
-
-  padding: 25px;
-
-  border-radius: 20px;
-
-  /* Ombra della scheda */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-
-}
+      /* Altezza delle righe per facilitare la lettura */
+      line-height: 1.6;
+    }
 
 
 
-/* Titolo principale */
+    /* Contenitore centrale della guida */
 
-h1 {
+    .contenitore {
 
-  text-align: center;
+      max-width: 800px;
 
-  color: #007bff;
+      margin: auto;
 
-  font-size: 28px;
+      background: white;
 
-}
+      padding: 25px;
 
+      border-radius: 20px;
 
+      /* Ombra della scheda */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
-/* Titoli delle sezioni */
-
-h2 {
-
-  color: #007bff;
-
-  margin-top: 30px;
-
-}
-
-
-h3 {
-
-  color: #555;
-
-}
-
-
-p {
-
-  font-size: 17px;
-
-}
-
-
-li {
-
-  margin-bottom: 8px;
-
-}
+    }
 
 
 
-/* ============================================
+    /* Titolo principale */
+
+    h1 {
+
+      text-align: center;
+
+      color: #007bff;
+
+      font-size: 28px;
+
+    }
+
+
+
+    /* Titoli delle sezioni */
+
+    h2 {
+
+      color: #007bff;
+
+      margin-top: 30px;
+
+    }
+
+
+    h3 {
+
+      color: #555;
+
+    }
+
+
+    p {
+
+      font-size: 17px;
+
+    }
+
+
+    li {
+
+      margin-bottom: 8px;
+
+    }
+
+
+
+    /* ============================================
    ADATTAMENTO SMARTPHONE
    ============================================ */
 
-@media (max-width: 600px) {
+    @media (max-width: 600px) {
 
 
-  body {
+      body {
 
-    padding: 10px;
+        padding: 10px;
 
-  }
-
-
-  .contenitore {
-
-    padding: 18px;
-
-    border-radius: 15px;
-
-  }
+      }
 
 
-  h1 {
+      .contenitore {
 
-    font-size: 24px;
+        padding: 18px;
 
-  }
+        border-radius: 15px;
 
-
-  p, li {
-
-    font-size: 18px;
-
-  }
+      }
 
 
-}
+      h1 {
+
+        font-size: 24px;
+
+      }
 
 
-</style>
+      p,
+      li {
+
+        font-size: 18px;
+
+      }
+
+
+    }
+  </style>
 
 
 </head>
@@ -164,96 +162,94 @@ li {
 <body>
 
 
-<!-- Contenitore principale della guida -->
+  <!-- Contenitore principale della guida -->
 
-<div class="contenitore">
+  <div class="contenitore">
 
 
 
-<!-- Pulsante per tornare alla pagina principale -->
+    <!-- Pulsante per tornare alla pagina principale -->
 
-  <a href="index.html" class="bottone">
-  ⬅ Torna alla Home
-  </a>
- 
-  <button onclick="condividiGuida()" class="bottone bottone-condividi">
-    🧭 Condividi guida
-  </button>
- 
-<!--
+    <a href="index.html" class="bottone">
+      ⬅ Torna alla Home
+    </a>
+
+    <button onclick="condividiGuida()" class="bottone bottone-condividi">
+      🧭 Condividi guida
+    </button>
+
+    <!--
     Area dove viene inserito automaticamente
     il contenuto del file guida_utente.md
 -->
 
-<div id="contenuto">
+    <div id="contenuto">
 
-Caricamento guida...
+      Caricamento guida...
 
-</div>
-
-
-
-</div>
+    </div>
 
 
 
-<!-- Libreria che converte Markdown in HTML -->
-
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </div>
 
 
 
-<script>
+  <!-- Libreria che converte Markdown in HTML -->
 
-
-// ============================================
-// CARICAMENTO GUIDA UTENTE
-//
-// Il file:
-// - recupera guida_utente.md
-// - converte Markdown in HTML
-// - visualizza il risultato nella pagina
-// ============================================
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 
 
-// Recupera il file Markdown dalla cartella documentazione
-
-fetch('documentazione/guida_utente.md')
+  <script>
 
 
-// Trasforma il contenuto ricevuto in testo
-
-.then(response => response.text())
-
-
-// Converte Markdown e lo inserisce nella pagina
-
-.then(text => {
-
-
-document.getElementById('contenuto').innerHTML = marked.parse(text);
+    // ============================================
+    // CARICAMENTO GUIDA UTENTE
+    //
+    // Il file:
+    // - recupera guida_utente.md
+    // - converte Markdown in HTML
+    // - visualizza il risultato nella pagina
+    // ============================================
 
 
-})
+
+    // Recupera il file Markdown dalla cartella documentazione
+
+    fetch('documentazione/guida_utente.md')
 
 
-// Gestione errore caricamento
+      // Trasforma il contenuto ricevuto in testo
 
-.catch(() => {
-
-
-document.getElementById('contenuto').innerText =
-"Errore nel caricamento guida";
+      .then(response => response.text())
 
 
-});
+      // Converte Markdown e lo inserisce nella pagina
+
+      .then(text => {
 
 
-</script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="app.js"></script>
-<script>
+        document.getElementById('contenuto').innerHTML = marked.parse(text);
+
+
+      })
+
+
+      // Gestione errore caricamento
+
+      .catch(() => {
+
+
+        document.getElementById('contenuto').innerText =
+          "Errore nel caricamento guida";
+
+
+      });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

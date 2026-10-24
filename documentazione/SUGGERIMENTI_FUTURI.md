@@ -28,7 +28,9 @@ La riproduzione in background è risultata funzionante su dispositivo mobile.
 
 ### Stato
 
-🟢 **Funzione verificata**
+🟢 **Verificata sul dispositivo utilizzato per il test**
+
+La compatibilità con altri dispositivi e sistemi operativi resta da monitorare.
 
 Possibili attività future:
 
@@ -124,6 +126,31 @@ Possibili utilizzi:
 La funzione potrebbe utilizzare un file di configurazione o contenuti separati dal codice.
 
 **Stato:** 🟡 Da valutare
+
+---
+
+# Palinsesto H24
+
+## Programmazione continua dei contenuti audio
+
+Il palinsesto H24 è un progetto in sviluppo nell'ambiente DR-TEST, destinato alla futura Beta 1.0.4.
+
+### Obiettivi
+
+* organizzare i contenuti audio in una programmazione continuativa di 24 ore;
+* definire gli appuntamenti fissi e quelli variabili in base al giorno della settimana;
+* selezionare automaticamente il Rosario previsto per il giorno;
+* integrare la serie della Preghiera dei 7 giorni;
+* individuare gli spazi liberi da completare con contenuti o musica;
+* visualizzare il contenuto in onda e quelli successivi.
+
+### Stato del progetto
+
+🔵 **In progettazione e sviluppo in DR-TEST — verifiche da completare**
+
+Il palinsesto non è ancora considerato collaudato o stabile. La struttura editoriale deve essere completata prima di definire le scelte tecniche definitive.
+
+## L'eventuale passaggio alla produzione sarà valutato soltanto dopo le verifiche e l'approvazione esplicita.
 
 ---
 
@@ -474,6 +501,7 @@ Una nuova funzione deve essere introdotta solo se porta un reale beneficio all'e
 | Accanto a Te               | 🟡 Progetto futuro   |
 | Archivio Preghiere         | 🟡 Idea              |
 | Domande di vita vera       | 🟡 Idea              |
+| Palinsesto H24 — Beta 1.0.4 | 🔵 In sviluppo e verifica in DR-TEST |
 
 ---
 

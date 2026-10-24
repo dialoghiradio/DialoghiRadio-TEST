@@ -7,7 +7,7 @@ Oggetto: Abbiamo preso in carico la tua segnalazione
 Ciao,
 
 grazie per averci segnalato il problema
-riscontrato durante l'utilizzo di Dialoghi Radio Beta 1.0.0.
+riscontrato durante l'utilizzo di Dialoghi Radio.
 
 Abbiamo preso in carico la tua segnalazione
 e stiamo verificando quanto ci hai indicato
@@ -52,7 +52,7 @@ Oggetto: Grazie per aver condiviso la tua esperienza
 Ciao,
 
 grazie per aver condiviso la tua esperienza
-con Dialoghi Radio Beta 1.0.0.
+con Dialoghi Radio.
 
 Il tuo parere è molto importante perché
 ci permette di capire cosa funziona meglio

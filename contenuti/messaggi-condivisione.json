@@ -14,13 +14,13 @@
   "percorso": {
     "titolo": "Dialoghi Radio",
     "testo": "📖 Dialoghi Radio\n\nTi invito a seguire il percorso a partire dal primo giorno.\n\nUn cammino di ascolto e riflessione."
-  }, 
+  },
   "categorie": {
     "titolo": "Dialoghi Radio",
     "testo": "📚 Scopri i percorsi, i temi e l'archivio ordinato di Dialoghi Radio."
   },
-  "sorprendimi": { 
-  "titolo": "Dialoghi Radio", 
-  "testo": "✨ Dialoghi Radio ha scelto per me un episodio che non avevo ancora ascoltato:\n\n{titolo}\n\nUn momento di ascolto su un tema specifico." 
+  "sorprendimi": {
+    "titolo": "Dialoghi Radio",
+    "testo": "✨ Dialoghi Radio ha scelto per me un episodio che non avevo ancora ascoltato:\n\n{titolo}\n\nUn momento di ascolto su un tema specifico."
   }
 }

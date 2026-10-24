@@ -1,6 +1,8 @@
 # Categorie contenuti Dialoghi Radio
 
-Le categorie previste per la futura funzione "Esplora contenuti":
+Questo documento raccoglie le categorie tematiche di Dialoghi Radio e costituisce un riferimento per la funzione Categorie, già attiva in DR-TEST, e per una possibile evoluzione futura denominata "Esplora contenuti".
+
+**Nota:** la presenza di una categoria in questo elenco ne definisce l'ambito tematico, ma non implica necessariamente che tutti i contenuti o le funzioni descritti siano già disponibili nell'app. L'effettiva disponibilità dipende dai contenuti pubblicati e dalle funzionalità implementate.
 
 ## 1. Sorriso quotidiano
 Pensieri quotidiani, messaggi, riflessioni leggere

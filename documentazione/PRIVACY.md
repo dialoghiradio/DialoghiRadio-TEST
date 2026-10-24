@@ -2,7 +2,9 @@
 
 ## 1. Raccolta dei dati
 
-Dialoghi Radio non richiede la registrazione di un account e non richiede l'inserimento di dati personali per l'utilizzo dell'applicazione.
+Dialoghi Radio non richiede la creazione di un account né l'inserimento di dati personali per il normale utilizzo delle funzioni dell'applicazione.
+
+L'utilizzo dell'app e dei servizi esterni collegati può comportare il trattamento di dati tecnici da parte dei rispettivi fornitori, secondo le modalità descritte nelle loro informative sulla privacy.
 
 Non sono richiesti:
 
@@ -26,7 +28,8 @@ Queste informazioni:
 * vengono memorizzate localmente sul dispositivo dell'utente;
 * non costituiscono un account personale;
 * non vengono utilizzate per identificare l'utente;
-* non vengono inviate a un server di Dialoghi Radio.
+
+Queste informazioni sono destinate alla memorizzazione locale sul dispositivo. L'eventuale trasmissione di dati da parte di altre funzioni dell'applicazione deve essere valutata separatamente.
 
 La cancellazione dei dati del browser o dell'applicazione può comportare la perdita delle informazioni memorizzate localmente.
 
@@ -40,11 +43,13 @@ Tali servizi possono trattare dati tecnici secondo le proprie modalità e posson
 
 Per questo motivo, il trattamento eventualmente effettuato da tali piattaforme è regolato dalle rispettive informative e condizioni di utilizzo.
 
+I servizi effettivamente utilizzati e le relative informative sulla privacy dovranno essere individuati e verificati in relazione alle funzionalità presenti nell'applicazione.
+
 ---
 
 ## 4. Cookie e tecnologie di tracciamento
 
-Dialoghi Radio non utilizza direttamente cookie di profilazione o sistemi di tracciamento degli utenti.
+L'applicazione non è progettata per utilizzare direttamente cookie di profilazione o sistemi di tracciamento degli utenti. L'eventuale presenza di cookie o altre tecnologie utilizzate dai servizi esterni deve essere verificata in relazione alle integrazioni effettivamente presenti.
 
 Eventuali servizi esterni integrati o collegati all'applicazione possono tuttavia utilizzare proprie tecnologie secondo le rispettive politiche.
 
@@ -54,13 +59,13 @@ Eventuali servizi esterni integrati o collegati all'applicazione possono tuttavi
 
 L'applicazione, nel suo utilizzo ordinario, non dispone di un sistema di registrazione degli utenti e non mantiene un database personale degli ascoltatori.
 
-Eventuali dati forniti volontariamente dall'utente attraverso la sezione **Contatti e suggerimenti** vengono inviati tramite il canale scelto dall'utente e possono essere trattati per rispondere alla richiesta ricevuta.
+Eventuali dati personali forniti volontariamente dall'utente attraverso la sezione **Contatti e suggerimenti** vengono trasmessi tramite il canale scelto dall'utente. Tali dati possono essere trattati per gestire la richiesta ricevuta e fornire una risposta, nel rispetto della normativa applicabile in materia di protezione dei dati personali.
 
 ---
 
 ## 6. Sicurezza
 
-Dialoghi Radio adotta una struttura che non richiede la creazione di account personali e limita la memorizzazione locale alle informazioni necessarie al funzionamento delle funzioni disponibili.
+Dialoghi Radio è progettata per funzionare senza richiedere la creazione di account personali. Alcune informazioni relative all'utilizzo dell'app possono essere memorizzate localmente sul dispositivo, secondo le modalità descritte in questa informativa.
 
 Nessuna misura di sicurezza può tuttavia garantire in modo assoluto l'assenza di rischi nell'utilizzo di servizi online o dispositivi digitali.
 
@@ -70,7 +75,7 @@ Nessuna misura di sicurezza può tuttavia garantire in modo assoluto l'assenza d
 
 La presente informativa può essere aggiornata nel tempo in relazione all'evoluzione dell'applicazione, delle sue funzionalità e dei servizi utilizzati.
 
-La versione aggiornata sarà pubblicata nel documento `PRIVACY.md`.
+La versione aggiornata sarà riportata nel documento `PRIVACY.md` e resa disponibile attraverso i canali previsti per la documentazione del progetto.
 
 ---
 

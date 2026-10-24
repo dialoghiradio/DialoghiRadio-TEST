@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,14 +37,38 @@
         <div id="contenutoGiornaliero" class="box-giorno">
             <p>Caricamento...</p>
         </div>
+        <!-- Palinsesto del giorno -->
+        <div class="box-giorno">
+            <a href="contenuti/palinsesto.html" style="
+       display: inline-block;
+       padding: 10px 18px;
+       background: #4169e1;
+       color: white;
+       text-decoration: none;
+       border-radius: 8px;
+       font-family: system-ui, -apple-system, sans-serif;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       transition: all 0.2s ease-in-out;
+   " onmouseover="this.style.background='#3152be'; this.style.transform='scale(1.03)';"
+                onmouseout="this.style.background='#4169e1'; this.style.transform='scale(1)';">
+                📻 <strong>Palinsesto del giorno</strong>
+            </a>
 
+        </div>
         <!-- Sezione Player Radio & News -->
         <div id="radioBox">
-            <h3>📰 News Dialoghi Radio</h3>
+
+            <h3>🔴 ON AIR — Accanto a Te</h3>
+
+            <div id="contenutoOnAir">
+                🎧 Preparazione della trasmissione...
+            </div>
+
+            <div id="prossimiOnAir"></div>
+
             <div id="statoRadio"></div>
 
             <audio id="audioRadio">
-                <source src="audio/notizie/news001.mp3" type="audio/mpeg">
                 Il tuo browser non supporta l'audio.
             </audio>
 
@@ -61,11 +86,6 @@
         <a href="categorie.html" class="bottone">📚 Esplora per categorie</a>
         <p class="descrizione-pulsante">
             Trova episodi e percorsi organizzati per tema e scegli cosa ascoltare.
-        </p>
-
-        <a href="percorso-biblico.html" class="bottone">📖 Percorso Biblico</a>
-        <p class="descrizione-pulsante">
-            Un cammino organizzato in più giornate per accompagnare l’ascolto e la riflessione.
         </p>
 
         <a href="ultime-puntate.html" class="bottone">🎧 Ascolta Dialoghi Radio</a>
@@ -105,9 +125,9 @@
 
         <hr>
 
-	<button onclick="condividiCategorie()" class="bottone bottone-invito">
-	👥 Invita un amico
-	</button>
+        <button onclick="condividiCategorie()" class="bottone bottone-invito">
+            👥 Invita un amico
+        </button>
         <p class="descrizione-pulsante">
             Invita un amico a scoprire e ascoltare Dialoghi Radio.
         </p>
@@ -130,15 +150,15 @@
 
     <!-- Piè di pagina -->
 
-<footer>
-    <p class="link-documenti">
-        <a href="privacy.html">Privacy</a>
-        <a href="termini.html">Termini</a>
-        <a href="copyright.html">Copyright</a>
-    </p>
+    <footer>
+        <p class="link-documenti">
+            <a href="privacy.html">Privacy</a>
+            <a href="termini.html">Termini</a>
+            <a href="copyright.html">Copyright</a>
+        </p>
 
-    <p>❤️ Dialoghi Radio</p>
-</footer>
+        <p>❤️ Dialoghi Radio</p>
+    </footer>
 
     <!-- Script Esterni -->
     <script async src="https://widget.spreaker.com/widgets.js"></script>
@@ -187,4 +207,5 @@
         document.getElementById("descrizione-dinamica").innerHTML = descrizione;
     </script>
 </body>
+
 </html>

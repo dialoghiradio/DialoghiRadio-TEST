@@ -43,11 +43,9 @@ Non è consentito:
 
 ## 5. Proprietà intellettuale
 
-I contenuti originali pubblicati attraverso Dialoghi Radio sono di proprietà dell'autore:
+I contenuti originali realizzati per Dialoghi Radio sono attribuibili all'autore, Salvatore Esposito, nei limiti della titolarità dei diritti e della normativa applicabile.
 
-**Salvatore Esposito**
-
-e sono protetti dalle norme sul diritto d'autore.
+Gli eventuali materiali di terzi restano soggetti ai diritti dei rispettivi titolari e alle relative licenze o condizioni d'uso.
 
 Per ulteriori informazioni sui contenuti protetti e sulle modalità di utilizzo è possibile consultare il documento `COPYRIGHT.md`.
 
@@ -55,14 +53,13 @@ Per ulteriori informazioni sui contenuti protetti e sulle modalità di utilizzo 
 
 ## 6. Servizi esterni
 
-L'applicazione può utilizzare servizi e piattaforme esterne per la pubblicazione o la riproduzione dei contenuti audio.
+L'applicazione può utilizzare servizi e piattaforme esterne per la pubblicazione, la distribuzione o la riproduzione dei contenuti audio.
 
-Dialoghi Radio non è responsabile di:
+Tali servizi sono gestiti dai rispettivi fornitori e possono essere soggetti a modifiche, interruzioni o indisponibilità.
 
-* eventuali malfunzionamenti dei servizi esterni;
-* modifiche alle loro funzionalità;
-* eventuali interruzioni o indisponibilità dei servizi;
-* condizioni di utilizzo applicate direttamente dalle piattaforme esterne.
+Dialoghi Radio non controlla direttamente il funzionamento delle piattaforme esterne. Eventuali responsabilità saranno valutate nel rispetto della normativa applicabile.
+
+L'utilizzo dei servizi esterni resta inoltre soggetto alle condizioni d'uso e alle informative pubblicate dai rispettivi fornitori.
 
 ---
 
@@ -70,7 +67,7 @@ Dialoghi Radio non è responsabile di:
 
 I presenti termini di utilizzo possono essere aggiornati nel tempo in relazione all'evoluzione dell'applicazione e dei servizi offerti.
 
-Eventuali modifiche saranno pubblicate attraverso la versione aggiornata del documento.
+Eventuali modifiche saranno riportate nella versione aggiornata del documento `TERMINI_UTILIZZO.md` e rese disponibili attraverso i canali previsti per la documentazione del progetto.
 
 ---
 

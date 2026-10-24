@@ -30,7 +30,7 @@ La configurazione comprende:
 * feed audio;
 * collegamento all'archivio Castbox.
 
-La configurazione permette di modificare i collegamenti principali senza intervenire direttamente nei diversi file HTML o JavaScript.
+La configurazione centralizza i collegamenti principali utilizzati dalle funzioni che leggono correttamente i valori da `config.js`. Il comportamento deve essere verificato per ogni funzione interessata.
 
 ---
 
@@ -53,7 +53,7 @@ Sono stati predisposti collegamenti dedicati alle diverse modalità di partecipa
 
 Aggiunto il collegamento WhatsApp per inviare una richiesta di preghiera.
 
-La funzione utilizza il collegamento configurato in `config.js`.
+La funzione utilizza il collegamento WhatsApp previsto dalla configurazione dell'app. La corrispondenza con il valore definito in `config.js` va verificata nell'ambiente DR-TEST.
 
 Il canale viene mantenuto separato dalle altre funzioni della Comunità.
 
@@ -67,7 +67,7 @@ Il pulsante utilizza un collegamento telefonico con numero e codice di accesso p
 
 La funzione permette all'utente di entrare nella conferenza direttamente dal dispositivo.
 
-**Stato:** funzionante, ma ancora da valutare per la gestione degli orari.
+**Stato:** funzione verificata e funzionante nell'ambiente DR-TEST. La gestione della disponibilità in base a giorni e orari resta da definire.
 
 ---
 
@@ -78,13 +78,13 @@ La funzione permette all'utente di entrare nella conferenza direttamente dal dis
 * 🟢 WhatsApp → richiesta di preghiera / messaggi;
 * 🟠 Conferenza → ingresso alla chiamata telefonica.
 
-Questa distinzione permette di rendere immediatamente riconoscibile il tipo di azione associata al pulsante.
+Questa distinzione aiuta a identificare il tipo di azione associata a ciascun pulsante.
 
 ---
 
 ## Condivisione
 
-Sono state definite e/o verificate le funzioni di condivisione relative alle principali sezioni dell'app.
+Sono state definite le funzioni di condivisione relative alle principali sezioni dell'app. La verifica del loro funzionamento deve essere considerata separatamente per ciascuna funzione.
 
 Funzioni previste:
 
@@ -107,7 +107,7 @@ Creato il file:
 
 per separare i testi utilizzati dalle funzioni di condivisione dal codice dell'app.
 
-Questo permette di modificare i messaggi senza dover intervenire direttamente nel codice JavaScript.
+Questa separazione consente di modificare i messaggi senza intervenire direttamente nel codice JavaScript, per le funzioni che utilizzano correttamente i testi definiti nel file JSON.
 
 ---
 
@@ -121,6 +121,8 @@ Testo attuale:
 
 La guida è stata verificata dopo la modifica.
 
+È stata segnalata l'opportunità di migliorare la visibilità della guida, affinché gli utenti possano individuarla più facilmente.
+
 ---
 
 ## Contatti
@@ -133,7 +135,7 @@ La sezione Contatti è stata completata con possibilità di inviare:
 
 I messaggi vengono inviati tramite email.
 
-**Stato:** funzionante.
+**Stato:** funzione verificata e funzionante nell'ambiente DR-TEST. La classificazione delle email nella Posta in arrivo o nella cartella Spam dipende anche dal servizio email del destinatario.
 
 ---
 
@@ -147,17 +149,19 @@ Il pulsante è funzionante e la riga relativa alla sezione Info viene pertanto c
 
 ## Archivio Castbox
 
-Verificato il collegamento all'archivio completo delle puntate tramite Castbox.
+Verificato nell'ambiente DR-TEST il collegamento all'archivio completo delle puntate tramite Castbox.
 
-La funzione è operativa.
+**Stato:** collegamento verificato e funzionante.
 
-La condivisione dell'archivio potrà essere valutata separatamente in base all'utilità per gli utenti.
+La verifica riguarda l'apertura del collegamento. Non implica necessariamente che siano stati controllati tutti gli episodi presenti nell'archivio.
+
+L'eventuale condivisione diretta dell'archivio potrà essere valutata separatamente, in base all'utilità per gli utenti.
 
 ---
 
 ## Funzione Appuntamento / Conferenza
 
-La funzione relativa all'appuntamento o alla conferenza rimane l'unico elemento ancora da definire completamente.
+Il collegamento alla conferenza telefonica è stato verificato e risulta funzionante nell'ambiente DR-TEST. Rimane da definire completamente la gestione della disponibilità della conferenza in base a giorni e orari.
 
 È stata considerata la possibilità di:
 
@@ -174,7 +178,7 @@ L'obiettivo è evitare che l'utente possa utilizzare o visualizzare funzioni leg
 
 ## Documentazione
 
-Aggiornata e verificata la documentazione del progetto.
+Aggiornata la documentazione del progetto, con revisione delle note di progetto, della struttura, del changelog e dei documenti dedicati ai tester.
 
 La documentazione comprende:
 
@@ -212,13 +216,106 @@ Prima del passaggio in produzione verranno effettuate:
 * verifica della conferenza;
 * controllo finale della documentazione.
 
+Il passaggio in produzione potrà avvenire soltanto dopo il completamento delle verifiche previste e previa autorizzazione esplicita.
+
 ---
 
-## Passaggio a Git di test
+## Gestione delle modifiche in Git — Beta 1.0.3
 
-Al termine della definizione delle ultime funzioni verrà effettuato uno step della versione Beta 1.0.3 nell'ambiente di test.
+Le modifiche della Beta 1.0.3 vengono sviluppate e verificate nell'ambiente DR-TEST.
 
-Il passaggio in produzione sarà effettuato solo dopo la verifica finale.
+Prima di registrare o pubblicare le modifiche nel repository di test, occorre controllare lo stato dei file e verificare che le modifiche siano coerenti con la versione in lavorazione.
+
+Il passaggio alla produzione DR è un'operazione separata e potrà essere valutato soltanto dopo il completamento delle verifiche e l'approvazione esplicita.
+
+**Stato:** verifiche in corso. Nessuna pubblicazione in produzione autorizzata da questa nota.
+
+---
+
+# Beta 1.0.4 — Progetto palinsesto H24
+
+**Ambiente:** DR-TEST
+**Stato:** progettazione e sviluppo, verifiche da completare.
+
+Il palinsesto H24 è un progetto separato dalla Beta 1.0.3, destinato alla futura Beta 1.0.4.
+
+L'obiettivo è organizzare la riproduzione continua dei contenuti audio di Dialoghi Radio attraverso una programmazione strutturata nell'arco delle 24 ore.
+
+## File coinvolti
+
+* `contenuti/onair.json` — configurazione dei contenuti audio, delle durate e degli identificativi degli episodi Spreaker.
+* `contenuti/palinsesto.html` — pagina dedicata alla visualizzazione del palinsesto.
+* `app.js` — file dell'applicazione coinvolto nello sviluppo.
+
+## Funzioni previste
+
+* organizzazione dei contenuti in una programmazione continua;
+* sincronizzazione del ciclo con l'orario di riferimento delle 16:00;
+* selezione del Rosario in base al giorno della settimana;
+* visualizzazione del contenuto in onda e dei contenuti successivi.
+
+## Verifiche da completare
+
+* sincronizzazione tra orario e contenuto riprodotto;
+* passaggio automatico tra gli episodi;
+* riproduzione su smartphone e computer;
+* selezione giornaliera del Rosario;
+* verifica complessiva del palinsesto.
+
+Il palinsesto H24 non è ancora considerato collaudato o stabile. Il suo completamento e l'eventuale pubblicazione saranno valutati dopo le verifiche e l'approvazione.
+
+Il lavoro deve rimanere nell'ambiente DR-TEST fino all'autorizzazione esplicita al passaggio successivo.
+
+---
+
+# Beta 1.0.4 — Preparazione per Git di test
+
+**Periodo:** ottobre 2026
+**Ambiente:** DR-TEST locale
+**Repository di destinazione:** `DialoghiRadio-TEST`
+**Stato:** preparazione della versione e verifiche.
+
+## Stato del palinsesto H24
+
+La Beta 1.0.4 comprende una prima parte del palinsesto H24 integrata nell'applicazione locale.
+
+La versione è stata utilizzata per oltre un mese, sia su computer sia su dispositivi mobili, con sessioni di riproduzione continua di circa quattro ore e senza problemi riscontrati durante l'utilizzo descritto.
+
+L'esperienza maturata costituisce un riscontro positivo sulla stabilità della versione locale. Non rappresenta una certificazione completa di tutte le funzionalità del palinsesto né di una programmazione continuativa di 24 ore.
+
+Il palinsesto rimane parzialmente implementato e le funzionalità non ancora verificate dovranno essere controllate separatamente.
+
+## Preparazione del codice
+
+Prima della pubblicazione nel repository di test è prevista una fase di controllo e formattazione dei file di codice.
+
+Gli interventi dovranno limitarsi alla leggibilità e alla formattazione, senza modificare intenzionalmente la logica applicativa o il comportamento delle funzioni già presenti.
+
+Dopo gli interventi sarà necessario verificare che l'applicazione continui a funzionare come prima.
+
+Eventuali correzioni funzionali saranno valutate separatamente e non dovranno essere introdotte come semplici modifiche di formattazione.
+
+## Preparazione della documentazione
+
+La documentazione viene aggiornata per distinguere chiaramente:
+
+* la precedente Beta 1.0.3;
+* la Beta 1.0.4 attualmente presente nell'ambiente locale;
+* le funzionalità H24 già integrate;
+* le parti ancora da completare o verificare;
+* i test effettivamente effettuati.
+
+Le descrizioni dovranno riflettere lo stato reale del progetto, senza dichiarare completate funzioni non ancora verificate.
+
+## Pubblicazione nel repository di test
+
+La versione locale Beta 1.0.4 sarà preparata per il repository GitHub `DialoghiRadio-TEST`.
+
+Prima della pubblicazione occorrerà verificare i file modificati, la coerenza della documentazione e il funzionamento dell'applicazione.
+
+La pubblicazione nel repository di test dovrà rimanere distinta da qualsiasi intervento sul repository di produzione.
+
+**Stato:** preparazione in corso. La pubblicazione richiede il controllo finale dei file e l'autorizzazione esplicita.
 
 ---
 
@@ -287,15 +384,17 @@ Modifiche effettuate:
 
 ## Verifica riproduzione in background
 
-Eseguito test su dispositivo mobile.
+Eseguiti test su dispositivo mobile per verificare il comportamento della riproduzione audio.
 
-Risultato:
+### Risultati dei test
 
-* l'audio continua dopo aver ridotto a icona l'app;
-* l'ascolto prosegue anche con schermo spento;
-* è possibile utilizzare altre applicazioni durante la riproduzione.
+* riproduzione audio mantenuta dopo aver ridotto a icona l'app;
+* riproduzione audio mantenuta con lo schermo spento;
+* possibilità di utilizzare altre applicazioni durante l'ascolto.
 
-La funzione risulta disponibile nella versione attuale.
+**Esito:** entrambe le prove sono riuscite sul dispositivo utilizzato per il test.
+
+Il risultato documenta il comportamento osservato durante le prove effettuate e non costituisce una garanzia di funzionamento identico su tutti i dispositivi o sistemi operativi.
 
 ---
 

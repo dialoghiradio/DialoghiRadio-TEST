@@ -111,7 +111,7 @@ Dialoghi Radio è una Web App dedicata all'ascolto di:
 📖 Percorsi Biblici
 🙏 riflessioni e momenti di condivisione
 
-La nuova versione contiene diverse funzioni aggiornate e vorrei farla provare ad alcune persone per verificarne il funzionamento e raccogliere eventuali suggerimenti.
+La versione di prova contiene funzioni che desidero verificare su dispositivi diversi. Vorrei raccogliere impressioni, suggerimenti ed eventuali segnalazioni di problemi per migliorare l'app prima di un eventuale passaggio in produzione.
 
 📱 **Per provarla:**
 
@@ -160,6 +160,77 @@ I suggerimenti e le segnalazioni dei tester saranno utilizzati per verificare la
 **Data:** 10 agosto 2026
 
 **Obiettivo:** verificare stabilità, navigazione, ascolto, condivisione e principali funzioni della Comunità.
+
+---
+
+# Messaggio tester Beta 1.0.4 — Dialoghi Radio
+
+## Obiettivo
+
+Invitare amici e collaboratori a provare la Beta 1.0.4 di Dialoghi Radio, con particolare attenzione alla prima parte del palinsesto H24 integrata nella versione di test.
+
+L'obiettivo è raccogliere impressioni, suggerimenti ed eventuali segnalazioni per migliorare l'esperienza di ascolto.
+
+## Messaggio da inviare
+
+📻 **Ciao! Ti invito a provare Dialoghi Radio — Beta 1.0.4.**
+
+Dialoghi Radio è una Web App dedicata all'ascolto di:
+
+🎙 episodi audio e programmi
+📖 Percorsi Biblici
+🙏 preghiere, riflessioni e momenti di condivisione
+
+In questa nuova fase sto verificando una prima parte del palinsesto H24, pensato per offrire contenuti audio in diversi momenti della giornata.
+
+Mi farebbe piacere se provassi l'app e mi aiutassi a verificare il funzionamento delle parti disponibili.
+
+📱 **Per provarla, apri questo collegamento:**
+
+https://dialoghiradio.github.io/DialoghiRadio-TEST/
+
+Se vuoi, puoi anche installarla come Web App sulla schermata Home del telefono.
+
+### Dopo averla provata, mi farebbe piacere sapere:
+
+✅ L'app si apre correttamente?
+✅ L'audio parte e si ascolta senza problemi?
+✅ I contenuti vengono riprodotti correttamente?
+✅ Hai notato interruzioni o anomalie durante l'ascolto?
+✅ L'app si comporta correttamente sul tuo dispositivo?
+✅ C'è qualcosa che miglioreresti?
+
+Se possibile, indicami anche il dispositivo utilizzato e descrivi brevemente eventuali problemi riscontrati.
+
+Grazie per il tuo aiuto e per il tempo che vorrai dedicare al progetto! ❤️
+
+**Dialoghi Radio**
+
+*"Parole, musica e riflessioni per accompagnare la tua giornata."*
+
+---
+
+## Note interne
+
+La Beta 1.0.4 comprende una prima parte del palinsesto H24 integrata nella versione locale.
+
+La versione locale è stata utilizzata per oltre un mese su computer e dispositivi mobili, con sessioni di riproduzione continua di circa quattro ore e senza problemi riscontrati durante le prove descritte.
+
+Questi risultati costituiscono un riscontro positivo sulla stabilità della versione utilizzata, ma non equivalgono a una verifica completa dell'intero palinsesto H24.
+
+I nuovi feedback dovranno essere registrati separatamente da quelli delle versioni precedenti.
+
+## Stato test
+
+**Versione:** Beta 1.0.4
+
+**Ambiente:** DR-TEST
+
+**Obiettivo:** verificare la prima parte del palinsesto H24, la riproduzione audio e il comportamento dell'app sui dispositivi utilizzati dai tester.
+
+**Stato:** verifiche in corso; alcune funzionalità devono ancora essere controllate.
+
+La pubblicazione nel repository di test e l'eventuale successivo passaggio in produzione restano attività separate.
 
 ---
 

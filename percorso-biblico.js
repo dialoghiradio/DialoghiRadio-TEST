@@ -9,16 +9,16 @@ const feed = CONFIG.audio.feed;
 // ============================================
 
 fetch(feed)
-.then(response => response.text())
-.then(str => {
+  .then((response) => response.text())
+  .then((str) => {
     const parser = new DOMParser();
     const xml = parser.parseFromString(str, "text/xml");
     const items = [...xml.querySelectorAll("item")];
 
     const bibbia = document.getElementById("percorso-biblico");
     if (!bibbia) {
-        console.error("Contenitore 'percorso-biblico' non trovato");
-        return;
+      console.error("Contenitore 'percorso-biblico' non trovato");
+      return;
     }
 
     // Pulisce il messaggio di caricamento iniziale
@@ -26,38 +26,38 @@ fetch(feed)
 
     let episodiTrovati = 0;
 
-    items.forEach(ep => {
-        const titoloElemento = ep.querySelector("title");
-        const linkElemento = ep.querySelector("link");
+    items.forEach((ep) => {
+      const titoloElemento = ep.querySelector("title");
+      const linkElemento = ep.querySelector("link");
 
-        if (!titoloElemento || !linkElemento) return;
+      if (!titoloElemento || !linkElemento) return;
 
-        const titolo = titoloElemento.textContent;
-        const link = linkElemento.textContent;
+      const titolo = titoloElemento.textContent;
+      const link = linkElemento.textContent;
 
-        // Filtra solo gli episodi del Percorso Biblico
-        if (!titolo.includes("[Percorso Biblico]")) return;
+      // Filtra solo gli episodi del Percorso Biblico
+      if (!titolo.includes("[Percorso Biblico]")) return;
 
-        // Recupera ID Spreaker dall'URL
-        const match = link.match(/(\d+)$/);
-        if (!match) {
-            console.warn("ID episodio non trovato per il link:", link);
-            return;
-        }
+      // Recupera ID Spreaker dall'URL
+      const match = link.match(/(\d+)$/);
+      if (!match) {
+        console.warn("ID episodio non trovato per il link:", link);
+        return;
+      }
 
-        const id = match[1];
-        const titoloPulito = titolo.replace("[Percorso Biblico]", "").trim();
+      const id = match[1];
+      const titoloPulito = titolo.replace("[Percorso Biblico]", "").trim();
 
-        // Recupera gli episodi già ascoltati
-        const ascoltate =
-            JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+      // Recupera gli episodi già ascoltati
+      const ascoltate =
+        JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
 
-        const giaAscoltata = ascoltate.includes(id);
+      const giaAscoltata = ascoltate.includes(id);
 
-        // Crea il blocco HTML dell'episodio
-        const elemento = document.createElement("div");
+      // Crea il blocco HTML dell'episodio
+      const elemento = document.createElement("div");
 
-        elemento.innerHTML = `
+      elemento.innerHTML = `
             <h3>📖 ${titoloPulito}</h3>
 
             <iframe
@@ -75,82 +75,67 @@ fetch(feed)
             <hr>
         `;
 
-        bibbia.appendChild(elemento);
-        episodiTrovati++;
+      bibbia.appendChild(elemento);
+      episodiTrovati++;
 
-        // Gestione del pulsante "Già ascoltata"
-        const pulsante = elemento.querySelector(".ascoltato");
+      // Gestione del pulsante "Già ascoltata"
+      const pulsante = elemento.querySelector(".ascoltato");
 
-        pulsante.addEventListener("click", () => {
+      pulsante.addEventListener("click", () => {
+        let ascoltateAttuali =
+          JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
 
-            let ascoltateAttuali =
-                JSON.parse(localStorage.getItem("puntateAscoltate")) || [];
+        const indice = ascoltateAttuali.indexOf(id);
 
-            const indice = ascoltateAttuali.indexOf(id);
+        if (indice !== -1) {
+          // Rimuove l'episodio dagli ascoltati
+          ascoltateAttuali.splice(indice, 1);
+          pulsante.textContent = "☐ Già ascoltata";
+        } else {
+          // Aggiunge l'episodio agli ascoltati
+          ascoltateAttuali.push(id);
+          pulsante.textContent = "✅ Già ascoltata";
+        }
 
-            if (indice !== -1) {
-                // Rimuove l'episodio dagli ascoltati
-                ascoltateAttuali.splice(indice, 1);
-                pulsante.textContent = "☐ Già ascoltata";
-            } else {
-                // Aggiunge l'episodio agli ascoltati
-                ascoltateAttuali.push(id);
-                pulsante.textContent = "✅ Già ascoltata";
-            }
-
-            localStorage.setItem(
-                "puntateAscoltate",
-                JSON.stringify(ascoltateAttuali)
-            );
-        });
+        localStorage.setItem(
+          "puntateAscoltate",
+          JSON.stringify(ascoltateAttuali)
+        );
+      });
     });
 
     // Se nessun episodio è stato trovato
     if (episodiTrovati === 0) {
-        bibbia.innerHTML =
-            "<p>Nessun episodio del Percorso Biblico trovato al momento.</p>";
+      bibbia.innerHTML =
+        "<p>Nessun episodio del Percorso Biblico trovato al momento.</p>";
     }
-})
-.catch(error => {
-    console.error(
-        "Errore durante il caricamento del percorso biblico:",
-        error
-    );
+  })
+  .catch((error) => {
+    console.error("Errore durante il caricamento del percorso biblico:", error);
 
-    const contenitore =
-        document.getElementById("percorso-biblico");
+    const contenitore = document.getElementById("percorso-biblico");
 
     if (contenitore) {
-        contenitore.innerHTML =
-            "<p>Impossibile caricare il percorso biblico al momento.</p>";
+      contenitore.innerHTML =
+        "<p>Impossibile caricare il percorso biblico al momento.</p>";
     }
-});
+  });
 
 // ============================================
 // 📤 CONDIVIDI PERCORSO BIBLICO
 // ============================================
 
 function condividiPercorso() {
+  if (!window.messaggi || !window.messaggi.percorso) {
+    console.error("Messaggi di condivisione del percorso non trovati");
+    return;
+  }
 
-    if (!window.messaggi || !window.messaggi.percorso) {
-        console.error(
-            "Messaggi di condivisione del percorso non trovati"
-        );
-        return;
-    }
+  const testo = window.messaggi.percorso.testo;
 
-    const testo = window.messaggi.percorso.testo;
-
-    if (typeof condividiContenuto === "function") {
-        condividiContenuto(
-            testo,
-            CONFIG.percorsi.biblico.url
-        );
-    } else {
-        console.log(
-            "Condivisione percorso:",
-            testo,
-            CONFIG.percorsi.biblico.url
-        );
-    }
+  if (typeof condividiContenuto === "function") {
+    condividiContenuto(testo, CONFIG.percorsi.biblico.url);
+  } else {
+    console.log("Condivisione percorso:", testo, CONFIG.percorsi.biblico.url);
+  }
 }

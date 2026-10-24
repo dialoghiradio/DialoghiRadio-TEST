@@ -115,10 +115,11 @@ Verificare la stabilità della versione Beta 1.0.3 dopo le modifiche alle funzio
 7. Funzione Sorprendimi.
 8. Funzioni della Comunità:
 
-   * richiesta di preghiera;
-   * preparazione conferenza;
-   * ingresso nella conferenza;
-   * invito nella Comunità.
+  * Richiesta di preghiera
+  * Preparazione conferenza;
+  * Entra nella conferenza;
+  * Invita nella Comunità.
+
 9. Contatti:
 
    * segnalazione problema;
@@ -129,9 +130,99 @@ Verificare la stabilità della versione Beta 1.0.3 dopo le modifiche alle funzio
 
 ### Stato
 
-La versione Beta 1.0.3 viene considerata una versione di test di riferimento per le prossime verifiche.
+La Beta 1.0.3 è in fase di verifica. Sono già stati ricevuti feedback dai tester, che verranno registrati in questo documento insieme agli esiti dei controlli effettuati.
 
-Le segnalazioni ricevute dai tester verranno registrate di seguito, mantenendo separate le diverse versioni dell'app.
+Le funzioni elencate sopra costituiscono i punti di riferimento per le verifiche. La loro presenza nell'elenco non implica che tutte siano state testate da ogni tester.
+
+Le segnalazioni e gli esiti dei controlli vengono registrati mantenendo separate le diverse versioni dell'app.
+
+---
+
+### Feedback ricevuti — Secondo ciclo di verifica
+
+Nel secondo ciclo di verifica sono stati raccolti riscontri sull'usabilità dell'app, sulla navigazione, sull'ascolto dei contenuti e sulla funzione Contatti.
+
+#### ⭐ Feedback positivi
+
+* **Claudio:** apprezzamento generale per l'app, descritta come «Una buonissima APP».
+* **Rosaria:** apprezzamento per il Percorso Biblico, in particolare per la capacità di rendere comprensibili argomenti complessi e di trasmettere speranza e tranquillità.
+* **Filomena:** ha compreso come utilizzare la funzione Contatti e ha suggerito di dare maggiore priorità a «Contatti e suggerimenti» rispetto a «Info».
+* **Carla:** ha suggerito di valorizzare le canzoni realizzate da Dialoghi Radio.
+
+#### ⚠️ Problemi e osservazioni
+
+* **Guida utente:** Claudio ha segnalato che non è immediatamente evidente a tutti gli utenti.
+* **Contatti:** Rosaria ha riferito che un messaggio inviato dall'app è finito nella cartella Posta indesiderata del destinatario. Il caso riguarda la classificazione effettuata dal servizio email e non dimostra un malfunzionamento dell'app.
+* **Home:** durante una verifica interna è stata rilevata la presenza della scritta «Caricamento ultima puntata» anche quando i pulsanti della schermata sono già disponibili.
+
+#### 💡 Suggerimenti per sviluppi futuri
+
+* Valutare una maggiore visibilità della Guida utente.
+* Valutare l'ordine dei pulsanti «Contatti e suggerimenti» e «Info».
+* Esaminare la chiarezza delle denominazioni utilizzate per le sezioni.
+* Valutare una sezione dedicata a canzoni, canti e contenuti musicali originali.
+* Considerare eventuali miglioramenti grafici e una sezione dedicata alle nuove pubblicazioni.
+* Valutare possibili miglioramenti all'esperienza di ascolto in background.
+
+#### Stato delle verifiche
+
+I feedback documentano esperienze positive e suggerimenti di miglioramento. Non costituiscono, da soli, una certificazione completa di tutte le funzioni della Beta 1.0.3.
+
+---
+
+# Registro Tester Beta 1.0.4
+
+## Verifica del palinsesto H24
+
+**Periodo:** ottobre 2026
+
+**Ambiente:** DR-TEST locale
+
+**Obiettivo:**
+
+Registrare le prove effettuate sulla prima parte del palinsesto H24 integrata nella versione locale della Beta 1.0.4 e tenere traccia delle verifiche ancora da completare.
+
+### Prove effettuate
+
+La versione locale contenente il palinsesto è stata utilizzata per oltre un mese, sia su computer sia su dispositivi mobili.
+
+Durante questo periodo sono state effettuate sessioni di riproduzione continua della durata indicativa di circa quattro ore, senza problemi riscontrati durante l'utilizzo descritto.
+
+### Stato delle verifiche
+
+* **Utilizzo su computer:** effettuato.
+* **Utilizzo su dispositivi mobili:** effettuato.
+* **Sessioni di riproduzione continua:** effettuate, con durata indicativa di circa quattro ore.
+* **Stabilità durante le prove descritte:** riscontro positivo.
+* **Verifica completa dell'intero palinsesto H24:** da completare.
+* **Verifica di tutte le funzionalità previste:** da completare.
+
+Le prove effettuate documentano il comportamento della versione locale utilizzata, ma non costituiscono una certificazione completa di tutte le funzioni o di una programmazione continuativa di 24 ore.
+
+### Verifiche da completare
+
+Prima della pubblicazione nel repository di test sarà necessario verificare, in base alle funzionalità effettivamente implementate:
+
+1. la sincronizzazione tra orario e contenuto previsto;
+2. la selezione del Rosario in base al giorno della settimana;
+3. la corretta successione dei contenuti;
+4. la visualizzazione del contenuto in onda e di quelli successivi;
+5. il comportamento della riproduzione nei diversi dispositivi;
+6. le parti del palinsesto non ancora verificate.
+
+### Segnalazioni dei tester
+
+Al momento, in questa sezione non vengono registrate nuove segnalazioni individuali relative alla Beta 1.0.4.
+
+Le prove descritte sono riferite all'utilizzo della versione locale e non devono essere attribuite a singoli tester senza riscontri documentati.
+
+### Stato generale
+
+La Beta 1.0.4 è in preparazione per il repository `DialoghiRadio-TEST`.
+
+Il palinsesto H24 è **parzialmente implementato e sottoposto a verifiche**. Gli esiti delle prove successive e le eventuali segnalazioni verranno aggiunti a questo registro.
+
+La pubblicazione nel repository di test richiederà il controllo finale dei file e l'autorizzazione esplicita. Questa attività non autorizza modifiche al repository di produ
 
 ---
 
